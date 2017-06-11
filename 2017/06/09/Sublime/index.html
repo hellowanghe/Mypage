@@ -1,0 +1,356 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="">
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta name="author" content="Jack Wang">
+  
+  
+  
+  
+    <meta name="description" content="Sublime 相关0 简介sublime是款轻量级的text编辑器，有丰富的插件。
+1.安装Windows下，到sublime官网下载http://www.sublimetext.com,sublime的windows的安装包。
+2.Package ControlPackage control 类似于一个插件包安装工具，安装了Package control就可在安装插件了!或者你可以直接下...">
+  
+  <title>Sublime [ TRY ]</title>
+  
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  
+  <link rel="stylesheet" href="/css/random.css">
+<link rel="stylesheet" href="/css/vegas.min.css">
+<link rel="stylesheet" href="/css/highlight-railscasts.css">
+<link rel="stylesheet" href="/css/jquery.fancybox.css">
+<link rel="stylesheet" href="/css/iconfont/iconfont.css">
+<link rel="stylesheet" href="/css/jquery.fancybox-thumbs.css">
+<link rel="stylesheet" href="/css/plyr.css">
+  
+</head>
+
+<body>
+<div class="side-navigate hide-area">
+  
+    <div class="item prev">
+      <a href="/2017/06/10/Linux-常用命令/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        Linux 常用命令
+      </div>
+    </div>
+  
+  
+</div>
+<div id="outer-container" class="hide-area">
+<div id="container">
+  <div id="menu-outer" class="slide-down">
+    <div id="menu-inner">
+      <div id="brand">
+        
+        <a onClick="openUserCard()">
+          <img id="avatar" src="http://7te9fe.com1.z0.glb.clouddn.com/default_avatar.jpg"/>
+          <div id="homelink">TRY</div>
+        </a>
+      </div>
+      <div id="menu-list">
+        <ul>
+        
+        
+          
+            <li>
+          
+            <a href="/index.html">主页</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/archives">存档</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/tags">标签</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/categories">分类</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/about">关于</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="https://github.com/stiekel/hexo-theme-random">Github</a>
+            
+          </li>
+        
+        </ul>
+      </div>
+      <div id="show-menu">
+        <button>Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="content-outer">
+    <div id="content-inner">
+      
+      
+  <article id="post">
+    <h1>Sublime</h1>
+    <p class="page-title-sub">
+      <span id = "post-title-date">Created at 2017-06-09</span>
+      
+        <span id = "post-title-updated">Updated at 2017-06-10</span>
+      
+      
+      <span id = "post-title-categories">Category
+      
+      
+        
+        
+        <a href="/categories/web/">web</a>
+      
+      </span>
+      
+      
+      <span id = "post-title-tags">
+      Tag
+      
+      
+        
+        
+        <a href="/tags/Sublime/">Sublime</a>
+      
+      </span>
+      
+    </p>
+    
+    <h2 id="Sublime-相关"><a href="#Sublime-相关" class="headerlink" title="Sublime 相关"></a>Sublime 相关</h2><h3 id="0-简介"><a href="#0-简介" class="headerlink" title="0 简介"></a>0 简介</h3><p>sublime是款轻量级的text编辑器，有丰富的插件。</p>
+<h3 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h3><p>Windows下，到sublime官网下载<a href="http://www.sublimetext.com" title="sublimetext" target="_blank" rel="external">http://www.sublimetext.com</a>,sublime的windows的安装包。</p>
+<h3 id="2-Package-Control"><a href="#2-Package-Control" class="headerlink" title="2.Package Control"></a>2.Package Control</h3><p>Package control 类似于一个插件包安装工具，安装了Package control就可在安装插件了!或者你可以直接下载Packagecontrol的压缩包，解压后，放在sublime的安装目录里，baidu网盘链接：<a href="http://pan.baidu.com/s/1geJjxlx" title="baidu" target="_blank" rel="external">http://pan.baidu.com/s/1geJjxlx</a> 密码：<strong>gwgn</strong>，我的是 <code>C:\Program Files\Sublime Text 3\Packages</code> ,压缩文件加压后文件夹命名为Package Control，放到上边的目录里，重启sublime即可。安装Package Control成功后，点击preferences，最下方点击package control!<br><img src="https://github.com/hellowanghe/Mypage/blob/master/img/sulime1.PNG?raw=true" alt=""><br>接着出现package control的选项，点击install Package Control<img src="https://github.com/hellowanghe/Mypage/blob/master/img/sublime2.PNG?raw=true" alt=""><br>会弹出搜索框，你可输入，选择你要安装的插件<br><img src="https://github.com/hellowanghe/Mypage/blob/master/img/sublime3.PNG?raw=true" alt=""><br>点击你要安装的插件，会自动安装，等待时间取决于你的网速了。</p>
+<h3 id="3-sublime常用插件"><a href="#3-sublime常用插件" class="headerlink" title="3.sublime常用插件"></a>3.sublime常用插件</h3><hr>
+<p><strong>1.Emmet</strong></p>
+<p>Emmet是一个自动补全插件，可以节约开发时间。</p>
+<p><strong>2.HTML-CSS_JS Prettify</strong></p>
+<p>Prettify是一个用来对齐美化代码的插件，使凌乱的代码立马变得整齐。<br>类似的插件还有Alignment，不过Alignment太过整齐，没有Prettify灵活。</p>
+<p><strong>3.Reactjs</strong></p>
+<p>适用于reactjs的开发可以快速生成代码</p>
+<p><strong>4.Snippet</strong></p>
+<p>代码补偿工具。</p>
+<p><strong>5.APICloud</strong></p>
+<p>具体可参见链接文档；<br><a href="http://docs.apicloud.com/Dev-Tools/sublime-apicloud-plugin" title="http://docs.apicloud.com/Dev-Tools/sublime-apicloud-plugin" target="_blank" rel="external">http://docs.apicloud.com/Dev-Tools/sublime-apicloud-plugin</a></p>
+<h3 id="4-sublime常用快捷方式"><a href="#4-sublime常用快捷方式" class="headerlink" title="4.sublime常用快捷方式"></a>4.sublime常用快捷方式</h3><p>Ctrl+L 选择整行（按住-继续选择下行）<br><br>Ctrl+KK 从光标处删除至行尾<br><br>Ctrl+Shift+K 删除整行<br><br>Ctrl+Shift+D 复制光标所在整行，插入在该行之前<br><br>Ctrl+J 合并行（已选择需要合并的多行时）<br><br>Ctrl+KU 改为大写<br><br>Ctrl+KL 改为小写<br><br>Ctrl+D 选词 （按住-继续选择下个相同的字符串）<br><br>Ctrl+M 光标移动至括号内开始或结束的位置<br><br>Ctrl+Shift+M 选择括号内的内容（按住-继续选择父括号）<br><br>Ctrl+/ 注释整行（如已选择内容，同“Ctrl+Shift+/”效果）<br><br>Ctrl+Shift+/ 注释已选择内容<br><br>Ctrl+Z 撤销<br><br>Ctrl+Y 恢复撤销<br><br>Ctrl+M 光标跳至对应的括号<br><br>Alt+. 闭合当前标签<br><br>Ctrl+Shift+A 选择光标位置父标签对儿<br><br>Ctrl+Shift+[ 折叠代码<br><br>Ctrl+Shift+] 展开代码<br><br>Ctrl+KT 折叠属性<br><br>Ctrl+K0 展开所有<br><br>Ctrl+U 软撤销<br><br>Ctrl+T 词互换<br><br>Tab 缩进 自动完成<br><br>Shift+Tab 去除缩进<br><br>Ctrl+Shift+↑ 与上行互换<br><br>Ctrl+Shift+↓ 与下行互换<br><br>Ctrl+K Backspace 从光标处删除至行首<br><br>Ctrl+Enter 光标后插入行<br><br>Ctrl+Shift+Enter 光标前插入行<br><br>Ctrl+F2 设置书签<br><br>F2 下一个书签<br><br>Shift+F2 上一个书签<br></p>
+<hr>
+
+  </article>
+  <div class="random-toc-area">
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">Show TOC</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">Hide TOC</button>
+  <div class="random-toc">
+    <h2>Table of Content</h2>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Sublime-相关"><span class="toc-text">Sublime 相关</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#0-简介"><span class="toc-text">0 简介</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#1-安装"><span class="toc-text">1.安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Package-Control"><span class="toc-text">2.Package Control</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-sublime常用插件"><span class="toc-text">3.sublime常用插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-sublime常用快捷方式"><span class="toc-text">4.sublime常用快捷方式</span></a></li></ol></li></ol>
+  </div>
+</div>
+
+  
+<nav id="pagination">
+  
+    <a href="/2017/06/10/Linux-常用命令/" class="prev">&larr; Prev post Linux 常用命令</a>
+  
+
+  
+
+  
+</nav>
+
+  <!-- JiaThis Button BEGIN -->
+
+<!-- JiaThis Button END -->
+
+
+      
+      
+    </div>
+  </div>
+
+  <div id="bottom-outer">
+    <div id="bottom-inner">
+      Site by Jack Wang using
+      <a href="http://hexo.io">Hexo</a> & <a href="https://github.com/stiekel/hexo-theme-random">Random</a>
+      <br>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+<div id="user-card">
+  <div class="center-field">
+    <img class="avatar" src="http://7te9fe.com1.z0.glb.clouddn.com/default_avatar.jpg">
+    <p id="description">TRY</p>
+    <ul class="social-icon">
+  
+  
+    <li>
+      <a href="https://github.com/stiekel/hexo-theme-random">
+        
+          <i class="icon iconfont github">&#xe606;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="http://weibo.com/sidcn">
+        
+          <i class="icon iconfont weibo">&#xe602;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="http://www.douban.com/people/Stiekel/">
+        
+          <i class="icon iconfont douban">&#xe60f;</i>
+        
+      </a>
+    </li>
+  
+</ul>
+  </div>
+</div>
+
+
+<div id="btn-view">Hide</div>
+
+<script>
+// is trigger analytics / tongji script
+var isIgnoreHost = false;
+
+if(window && window.location && window.location.host) {
+  isIgnoreHost = ["localhost","127.0.0.1"].some(function(address){
+    return 0 === window.location.host.indexOf(address);
+  });
+}
+
+var isTriggerAnalytics = !( true && isIgnoreHost );
+
+</script>
+
+
+
+
+  
+  
+    <script src="/js/jquery-2.2.3.min.js"></script>
+  
+    <script src="/js/vegas.min.js"></script>
+  
+    <script src="/js/random.js"></script>
+  
+    <script src="/js/highlight.pack.js"></script>
+  
+    <script src="/js/jquery.mousewheel.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox-thumbs.js"></script>
+  
+    <script src="/js/plyr.js"></script>
+  
+
+<script>
+
+  // fancybox
+  var backgroundImages = [];
+  
+  $('#post').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox') || $(this).parent().hasClass('fancybox-thumb')) return;
+      var alt = this.alt || this.title;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'post' + i);
+    });
+  });
+  $(".fancybox").fancybox();
+
+var vegasConfig = {"preload­Image":true,"transition":["slideLeft2","slideRight2","flash2"],"timer":true,"delay":5000,"shuffle":true,"count":28};
+var unsplashConfig = {"gravity":"north"};
+// is show background images
+var turnoffBackgroundImage = false;
+
+
+
+  turnoffBackgroundImage = true;
+
+
+var backgroundColor = "34495E";
+
+$(".fancybox-thumb").fancybox({
+  prevEffect: 'none',
+  nextEffect: 'none',
+  helpers: {
+    title: {
+      type: 'outside'
+    },
+    thumbs: {
+      width: 50,
+      height: 50
+    }
+  }
+});
+
+// show video with plyr
+$(".video-container iframe").each(function(i){
+  var url = $(this).attr('src');
+  var id = url.split('/').pop();
+  var plyrContainer = document.createElement('div');
+  plyrContainer.className = 'plyr';
+  var plyrElement = document.createElement('div');
+  plyrElement.dataset.videoId = id;
+  switch(true) {
+    case url.search('youtube.com') >= 0:
+      plyrElement.dataset.type = 'youtube';
+      break;
+    case url.search('vimeo.com') >= 0:
+      plyrElement.dataset.type = 'vimeo';
+      break;
+    default:
+      return;
+  };
+  plyrContainer.appendChild(plyrElement);
+  $(this).parent().html(plyrContainer);
+});
+plyr.setup('.plyr', {iconUrl: '/css/sprite.svg'});
+</script>
+</body>
+</html>
+
