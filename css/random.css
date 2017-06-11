@@ -591,14 +591,14 @@ figure.highlight .line {
   white-space: pre-wrap;
 }
 code {
-  font-family: Liberation MonoConsolas, Helvetica, Monaco, Courier New, Lucida Console;
+  font-family: Monaco, Courier New, Lucida Console;
   background-color: #000;
   padding-left: 12px;
   padding-right: 12px;
   color: #fff;
 }
 table .line {
-  font-family: Liberation MonoConsolas, Helvetica, Monaco, Courier New, Lucida Console;
+  font-family: Monaco, Courier New, Lucida Console;
 }
 blockquote {
   background-color: #eee;
