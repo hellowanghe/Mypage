@@ -1,0 +1,386 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta name="author" content="Jack Wang">
+  
+  
+  
+  
+    <meta name="description" content="Git是分布式的版本控制工具这是git的官网，可以下载最新版本的git使用。我只装了windows版本的git。想详细了解的同学可以去廖雪峰的Git教程看看。
+https://git-scm.com/http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000安装成功git，在cmd命令行...">
+  
+  <title>Git 基本操作 [ TRY ]</title>
+  
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  
+  <link rel="stylesheet" href="/css/random.css">
+<link rel="stylesheet" href="/css/vegas.min.css">
+<link rel="stylesheet" href="/css/highlight-railscasts.css">
+<link rel="stylesheet" href="/css/jquery.fancybox.css">
+<link rel="stylesheet" href="/css/iconfont/iconfont.css">
+<link rel="stylesheet" href="/css/jquery.fancybox-thumbs.css">
+<link rel="stylesheet" href="/css/plyr.css">
+  
+</head>
+
+<body>
+<div class="side-navigate hide-area">
+  
+  
+    <div class="item next">
+      <a href="/2017/06/11/hello-world/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        Hello World
+      </div>
+    </div>
+  
+</div>
+<div id="outer-container" class="hide-area">
+<div id="container">
+  <div id="menu-outer" class="slide-down">
+    <div id="menu-inner">
+      <div id="brand">
+        
+        <a onClick="openUserCard()">
+          <img id="avatar" src="http://7te9fe.com1.z0.glb.clouddn.com/default_avatar.jpg"/>
+          <div id="homelink">TRY</div>
+        </a>
+      </div>
+      <div id="menu-list">
+        <ul>
+        
+        
+          
+            <li>
+          
+            <a href="/index.html">主页</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/archives">存档</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/tags">标签</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/categories">分类</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/about">关于</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="https://github.com/stiekel/hexo-theme-random">Github</a>
+            
+          </li>
+        
+        </ul>
+      </div>
+      <div id="show-menu">
+        <button>Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="content-outer">
+    <div id="content-inner">
+      
+      
+  <article id="post">
+    <h1>Git 基本操作</h1>
+    <p class="page-title-sub">
+      <span id = "post-title-date">撰写于 2017-06-15</span>
+      
+        <span id = "post-title-updated">修改于 2017-06-19</span>
+      
+      
+      <span id = "post-title-categories">分类
+      
+      
+        
+        
+        <a href="/categories/Tools/">Tools</a>
+      
+      </span>
+      
+      
+      <span id = "post-title-tags">
+      标签
+      
+      
+        
+        
+        <a href="/tags/Git/">Git</a>
+      
+      </span>
+      
+    </p>
+    
+    <h3 id="Git是分布式的版本控制工具"><a href="#Git是分布式的版本控制工具" class="headerlink" title="Git是分布式的版本控制工具"></a>Git是分布式的版本控制工具</h3><p>这是git的官网，可以下载最新版本的git使用。我只装了windows版本的git。想详细了解的同学可以去廖雪峰的Git教程看看。</p>
+<h2 id="https-git-scm-com"><a href="#https-git-scm-com" class="headerlink" title="https://git-scm.com/"></a><a href="https://git-scm.com/" title="Git 官网" target="_blank" rel="external">https://git-scm.com/</a></h2><h2 id="http-www-liaoxuefeng-com-wiki-0013739516305929606dd18361248578c67b8067c8c017b000"><a href="#http-www-liaoxuefeng-com-wiki-0013739516305929606dd18361248578c67b8067c8c017b000" class="headerlink" title="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000"></a><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" title="廖雪峰Git" target="_blank" rel="external">http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000</a></h2><p>安装成功git，在cmd命令行输入 <code>git --version</code> 就可以看到git的版本号了（注意两个是<code>--</code>）<img src="https://github.com/hellowanghe/blogimg/blob/master/img/git1.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/git1.PNG?raw=true"></p>
+<p>安装完成后，首先需要配置一下，用户名和邮箱，每次的commit都会记录下是哪个用户推送的。</p>
+<pre><code>$ git config --global user.name &quot;Your Name&quot;
+$ git config --global user.email &quot;email@example.com&quot;
+</code></pre><h3 id="1-基本命令"><a href="#1-基本命令" class="headerlink" title="1. 基本命令"></a>1. 基本命令</h3><h5 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h5><ul>
+<li><code>git init test</code>  初始化一个名为test的仓库。test里有一个.git的文件夹（默认为隐藏），这个是用来管理仓库的。一个本地仓库就建好了。（版本库又名仓库，英文名repository，大概就是一个目录的样子）</li>
+</ul>
+<p>或者新建文件夹test，cd test之后，输入git init，和上步有同样的效果</p>
+<h5 id="查看仓库状态"><a href="#查看仓库状态" class="headerlink" title="查看仓库状态"></a>查看仓库状态</h5><ul>
+<li><code>git status</code>  用于查看仓库状态，一旦发生改变就会有提示。我们在test文件夹下新建一个文本文件名为one.txt,并写入this is test，保存。运行此命令，如图所示。</li>
+</ul>
+<p><img src="https://github.com/hellowanghe/blogimg/blob/master/img/git2.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/git2.PNG?raw=true"></p>
+<h5 id="对比差异"><a href="#对比差异" class="headerlink" title="对比差异"></a>对比差异</h5><ul>
+<li><code>git diff one.txt</code>  可以查看你所修改的东西，在提交之前查看，一旦你add之后，这个命令就不起作用了。<h5 id="添加到暂存区"><a href="#添加到暂存区" class="headerlink" title="添加到暂存区"></a>添加到暂存区</h5></li>
+<li><code>git add filesname</code>  将文件添加到暂存区<h5 id="提交到分支"><a href="#提交到分支" class="headerlink" title="提交到分支"></a>提交到分支</h5></li>
+<li><code>git commit -m &quot;添加了一些东西，删除了一些东西&quot;</code> 提交到分支，-m后面是你提交的说明。可以填写你所修改的东西。<h5 id="查看历史提交记录"><a href="#查看历史提交记录" class="headerlink" title="查看历史提交记录"></a>查看历史提交记录</h5></li>
+<li><code>git log</code> 会显示你所提交的日志，及版本号，版本号是用sh1计算出的一串字符，为了避免重复。在后面加上参数–pretty=oneline会让日志成行显示，</li>
+<li><img src="https://github.com/hellowanghe/blogimg/blob/master/img/gitlog.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/gitlog.PNG?raw=true"><br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/githead.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/githead.PNG?raw=true"></li>
+</ul>
+<h5 id="版本回退"><a href="#版本回退" class="headerlink" title="版本回退"></a>版本回退</h5><ul>
+<li><code>git reset --hard &quot;版本号&quot;</code> 回退到制定的版本号。git log 显示出你的所有提交记录，想要回退到那个版本，就输入版本号，一般输个前5位就行，如果没有相同的话。<br>如上图</li>
+<li><code>git reset --hard HEAD</code> 可以查看当前的版本号</li>
+<li><img src="https://github.com/hellowanghe/blogimg/blob/master/img/gitreset.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/gitreset.PNG?raw=true"><h5 id="后悔药"><a href="#后悔药" class="headerlink" title="后悔药"></a>后悔药</h5></li>
+<li>git reflog 可以查看你所有的操作记录。也可以用reset命令，回退到你想要回退的版本。</li>
+</ul>
+<p><img src="https://github.com/hellowanghe/blogimg/blob/master/img/git.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/git.PNG?raw=true"></p>
+<h5 id="添加远程仓库"><a href="#添加远程仓库" class="headerlink" title="添加远程仓库"></a>添加远程仓库</h5><p>在你的仓库文件中运行</p>
+<pre><code>git remote add origin git@github.com:michaelliao/fortest.git
+</code></pre><p>把仓库名改成自己的就行了。</p>
+<h5 id="推送到远程仓库"><a href="#推送到远程仓库" class="headerlink" title="推送到远程仓库"></a>推送到远程仓库</h5><p>在仓库运行</p>
+<pre><code>git push -u origin master
+</code></pre><p>-u表示，将本地仓库同步到远程仓库，并关联到远程仓库。</p>
+<h5 id="将远程仓库同步到本地"><a href="#将远程仓库同步到本地" class="headerlink" title="将远程仓库同步到本地"></a>将远程仓库同步到本地</h5><p>git pull会同步远程分支到本地。</p>
+<pre><code>git pull
+</code></pre><h5 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h5><p>新建一个dev分支</p>
+<pre><code>git branch dev
+</code></pre><p>切换到dev分支</p>
+<pre><code>git checkout dev
+</code></pre><p>查看当前分支 </p>
+<pre><code>git branch
+</code></pre><p>删除分支</p>
+<pre><code>git branch -d dev
+</code></pre><p>查看分支合并图</p>
+<pre><code>git log --graph
+</code></pre><h5 id="合并分支"><a href="#合并分支" class="headerlink" title="合并分支"></a>合并分支</h5><p>在切换回master分之后，运行命令，会将dev分支合并到master分支，也就是当前分支</p>
+<pre><code>git merge dev
+</code></pre>
+  </article>
+  <div class="random-toc-area">
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
+  <div class="random-toc">
+    <h2>目录</h2>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#Git是分布式的版本控制工具"><span class="toc-text">Git是分布式的版本控制工具</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#https-git-scm-com"><span class="toc-text">https://git-scm.com/</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#http-www-liaoxuefeng-com-wiki-0013739516305929606dd18361248578c67b8067c8c017b000"><span class="toc-text">http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-基本命令"><span class="toc-text">1. 基本命令</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#初始化"><span class="toc-text">初始化</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看仓库状态"><span class="toc-text">查看仓库状态</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#对比差异"><span class="toc-text">对比差异</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#添加到暂存区"><span class="toc-text">添加到暂存区</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#提交到分支"><span class="toc-text">提交到分支</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#查看历史提交记录"><span class="toc-text">查看历史提交记录</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#版本回退"><span class="toc-text">版本回退</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#后悔药"><span class="toc-text">后悔药</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#添加远程仓库"><span class="toc-text">添加远程仓库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#推送到远程仓库"><span class="toc-text">推送到远程仓库</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#将远程仓库同步到本地"><span class="toc-text">将远程仓库同步到本地</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#创建分支"><span class="toc-text">创建分支</span></a></li><li class="toc-item toc-level-5"><a class="toc-link" href="#合并分支"><span class="toc-text">合并分支</span></a></li></ol></li></ol></li></ol>
+  </div>
+</div>
+
+  
+<nav id="pagination">
+  
+
+  
+
+  
+    <a href="/2017/06/11/hello-world/" class="next">下一篇 Hello World &rarr;</a>
+  
+</nav>
+
+  <!-- JiaThis Button BEGIN -->
+
+<!-- JiaThis Button END -->
+
+
+      
+      
+    </div>
+  </div>
+
+  <div id="bottom-outer">
+    <div id="bottom-inner">
+      Site by Jack Wang using
+      <a href="http://hexo.io">Hexo</a> & <a href="https://github.com/stiekel/hexo-theme-random">Random</a>
+      <br>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+<div id="user-card">
+  <div class="center-field">
+    <img class="avatar" src="http://7te9fe.com1.z0.glb.clouddn.com/default_avatar.jpg">
+    <p id="description">TRY</p>
+    <ul class="social-icon">
+  
+  
+    <li>
+      <a href="https://github.com/stiekel/hexo-theme-random">
+        
+          <i class="icon iconfont github">&#xe606;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="http://weibo.com/sidcn">
+        
+          <i class="icon iconfont weibo">&#xe602;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="http://www.douban.com/people/Stiekel/">
+        
+          <i class="icon iconfont douban">&#xe60f;</i>
+        
+      </a>
+    </li>
+  
+</ul>
+  </div>
+</div>
+
+
+<div id="btn-view">Hide</div>
+
+<script>
+// is trigger analytics / tongji script
+var isIgnoreHost = false;
+
+if(window && window.location && window.location.host) {
+  isIgnoreHost = ["localhost","127.0.0.1"].some(function(address){
+    return 0 === window.location.host.indexOf(address);
+  });
+}
+
+var isTriggerAnalytics = !( true && isIgnoreHost );
+
+</script>
+
+
+
+
+  
+  
+    <script src="/js/jquery-2.2.3.min.js"></script>
+  
+    <script src="/js/vegas.min.js"></script>
+  
+    <script src="/js/random.js"></script>
+  
+    <script src="/js/highlight.pack.js"></script>
+  
+    <script src="/js/jquery.mousewheel.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox-thumbs.js"></script>
+  
+    <script src="/js/plyr.js"></script>
+  
+
+<script>
+
+  // fancybox
+  var backgroundImages = [];
+  
+  $('#post').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox') || $(this).parent().hasClass('fancybox-thumb')) return;
+      var alt = this.alt || this.title;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'post' + i);
+    });
+  });
+  $(".fancybox").fancybox();
+
+var vegasConfig = {"preload­Image":true,"transition":["slideLeft2","slideRight2","flash2"],"timer":true,"delay":5000,"shuffle":true,"count":28};
+var unsplashConfig = {"gravity":"north"};
+// is show background images
+var turnoffBackgroundImage = false;
+
+
+
+  turnoffBackgroundImage = true;
+
+
+var backgroundColor = "34495E";
+
+$(".fancybox-thumb").fancybox({
+  prevEffect: 'none',
+  nextEffect: 'none',
+  helpers: {
+    title: {
+      type: 'outside'
+    },
+    thumbs: {
+      width: 50,
+      height: 50
+    }
+  }
+});
+
+// show video with plyr
+$(".video-container iframe").each(function(i){
+  var url = $(this).attr('src');
+  var id = url.split('/').pop();
+  var plyrContainer = document.createElement('div');
+  plyrContainer.className = 'plyr';
+  var plyrElement = document.createElement('div');
+  plyrElement.dataset.videoId = id;
+  switch(true) {
+    case url.search('youtube.com') >= 0:
+      plyrElement.dataset.type = 'youtube';
+      break;
+    case url.search('vimeo.com') >= 0:
+      plyrElement.dataset.type = 'vimeo';
+      break;
+    default:
+      return;
+  };
+  plyrContainer.appendChild(plyrElement);
+  $(this).parent().html(plyrContainer);
+});
+plyr.setup('.plyr', {iconUrl: '/css/sprite.svg'});
+</script>
+</body>
+</html>
+
