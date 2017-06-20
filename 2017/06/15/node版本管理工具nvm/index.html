@@ -2,8 +2,6 @@
 
 
 
-  
-
 
 
 
@@ -18,9 +16,11 @@
   
   
   
-    <meta name="description" content="TRY">
+    <meta name="description" content="nvm出现的原因在nodejs的开发中，会需要用到不同的nodejs版本，现阶段node各个版本对一些软件支持不太够，js新的技术层出不穷，各种新的框架，js语言的不断更新，ES6/ES7新标准的js，nodejs也在不断更新。为了方便切换到不同的nodejs版本。
+淘宝的nodejs所有的镜像https://npm.taobao.org/mirrors/node
+nvm-windows的g...">
   
-  <title>分类: web [ TRY ]</title>
+  <title>nvm-node版本管理工具 [ TRY ]</title>
   
   
     <link rel="shortcut icon" href="/favicon.ico">
@@ -39,6 +39,24 @@
 <body>
 <div class="side-navigate hide-area">
   
+    <div class="item prev">
+      <a href="/2017/06/15/Git-基本操作/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        Git 基本操作
+      </div>
+    </div>
+  
+  
+    <div class="item next">
+      <a href="/2017/06/11/hello-world/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        Hello World
+      </div>
+    </div>
   
 </div>
 <div id="outer-container" class="hide-area">
@@ -78,7 +96,7 @@
           </li>
         
           
-            <li class="active">
+            <li>
           
             <a href="/categories">分类</a>
             
@@ -110,129 +128,76 @@
     <div id="content-inner">
       
       
-  <article id="page">
-    
+  <article id="post">
+    <h1>nvm-node版本管理工具</h1>
+    <p class="page-title-sub">
+      <span id = "post-title-date">撰写于 2017-06-15</span>
       
-    
+        <span id = "post-title-updated">修改于 2017-06-20</span>
       
-    
       
-        <h1 class="center-title">
-          分类
-          
-        </h1>
-      
-    
-      
-    
-    <ul class="category-list">
-      
-        <li class="category-list-item">
-        
-          <a href="/categories/Tools/">Tools</a>
-        
-          <span class="category-list-count">1</span>
-        </li>
-      
-        <li class="category-list-item">
-        
-          <a href="/categories/Linux/">Linux</a>
-        
-          <span class="category-list-count">1</span>
-        </li>
-      
-        <li class="category-list-item">
-        
-          <a class="active" href="/categories/web/">web</a>
-        
-          <span class="category-list-count">1</span>
-        </li>
-      
-        <li class="category-list-item">
-        
-          <a href="/categories/node/">node</a>
-        
-          <span class="category-list-count">1</span>
-        </li>
-      
-    </ul>
-    
+      <span id = "post-title-categories">分类
       
       
         
+        
+        <a href="/categories/node/">node</a>
+      
+      </span>
       
       
-    
-      
-      
-      
-    
+      <span id = "post-title-tags">
+      标签
       
       
         
-      
-      
-    
-      
-      
-      
-    
-      
-      
         
-          
-        
+        <a href="/tags/nvm/">nvm</a>
       
+      </span>
       
-      <div class="post-title-item">
-  
-  <a href="/2017/06/09/Sublime/">
-  
-    Sublime
-  
-  </a>
-  <p class="page-title-sub">
-    <span id = "post-title-date">6-9</span>
+    </p>
     
-    <span id = "post-title-categories">分类
-    
-    
-      
-      
-      <a href="/categories/web/">web</a>
-    
-    </span>
-    
-    
-    <span id = "post-title-tags">
-    标签
-    
-    
-      
-      
-      <a href="/tags/Sublime/">Sublime</a>
-    
-    </span>
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-      
-    
-      
-      
-        
-      
-      
-    
+    <h3 id="nvm出现的原因"><a href="#nvm出现的原因" class="headerlink" title="nvm出现的原因"></a>nvm出现的原因</h3><p>在nodejs的开发中，会需要用到不同的nodejs版本，<strong>现阶段node各个版本对一些软件支持不太够</strong>，js新的技术层出不穷，各种新的框架，js语言的不断更新，ES6/ES7新标准的js，nodejs也在不断更新。为了方便切换到不同的nodejs版本。</p>
+<p>淘宝的nodejs所有的镜像<br><a href="https://npm.taobao.org/mirrors/node" title="nodejs镜像" target="_blank" rel="external">https://npm.taobao.org/mirrors/node</a></p>
+<p>nvm-windows的github地址<br><a href="https://github.com/coreybutler/nvm-windows" title="nvm-windows" target="_blank" rel="external">https://github.com/coreybutler/nvm-windows</a></p>
+<p>nvm的linux版本的github地址<br><a href="https://github.com/creationix/nvm" title="nvm" target="_blank" rel="external">https://github.com/creationix/nvm</a></p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>windows下nvm的安装比较简单，最好先卸载nodejs，下载nvm的windows的安装包，像安装其他软件一样。安装完成后，可以在淘宝的npm镜像下载你所需要的不同的版本的nodejs的压缩包zip格式就行。</p>
+<p>nvm管理nodejs的目录默认在<code>C:\Users\dell\AppData\Roaming\nvm</code>，你的电脑上用户名就是你自己的，AppData有的是隐藏的，需要设置一下文件的查看方式，将其显示出来。将下载好的压缩包解压到，nvm的目录下，并重命名为<code>vx.x.x</code>即可，如图<br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/nvm1.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/nvm1.PNG?raw=true"></p>
+<p>在命令行输入</p>
+<pre><code>nvm list
+</code></pre><p>会显示可用的nodejs版本列表，当前再用版本也会显示出来。如图：<br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/nvmlist.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/nvmlist.PNG?raw=true"></p>
+<p>在命令行输入</p>
+<pre><code>nvm use 4.5.0
+</code></pre><p>nvm会自动切换到所选版本，nvm list可以看到，当前使用版本变为了4.5.0，也可用node -v查看版本是否改变。<br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/nvmuse.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/nvmuse.PNG?raw=true"></p>
+
   </article>
+  <div class="random-toc-area">
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
+  <div class="random-toc">
+    <h2>目录</h2>
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#nvm出现的原因"><span class="toc-text">nvm出现的原因</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li></ol>
+  </div>
+</div>
 
   
+<nav id="pagination">
+  
+    <a href="/2017/06/15/Git-基本操作/" class="prev">&larr; 上一篇 Git 基本操作</a>
+  
+
+  
+
+  
+    <a href="/2017/06/11/hello-world/" class="next">下一篇 Hello World &rarr;</a>
+  
+</nav>
+
+  <!-- JiaThis Button BEGIN -->
+
+<!-- JiaThis Button END -->
+
 
       
       
@@ -350,6 +315,8 @@ var unsplashConfig = {"gravity":"north"};
 var turnoffBackgroundImage = false;
 
 
+
+  turnoffBackgroundImage = true;
 
 
 var backgroundColor = "34495E";
