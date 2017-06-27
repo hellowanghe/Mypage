@@ -1,0 +1,411 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta name="author" content="Jack Wang">
+  
+  
+  
+  
+    <meta name="description" content="学习笔记主流的web服务器软件，一个是Apache HTTP Server，一个是Nginx。Nginx是款轻量级的web服务器和反向代理服务器软件，处理静态请求有极高的性能，国内的淘宝，百度，微博都在使用。使用系统为CentOS7，不同系统可能有差易
+systemctl 工具centOS7中，systemctl是个新的工具，据说是集合了service和chkconfig的功能。如果你的网站...">
+  
+  <title>Apache And nginx [ TRY ]</title>
+  
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  
+  <link rel="stylesheet" href="/css/random.css">
+<link rel="stylesheet" href="/css/vegas.min.css">
+<link rel="stylesheet" href="/css/highlight-railscasts.css">
+<link rel="stylesheet" href="/css/jquery.fancybox.css">
+<link rel="stylesheet" href="/css/iconfont/iconfont.css">
+<link rel="stylesheet" href="/css/jquery.fancybox-thumbs.css">
+<link rel="stylesheet" href="/css/plyr.css">
+  
+</head>
+
+<body>
+<div class="side-navigate hide-area">
+  
+    <div class="item prev">
+      <a href="/2017/06/23/ftp/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        一个简单的FTP服务器
+      </div>
+    </div>
+  
+  
+    <div class="item next">
+      <a href="/2017/06/15/Git-基本操作/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        Git 基本操作
+      </div>
+    </div>
+  
+</div>
+<div id="outer-container" class="hide-area">
+<div id="container">
+  <div id="menu-outer" class="slide-down">
+    <div id="menu-inner">
+      <div id="brand">
+        
+        <a onClick="openUserCard()">
+          <img id="avatar" src="http://7te9fe.com1.z0.glb.clouddn.com/default_avatar.jpg"/>
+          <div id="homelink">TRY</div>
+        </a>
+      </div>
+      <div id="menu-list">
+        <ul>
+        
+        
+          
+            <li>
+          
+            <a href="/index.html">主页</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/archives">存档</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/tags">标签</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/categories">分类</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/about">关于</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="https://github.com/stiekel/hexo-theme-random">Github</a>
+            
+          </li>
+        
+        </ul>
+      </div>
+      <div id="show-menu">
+        <button>Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="content-outer">
+    <div id="content-inner">
+      
+      
+  <article id="post">
+    <h1>Apache And nginx</h1>
+    <p class="page-title-sub">
+      <span id = "post-title-date">撰写于 2017-06-21</span>
+      
+        <span id = "post-title-updated">修改于 2017-06-27</span>
+      
+      
+      <span id = "post-title-categories">分类
+      
+      
+        
+        
+        <a href="/categories/web-linux/">web&linux</a>
+      
+      </span>
+      
+      
+      <span id = "post-title-tags">
+      标签
+      
+      
+        
+        
+        <a href="/tags/webserver/">webserver</a>
+      
+      </span>
+      
+    </p>
+    
+    <h1 id="学习笔记"><a href="#学习笔记" class="headerlink" title="学习笔记"></a>学习笔记</h1><p>主流的web服务器软件，一个是Apache HTTP Server，一个是Nginx。Nginx是款轻量级的web服务器和反向代理服务器软件，处理静态请求有极高的性能，国内的淘宝，百度，微博都在使用。<br>使用系统为CentOS7，不同系统可能有差易</p>
+<h1 id="systemctl-工具"><a href="#systemctl-工具" class="headerlink" title="systemctl 工具"></a>systemctl 工具</h1><p>centOS7中，systemctl是个新的工具，据说是集合了service和chkconfig的功能。如果你的网站，在别的电脑打不开，可能是防火墙打开了。如果不知道如何只开启80端口，在自己实验的时候可以把防火墙全部关掉。<br>查看防火墙状态<br><code>$ systemctl status firewalld  #查看防火墙状态</code><br><code>$ systemctl stop firewalld  #关闭防火墙</code><br><code>$ systemctl start firewalld #启动防火墙</code><br><code>$ systemctl restart firewalld #重启防火墙</code><br><code>$ systemctl enable firewalld #开机启动防火墙</code><br><code>$ systemctl disable firewalld #禁止开机启动防火墙</code></p>
+<p>上面的命令将firewalld替换为其他服务，对绝大多数的服务有相同的效果，比如（<code>$ systemctl status httpd</code>）查看httpd服务的状态。</p>
+<h1 id="压缩与解压"><a href="#压缩与解压" class="headerlink" title="压缩与解压"></a>压缩与解压</h1><h2 id="zip"><a href="#zip" class="headerlink" title="zip"></a>zip</h2><p><code>$ unzip filename.zip #解压文件到当前目录</code></p>
+<p><code>$ zip 1.zip 2.txt  #将名为2.txt的文件压缩为1.zip</code></p>
+<p><code>$ zip -r 1.zip uuu #将名为uuu的文件夹压缩为1.zip，文件夹压缩加参数-r</code></p>
+<h2 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h2><p><code>$ tar xvf filename.tar #解压文件到当前目录</code></p>
+<p><code>$ tar cvf 目标文件 源文件 #压缩命令</code></p>
+<h2 id="tar-gz"><a href="#tar-gz" class="headerlink" title="tar.gz"></a>tar.gz</h2><p><code>$ tar zxvf name.tar.gz  #解压文件到当前目录</code></p>
+<p><code>$ tar zcvf name.tar.gz 2.txt  #压缩命令，将2.txt压缩到name.tar.gz</code></p>
+<h1 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>在Linux中Apache是个叫做httpd的软件，安装之前可以用命令rpm -qa|grep httpd查看是否安装了软件。如未安装，可以用yum install命令安装</p>
+<pre><code>$ yum install httpd
+</code></pre><p>系统会自动从软件仓库安装。</p>
+<p>安装完成后存放html文件的目录为<em><code>/var/www/html/</code></em>下，你的网站页面文件就放在这个目录下。</p>
+<p>配置文件的目录为<em><code>/etc/httpd/conf/</code></em>下，有一个<em><code>httpd.conf</code></em>的文件。可以配置详细的功能，有兴趣的同学可以深入学习。</p>
+<p>httpd默认开启80端口，打开浏览器输入localhost就能看到Apache的默认页面了。如果你的电脑在局域网中，在其他电脑上打开浏览器，输入你的电脑的IP地址，也可以访问到你的网页。你的电脑，就相当于一个WEB服务器了。</p>
+<h1 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h1><h2 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h2><p>在nginx的官网下载nginx的linux版本包。</p>
+<p><a href="http://nginx.org/en/download.html" title="http://nginx.org/en/download.html" target="_blank" rel="external">http://nginx.org/en/download.html</a></p>
+<p>解压文件</p>
+<pre><code>$ tar zxvf nginx-1.13.1.tar.gz #我下载的为此版本
+</code></pre><hr>
+<pre><code>$ cd nginx-1.13.1
+</code></pre><hr>
+<pre><code>$ ./configure
+</code></pre><hr>
+<pre><code>$ make &amp;&amp; make install
+</code></pre><p>nginx的执行目录在<em><code>/usr/local/nginx/sbin/</code></em></p>
+<p>静态文件的存放路径在<em><code>/usr/local/nginx/html</code></em>进入到此目录可一看到一个index.html（默认主页）文件和50x.html文件（错误的时候反会的402页面）。</p>
+<h3 id="启动-amp-软连接-amp-基本命令"><a href="#启动-amp-软连接-amp-基本命令" class="headerlink" title="启动&amp;软连接&amp;基本命令"></a>启动&amp;软连接&amp;基本命令</h3><h4 id="软链接"><a href="#软链接" class="headerlink" title="软链接"></a>软链接</h4><p>由于<code>nginx</code>命令没有加到系统路径，所以启动的时候要输入<br><code>$ /usr/local/nginx/sbin/nginx</code>这么一大串完整路径，为了方便，<br>可以给nginx加一个软连接到bin目录下，就是一个程序的快捷方式，这样当你在命令行ngnix的时候就不会提示<code>no command</code>了。</p>
+<pre><code>ln -s /usr/local/nginx/sbin/nginx /bin/nginx
+</code></pre><p>(ln -s 源文件 目标文件）这样就在bin目录下添加了一个软链接，到<code>bin</code>目录下用<code>ll</code>命令查看<code>nginx</code>是这样的，如图<br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/nginxln.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/nginxln.PNG?raw=true">可以发现，nginx指向nginx所在的目录。</p>
+<h4 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h4><p>当在命令行输入nginx的时候，系统会到bin下找nginx的命令，nginx就会到它指向的目录寻找。这时就能启动nginx了，在浏览器输入localhost，就可以看到nginx的默认页面。或者在局域网内的其他电脑上输入，nginx服务所在电脑的IP也可以看到（80端口开启的情况下）。<br>可以输入</p>
+<pre><code>$ nginx -h #查看帮助
+</code></pre><p>nignx的命令不多，常用的就nginx -s了，在帮助里可以看到他的意思。-s是向ngnix传递信息的意思。<br><code>$ nginx -s stop #直接退出，不做保存</code></p>
+<p><code>$ nginx -s quit #温和的退出</code></p>
+<p><code>$ nginx -s reopen #重新打开</code></p>
+<p><code>$ nginx -s reload #重新加载配置文件，如果配置文件有修改的话</code></p>
+<h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><p>在./configure的时候回报找不到PCRE library，gzip需要zlib库的错误，或者找不到g++的错误。所以在这之前需要把这些库安装好。<br>先安装编译工具。</p>
+<pre><code>$ yum install gcc
+</code></pre><hr>
+<pre><code>$ yum install gcc-c++
+</code></pre><h3 id="PCRE"><a href="#PCRE" class="headerlink" title="PCRE:"></a>PCRE:</h3><p>rewrite所要使用的第三方模块<br><a href="http://www.pcre.org/" target="_blank" rel="external">http://www.pcre.org/</a></p>
+<pre><code>$ wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.13.zip
+</code></pre><h3 id="openssl："><a href="#openssl：" class="headerlink" title="openssl："></a>openssl：</h3><p>https协议所要使用的模块<br><a href="http://www.openssl.org/source/下载源码包安装。" target="_blank" rel="external">http://www.openssl.org/source/下载源码包安装。</a></p>
+<pre><code>$ wget http://www.openssl.org/source/openssl-1.0.0e.tar.gz
+</code></pre><p>或者</p>
+<pre><code>yum install -y openssl
+</code></pre><h3 id="zlib"><a href="#zlib" class="headerlink" title="zlib"></a>zlib</h3><p>缺少zlib的情况，</p>
+<pre><code>yum install -y zlib-devel
+</code></pre><h3 id="uploadprogress"><a href="#uploadprogress" class="headerlink" title="uploadprogress"></a>uploadprogress</h3><p>如果你用到uploadprogress模块<br><a href="http://wiki.nginx.org/HttpUploadProgressModule" target="_blank" rel="external">http://wiki.nginx.org/HttpUploadProgressModule</a></p>
+<pre><code>wget https://github.com/masterzen/nginx-upload-progress-module/downloads
+</code></pre><p>将所需模块安装完成后，照如下步骤安装即可。</p>
+<p><code>$ ./configure</code></p>
+<p><code>$ make</code></p>
+<p><code>$ make install</code></p>
+<h3 id="libpcre-so-0"><a href="#libpcre-so-0" class="headerlink" title="libpcre.so.0"></a>libpcre.so.0</h3><p>在安装完pcre的依赖包之后，启动nginx时，又爆出了错误，提示没有libpcre.so.0文件。我进到lib64目录发现，有一个libpcre.so.1的软链接到了libpcre.so.1.2.0文件。于是我加了一个libpcre.so.0的软链接到libpcre.so.1.2.0.再次启动,启动成功。</p>
+<pre><code>$ ln -s /lib64/libpcre.so.1.2.0  /lib64/libpcre.so.0
+</code></pre><h1 id="Windows下的Nginx"><a href="#Windows下的Nginx" class="headerlink" title="Windows下的Nginx"></a>Windows下的Nginx</h1><p>windows的下的Nginx比较简单，到nginx的官网下载，nginx的windows压缩包，解压到一个目录下，最好是英文的目录。<br>打开cmd命令行<br>进入到nginx的目录，<br>敲入<br><code>nginx</code>，</p>
+<p>或者</p>
+<p><code>start nginx</code><br>然后，在浏览器打开localhost就可以看到nginx的页面了。关掉dos窗口，nginx会在后台运行。<br>若要停止，命令行进入，nginx所在目录，运行</p>
+<p><code>nginx -s stop</code></p>
+
+  </article>
+  <div class="random-toc-area">
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
+  <div class="random-toc">
+    <h2>目录</h2>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#学习笔记"><span class="toc-text">学习笔记</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#systemctl-工具"><span class="toc-text">systemctl 工具</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#压缩与解压"><span class="toc-text">压缩与解压</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#zip"><span class="toc-text">zip</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tar"><span class="toc-text">tar</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#tar-gz"><span class="toc-text">tar.gz</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Apache"><span class="toc-text">Apache</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#nginx"><span class="toc-text">nginx</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装-1"><span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#启动-amp-软连接-amp-基本命令"><span class="toc-text">启动&软连接&基本命令</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#软链接"><span class="toc-text">软链接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#启动"><span class="toc-text">启动</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#遇到的问题"><span class="toc-text">遇到的问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#PCRE"><span class="toc-text">PCRE:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#openssl："><span class="toc-text">openssl：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#zlib"><span class="toc-text">zlib</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#uploadprogress"><span class="toc-text">uploadprogress</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#libpcre-so-0"><span class="toc-text">libpcre.so.0</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Windows下的Nginx"><span class="toc-text">Windows下的Nginx</span></a></li></ol>
+  </div>
+</div>
+
+  
+<nav id="pagination">
+  
+    <a href="/2017/06/23/ftp/" class="prev">&larr; 上一篇 一个简单的FTP服务器</a>
+  
+
+  
+
+  
+    <a href="/2017/06/15/Git-基本操作/" class="next">下一篇 Git 基本操作 &rarr;</a>
+  
+</nav>
+
+  <!-- JiaThis Button BEGIN -->
+
+<!-- JiaThis Button END -->
+
+
+      
+      
+    </div>
+  </div>
+
+  <div id="bottom-outer">
+    <div id="bottom-inner">
+      Site by Jack Wang using
+      <a href="http://hexo.io">Hexo</a> & <a href="https://github.com/stiekel/hexo-theme-random">Random</a>
+      <br>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+<div id="user-card">
+  <div class="center-field">
+    <img class="avatar" src="http://7te9fe.com1.z0.glb.clouddn.com/default_avatar.jpg">
+    <p id="description">TRY</p>
+    <ul class="social-icon">
+  
+  
+    <li>
+      <a href="https://github.com/stiekel/hexo-theme-random">
+        
+          <i class="icon iconfont github">&#xe606;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="http://weibo.com/sidcn">
+        
+          <i class="icon iconfont weibo">&#xe602;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="http://www.douban.com/people/Stiekel/">
+        
+          <i class="icon iconfont douban">&#xe60f;</i>
+        
+      </a>
+    </li>
+  
+</ul>
+  </div>
+</div>
+
+
+<div id="btn-view">Hide</div>
+
+<script>
+// is trigger analytics / tongji script
+var isIgnoreHost = false;
+
+if(window && window.location && window.location.host) {
+  isIgnoreHost = ["localhost","127.0.0.1"].some(function(address){
+    return 0 === window.location.host.indexOf(address);
+  });
+}
+
+var isTriggerAnalytics = !( true && isIgnoreHost );
+
+</script>
+
+
+
+
+  
+  
+    <script src="/js/jquery-2.2.3.min.js"></script>
+  
+    <script src="/js/vegas.min.js"></script>
+  
+    <script src="/js/random.js"></script>
+  
+    <script src="/js/highlight.pack.js"></script>
+  
+    <script src="/js/jquery.mousewheel.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox-thumbs.js"></script>
+  
+    <script src="/js/plyr.js"></script>
+  
+
+<script>
+
+  // fancybox
+  var backgroundImages = [];
+  
+  $('#post').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox') || $(this).parent().hasClass('fancybox-thumb')) return;
+      var alt = this.alt || this.title;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'post' + i);
+    });
+  });
+  $(".fancybox").fancybox();
+
+var vegasConfig = {"preload­Image":true,"transition":["slideLeft2","slideRight2","flash2"],"timer":true,"delay":5000,"shuffle":true,"count":28};
+var unsplashConfig = {"gravity":"north"};
+// is show background images
+var turnoffBackgroundImage = false;
+
+
+
+  turnoffBackgroundImage = true;
+
+
+var backgroundColor = "34495E";
+
+$(".fancybox-thumb").fancybox({
+  prevEffect: 'none',
+  nextEffect: 'none',
+  helpers: {
+    title: {
+      type: 'outside'
+    },
+    thumbs: {
+      width: 50,
+      height: 50
+    }
+  }
+});
+
+// show video with plyr
+$(".video-container iframe").each(function(i){
+  var url = $(this).attr('src');
+  var id = url.split('/').pop();
+  var plyrContainer = document.createElement('div');
+  plyrContainer.className = 'plyr';
+  var plyrElement = document.createElement('div');
+  plyrElement.dataset.videoId = id;
+  switch(true) {
+    case url.search('youtube.com') >= 0:
+      plyrElement.dataset.type = 'youtube';
+      break;
+    case url.search('vimeo.com') >= 0:
+      plyrElement.dataset.type = 'vimeo';
+      break;
+    default:
+      return;
+  };
+  plyrContainer.appendChild(plyrElement);
+  $(this).parent().html(plyrContainer);
+});
+plyr.setup('.plyr', {iconUrl: '/css/sprite.svg'});
+</script>
+</body>
+</html>
+

@@ -1,8 +1,6 @@
 
 
 
-  
-
 
 
 
@@ -18,9 +16,18 @@
   
   
   
-    <meta name="description" content="TRY">
+    <meta name="description" content="FTP 服务器简单搭建（centos7)
+安装如果你的电脑是没有安装ftp。执行命令安装。
+yum install vsftpd
+
+yum install ftp
+在目录/var/ftp/pub下存放共享的文件。
+开启ftp服务$ systemctl start vsftpd
+查看ftp服务状态$ systemctl status vsftpd
+状态为active表示成功开启
+文件目录在/v...">
   
-  <title>标签: 常用命令 [ TRY ]</title>
+  <title>一个简单的FTP服务器 [ TRY ]</title>
   
   
     <link rel="shortcut icon" href="/favicon.ico">
@@ -39,6 +46,15 @@
 <body>
 <div class="side-navigate hide-area">
   
+  
+    <div class="item next">
+      <a href="/2017/06/21/Apache-And-nginx/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        Apache And nginx
+      </div>
+    </div>
   
 </div>
 <div id="outer-container" class="hide-area">
@@ -71,7 +87,7 @@
           </li>
         
           
-            <li class="active">
+            <li>
           
             <a href="/tags">标签</a>
             
@@ -110,93 +126,78 @@
     <div id="content-inner">
       
       
-  <div id="tag">
-    <h1>常用命令</h1>
-    
+  <article id="post">
+    <h1>一个简单的FTP服务器</h1>
+    <p class="page-title-sub">
+      <span id = "post-title-date">撰写于 2017-06-23</span>
+      
+        <span id = "post-title-updated">修改于 2017-06-27</span>
+      
+      
+      <span id = "post-title-categories">分类
       
       
         
+        
+        <a href="/categories/linux/">linux</a>
+      
+      </span>
       
       
-    
+      <span id = "post-title-tags">
+      标签
       
       
         
-          
         
+        <a href="/tags/ftp/">ftp</a>
       
+      </span>
       
-      <div class="post-title-item">
-  
-  <a href="/2017/06/10/Linux-常用命令/">
-  
-    Linux 常用命令
-  
-  </a>
-  <p class="page-title-sub">
-    <span id = "post-title-date">6-10</span>
+    </p>
     
-    <span id = "post-title-categories">分类
-    
-    
-      
-      
-      <a href="/categories/Linux/">Linux</a>
-    
-    </span>
-    
-    
-    <span id = "post-title-tags">
-    标签
-    
-    
-      
-      
-      <a href="/tags/常用命令/">常用命令</a>
-    
-    </span>
-    
-    
-      <br>
-      
-      
-    
-  </p>
-  
-</div>
-      
-    
-      
-      
-      
-    
-      
-      
-        
-      
-      
-    
-      
-      
-        
-      
-      
-    
-      
-      
-        
-      
-      
-    
-      
-      
-        
-      
-      
-    
+    <h1 id="FTP-服务器简单搭建"><a href="#FTP-服务器简单搭建" class="headerlink" title="FTP 服务器简单搭建"></a>FTP 服务器简单搭建</h1><p>（centos7)</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>如果你的电脑是没有安装ftp。执行命令安装。</p>
+<pre><code>yum install vsftpd
+</code></pre><hr>
+<pre><code>yum install ftp
+</code></pre><p>在目录/var/ftp/pub下存放共享的文件。</p>
+<h2 id="开启ftp服务"><a href="#开启ftp服务" class="headerlink" title="开启ftp服务"></a>开启ftp服务</h2><pre><code>$ systemctl start vsftpd
+</code></pre><h2 id="查看ftp服务状态"><a href="#查看ftp服务状态" class="headerlink" title="查看ftp服务状态"></a>查看ftp服务状态</h2><pre><code>$ systemctl status vsftpd
+</code></pre><p>状态为active表示成功开启<br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/ftpstatus.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/ftpstatus.PNG?raw=true"></p>
+<p>文件目录在<code>/var/ftp/</code>下有个<code>pub</code>文件夹，要分享的文件可以放在这里。<br><code>/etc/vsftpd/</code>下<code>vsftpd.conf</code>是配置文件。<br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/ftpconf.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/ftpconf.PNG?raw=true"></p>
+<p>如果修改成NO，在登录的时候会需要服务器密码。目录也不再是默认的目录，而是你所登录用户的目录。<br>在浏览器输入地址</p>
+<pre><code>ftp://localhost/
+</code></pre><p>或者</p>
+<pre><code>ftp://10.238.49.54/
+</code></pre><p>就可以看到ftp目录了。</p>
+<p>2017/6/27 21:12:16 </p>
+
+  </article>
+  <div class="random-toc-area">
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
+  <div class="random-toc">
+    <h2>目录</h2>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#FTP-服务器简单搭建"><span class="toc-text">FTP 服务器简单搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#开启ftp服务"><span class="toc-text">开启ftp服务</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看ftp服务状态"><span class="toc-text">查看ftp服务状态</span></a></li></ol></li></ol>
   </div>
+</div>
 
   
+<nav id="pagination">
+  
+
+  
+
+  
+    <a href="/2017/06/21/Apache-And-nginx/" class="next">下一篇 Apache And nginx &rarr;</a>
+  
+</nav>
+
+  <!-- JiaThis Button BEGIN -->
+
+<!-- JiaThis Button END -->
+
 
       
       
@@ -314,6 +315,8 @@ var unsplashConfig = {"gravity":"north"};
 var turnoffBackgroundImage = false;
 
 
+
+  turnoffBackgroundImage = true;
 
 
 var backgroundColor = "34495E";
