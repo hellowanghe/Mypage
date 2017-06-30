@@ -593,8 +593,7 @@ figure.highlight .line {
 code {
   font-family: Monaco, Courier New, Microsoft YaHe, Lucida Console;
   background-color: #0c7947;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding: 3px 12px;
   color: #fff;
   border-radius: 4.2px;
   font-style: italic;
