@@ -591,19 +591,18 @@ figure.highlight .line {
   white-space: pre-wrap;
 }
 code {
-  font-family: Monaco, Courier New, Lucida Console;
-  background-color: #cacaca;
+  font-family: sans-serif, Monaco, Courier New, Lucida Console;
+  background-color: #0c7947;
   padding-left: 12px;
   padding-right: 12px;
-  color: #000;
-  border: 1px solid #a6aaaf;
+  color: #fff;
   border-radius: 4.2px;
-  text-shadow: 1px 1px 3px #352727;
   font-style: italic;
   font-weight: bolder;
+  font-size: xx-small;
 }
 table .line {
-  font-family: Monaco, Courier New, Lucida Console;
+  font-family: sans-serif, Monaco, Courier New, Lucida Console;
 }
 blockquote {
   background-color: #eee;
