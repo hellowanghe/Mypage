@@ -592,10 +592,15 @@ figure.highlight .line {
 }
 code {
   font-family: Monaco, Courier New, Lucida Console;
-  background-color: #000;
+  background-color: #cacaca;
   padding-left: 12px;
   padding-right: 12px;
-  color: #fff;
+  color: #000;
+  border: 1px solid #a6aaaf;
+  border-radius: 4.2px;
+  text-shadow: 1px 1px 3px #352727;
+  font-style: italic;
+  font-weight: bolder;
 }
 table .line {
   font-family: Monaco, Courier New, Lucida Console;
