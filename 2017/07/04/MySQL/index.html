@@ -1,0 +1,436 @@
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  <meta name="author" content="Jack Wang">
+  
+  
+  
+  
+    <meta name="description" content="学习笔记mysql是开源的关系型数据库。可参见菜鸟教程http://www.runoob.com的介绍。
+安装（我用的是centos7 64位的系统）
+检查rpm -qa|grep mysql
+卸载rpm -e mysql
+
+rpm -e--nodeps mysql
+安装用yum安装，centos7上mysql已经改为了mariadb，所以安装的时候和之前版本的有些不同，
+centos7下的...">
+  
+  <title>MySQL_入门笔记 [ TRY ]</title>
+  
+  
+    <link rel="shortcut icon" href="/favicon.ico">
+  
+  
+  <link rel="stylesheet" href="/css/random.css">
+<link rel="stylesheet" href="/css/vegas.min.css">
+<link rel="stylesheet" href="/css/highlight-railscasts.css">
+<link rel="stylesheet" href="/css/jquery.fancybox.css">
+<link rel="stylesheet" href="/css/iconfont/iconfont.css">
+<link rel="stylesheet" href="/css/jquery.fancybox-thumbs.css">
+<link rel="stylesheet" href="/css/plyr.css">
+  
+</head>
+
+<body>
+<div class="side-navigate hide-area">
+  
+  
+    <div class="item next">
+      <a href="/2017/06/23/ftp/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        一个简单的FTP服务器
+      </div>
+    </div>
+  
+</div>
+<div id="outer-container" class="hide-area">
+<div id="container">
+  <div id="menu-outer" class="slide-down">
+    <div id="menu-inner">
+      <div id="brand">
+        
+        <a onClick="openUserCard()">
+          <img id="avatar" src="http://7te9fe.com1.z0.glb.clouddn.com/default_avatar.jpg"/>
+          <div id="homelink">TRY</div>
+        </a>
+      </div>
+      <div id="menu-list">
+        <ul>
+        
+        
+          
+            <li>
+          
+            <a href="/index.html">主页</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/archives">存档</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/tags">标签</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/categories">分类</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/about">关于</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="https://github.com/stiekel/hexo-theme-random">Github</a>
+            
+          </li>
+        
+        </ul>
+      </div>
+      <div id="show-menu">
+        <button>Menu</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="content-outer">
+    <div id="content-inner">
+      
+      
+  <article id="post">
+    <h1>MySQL_入门笔记</h1>
+    <p class="page-title-sub">
+      <span id = "post-title-date">撰写于 2017-07-04</span>
+      
+        <span id = "post-title-updated">修改于 2017-07-06</span>
+      
+      
+      <span id = "post-title-categories">分类
+      
+      
+        
+        
+        <a href="/categories/MySQL-linux/">MySQL&linux</a>
+      
+      </span>
+      
+      
+      <span id = "post-title-tags">
+      标签
+      
+      
+        
+        
+        <a href="/tags/MySQL/">MySQL</a>
+      
+      </span>
+      
+    </p>
+    
+    <h1 id="学习笔记"><a href="#学习笔记" class="headerlink" title="学习笔记"></a>学习笔记</h1><p>mysql是开源的关系型数据库。可参见菜鸟教程<a href="http://www.runoob.com" title="菜鸟教程" target="_blank" rel="external">http://www.runoob.com</a>的介绍。</p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>（我用的是centos7 64位的系统）</p>
+<h3 id="检查"><a href="#检查" class="headerlink" title="检查"></a>检查</h3><pre><code>rpm -qa|grep mysql
+</code></pre><h3 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h3><pre><code>rpm -e mysql
+</code></pre><hr>
+<pre><code>rpm -e--nodeps mysql
+</code></pre><h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><p>用yum安装，centos7上<strong>mysql</strong>已经改为了<strong>mariadb</strong>，所以安装的时候和之前版本的有些不同，</p>
+<h3 id="centos7下的mysql"><a href="#centos7下的mysql" class="headerlink" title="centos7下的mysql"></a>centos7下的mysql</h3><pre><code>$ yum install mariadb-server mariadb #安装数据库和数据库服务器
+</code></pre><p>（之前的centos版本可以这样安装：<br><code>yum install mysql-server mysql mysql-develop</code><br>）<br>或者</p>
+<pre><code>$ yum install mariadb*   #把所有和mariadb相关的东西都装上
+</code></pre><p>完成后，可以输入<strong><code>mysqladmin --version</code></strong> 来查看安装是否成功。<br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/mysql1.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/mysql1.PNG?raw=true"><br>如果出现版本信息，就说明安装成功了。</p>
+<p>注意：安装完之后，在命令行直接输入mysql是会报错了，<br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/mysql2.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/mysql2.PNG?raw=true"><br>应该先启动数据库服务器，<code>$ systemctl start mariadb</code></p>
+<p><img src="https://github.com/hellowanghe/blogimg/blob/master/img/mysql3.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/mysql3.PNG?raw=true"></p>
+<p>相关命令：（<code>systemctl stop mariadb #停止服务,systemctl restart mariadb #重启服务,systemctl enable mariadb #开机启动,systemctl status maridb #查看状态</code>）<br>启动之后，在次输入mysql就可以进入数据库了，Mysql服务器的密码为空，本次不用输入密码，如上图。</p>
+<p>此时进入时没有用户名的。</p>
+<h3 id="创建root用户和密码"><a href="#创建root用户和密码" class="headerlink" title="创建root用户和密码"></a>创建root用户和密码</h3><p>上面看到，在初次登录的时候mysql是没有密码的，所以要设置root用户的密码，root用户是超级用户，拥有的很大的权限，密码是很有必要的。</p>
+<p><img src="https://github.com/hellowanghe/blogimg/blob/master/img/mysql4.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/mysql4.PNG?raw=true"></p>
+<p>为了方便，我设置了简单的密码。下次登录的时候，就需要密码了，直接输mysql系统会告诉你Access denied。</p>
+<h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><p>登录到mysql的命令行后，我们可以先查看一下有几个数据库。<br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/mysqluse.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/mysqluse.PNG?raw=true"></p>
+<h3 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h3><p>可以看到所有的数据库。test，test1，test2是我自己建的。选择你要操作的数据库，用use语句，首先创建一个数据库test。</p>
+<pre><code>create database test；
+</code></pre><hr>
+<h3 id="选择数据库"><a href="#选择数据库" class="headerlink" title="选择数据库"></a>选择数据库</h3><pre><code>use test；
+</code></pre><p>我们就进入到了<code>test</code>库。查看库中的表，由于这是个新建的库，当我用<br><code>show tables</code>；的时候，他会提示空<code>empty set</code>；</p>
+<h3 id="删除数据库，"><a href="#删除数据库，" class="headerlink" title="删除数据库，"></a>删除数据库，</h3><p>如果你要删除某个数据库。比如；</p>
+<pre><code>drop database test2；删除掉test2数据库。
+</code></pre><h3 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h3><p>一般格式为</p>
+<blockquote>
+<p>CREATE TABLE table_name (column_name column_type);</p>
+</blockquote>
+<p>简单的例子:<br></p>
+<blockquote>
+<p>CREATE TABLE person(person_name CHAR,person_age INT,person_sex CHAR);</p>
+</blockquote>
+<p>建立了名为<code>person</code>的表，字段有<code>person_name</code>,<code>person_age</code>,<code>person_sex</code>,<br>就是名字年龄和性别。<code>CHAR</code>代表字符 <code>INT</code>代表整数数字。可以用<code>desc ‘表名’</code>来查看表字段的属性。<br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/mysqldesc.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/mysqldesc.PNG?raw=true"><br>可以看到，<code>name</code>和<code>sex</code>字段的<code>type</code>属性为<code>char（1）</code>，这因为建表的时候没有声明字段的长度，默认为1了。</p>
+<h3 id="删除表"><a href="#删除表" class="headerlink" title="删除表"></a>删除表</h3><blockquote>
+<p>drop table person；</p>
+</blockquote>
+<p>和删除数据库命令类似，这里就不做演示了。</p>
+<h3 id="INSERT插入数据"><a href="#INSERT插入数据" class="headerlink" title="INSERT插入数据"></a>INSERT插入数据</h3><blockquote>
+<p>INSERT INTO person（person_name，person_age,person_sex)<br><br>values(“jack”,23, “male”);</p>
+</blockquote>
+<p>然后查看，<br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/mysql_insert.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/mysql_insert.PNG?raw=true"><br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/mysql_insert1.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/mysql_insert1.PNG?raw=true"></p>
+<p>发现，<code>name</code>和<code>sex</code>字段只有一个字符，这就是之前的问题了，他的字符长度是1，只能容纳一个字符。现在改变他的属性。</p>
+<h3 id="ALTER-删除，添加"><a href="#ALTER-删除，添加" class="headerlink" title="ALTER-删除，添加"></a>ALTER-删除，添加</h3><p>ALTER TABLE</p>
+<blockquote>
+<p>ALTER TABLE person DROP person_name;<br>#删除person表的person_name字段<br>ALTER TABLE person ADD person_name INT FIRST;<br>#给person表添加person_name字段，并放在第一列。<br>ALTER TABLE person DROP person_age;<br>ALTER TABLE person ADD person_age INT AFTER person_name;<br>#删除person_age字段，再添加person_age字段，并插在person_name字段后边。</p>
+</blockquote>
+<p>注：默认的添加字段是放在最后面的。</p>
+<h3 id="ALTER-修改字段"><a href="#ALTER-修改字段" class="headerlink" title="ALTER-修改字段"></a>ALTER-修改字段</h3><p>修改表字段的属性有两种方法：MODIFY和CHANGE。<br>下面是两种方法修改person表中，person_name字段的属性。</p>
+<h4 id="MODIFY"><a href="#MODIFY" class="headerlink" title="MODIFY"></a>MODIFY</h4><blockquote>
+<p>ALTER TABLE person MODIFY person_name CHAR(10);</p>
+</blockquote>
+<h4 id="CHANGE"><a href="#CHANGE" class="headerlink" title="CHANGE"></a>CHANGE</h4><blockquote>
+<p>ALTER TABLE person CHANGE COLUMN person_name person_name CHAR(10) NOT NULL;</p>
+</blockquote>
+<p>修改完成后，再插入一条数据，可以发现，person_name已经可以，正常显示了。<br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/mysql_insert2.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/mysql_insert2.PNG?raw=true"></p>
+<h3 id="ALTER-修改表名"><a href="#ALTER-修改表名" class="headerlink" title="ALTER-修改表名"></a>ALTER-修改表名</h3><p>下面的语句可以修改表名。如果有需要的话。将表person重命名为person_tbl。</p>
+<blockquote>
+<p>ALTER TABLE person RENAME TO person_tbl;</p>
+</blockquote>
+<h2 id="创建用户与权限管理"><a href="#创建用户与权限管理" class="headerlink" title="创建用户与权限管理"></a>创建用户与权限管理</h2><p>之前我们已经有了root用户及密码，我们以root用户登录，创建其他的用户，用来控制权限。<br>创建用户有两种方法（前提以root用户登录）</p>
+<ol>
+<li>GRANT命令<br></li>
+<li>用insert 语句直接在mysql库user表中直接插入用户</li>
+</ol>
+<h3 id="GRANT命令创建用户"><a href="#GRANT命令创建用户" class="headerlink" title="GRANT命令创建用户"></a>GRANT命令创建用户</h3><blockquote>
+<p>GRANT ALL PRIVILEGES<br>ON *.* TO ‘monty’@’localhost’<br>IDENTIFIED BY ‘some_pass’ WITH GRANT OPTION</p>
+</blockquote>
+<p>超级用户，用于本机链接。</p>
+<blockquote>
+<p>GRANT ALL PRIVILEGES ON *.* TO ‘monty’@’%’<br><br>IDENTIFIED BY ‘some_pass’ WITH GRANT OPTION;</p>
+</blockquote>
+<p>超级用户，用于从其他主机连接。</p>
+<blockquote>
+<p>GRANT RELOAD,PROCESS ON *.* TO ‘admin’@’localhost’;</p>
+</blockquote>
+<p>无密码admin账户，授予RELOAD和PROCESS权限。<br>这些权限允许<code>admin</code>用户执行<code>mysqladmin reload</code>，<code>mysqladmin refresh</code>， <code>mysqladmin flush-xxx</code>命令，<br>以及<code>mysqladmin processlist</code>。未授予访问数据库的权限。</p>
+<blockquote>
+<p>GRANT USAGE ON *.* TO ‘dummy’@’localhost’;</p>
+</blockquote>
+<p>无密码，只用于从本机连接。未授予权限，</p>
+<blockquote>
+<p>GRANT ALL PRIVILEGES ON db_1.* to ‘jack’@’localhost’ <br>IDENTIFIED BY “jack” WITH GRANT OPTION；</p>
+</blockquote>
+<p>该用户只能访问db_1的数据库。</p>
+<h3 id="INSERT语句创建用户"><a href="#INSERT语句创建用户" class="headerlink" title="INSERT语句创建用户"></a>INSERT语句创建用户</h3><blockquote>
+<p>MariaDB&gt;INSERT INTO user<br>(host, user, authentication_string,<br>select_priv, insert_priv, update_priv)<br>VALUES (‘localhost’, ‘guest’,<br>PASSWORD(‘guest123’), ‘Y’, ‘Y’, ‘Y’);</p>
+</blockquote>
+<p><strong>注意:在用inser语句创建完用户后，需要执行 FLUSH PRIVILEGES命令。 这个命令执行后会重新载入授权表。否则，你插入所建的用户不会生效，除非你重启数据库服务。</strong></p>
+<p><strong>注意：用insert创建用户时，可能会弹出，某字段不能空的错误，具体的语句可以参照mysql库user表的字段写，确保不会出错</strong></p>
+
+  </article>
+  <div class="random-toc-area">
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">显示目录</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">隐藏目录</button>
+  <div class="random-toc">
+    <h2>目录</h2>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#学习笔记"><span class="toc-text">学习笔记</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#安装"><span class="toc-text">安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#检查"><span class="toc-text">检查</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#卸载"><span class="toc-text">卸载</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#安装-1"><span class="toc-text">安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#centos7下的mysql"><span class="toc-text">centos7下的mysql</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建root用户和密码"><span class="toc-text">创建root用户和密码</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#基本命令"><span class="toc-text">基本命令</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#创建数据库"><span class="toc-text">创建数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#选择数据库"><span class="toc-text">选择数据库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除数据库，"><span class="toc-text">删除数据库，</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建表"><span class="toc-text">创建表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#删除表"><span class="toc-text">删除表</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#INSERT插入数据"><span class="toc-text">INSERT插入数据</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ALTER-删除，添加"><span class="toc-text">ALTER-删除，添加</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ALTER-修改字段"><span class="toc-text">ALTER-修改字段</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#MODIFY"><span class="toc-text">MODIFY</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CHANGE"><span class="toc-text">CHANGE</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ALTER-修改表名"><span class="toc-text">ALTER-修改表名</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#创建用户与权限管理"><span class="toc-text">创建用户与权限管理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#GRANT命令创建用户"><span class="toc-text">GRANT命令创建用户</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#INSERT语句创建用户"><span class="toc-text">INSERT语句创建用户</span></a></li></ol></li></ol></li></ol>
+  </div>
+</div>
+
+  
+<nav id="pagination">
+  
+
+  
+
+  
+    <a href="/2017/06/23/ftp/" class="next">下一篇 一个简单的FTP服务器 &rarr;</a>
+  
+</nav>
+
+  <!-- JiaThis Button BEGIN -->
+
+<!-- JiaThis Button END -->
+
+
+      
+      
+    </div>
+  </div>
+
+  <div id="bottom-outer">
+    <div id="bottom-inner">
+      Site by Jack Wang using
+      <a href="http://hexo.io">Hexo</a> & <a href="https://github.com/stiekel/hexo-theme-random">Random</a>
+      <br>
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+<div id="user-card">
+  <div class="center-field">
+    <img class="avatar" src="http://7te9fe.com1.z0.glb.clouddn.com/default_avatar.jpg">
+    <p id="description">TRY</p>
+    <ul class="social-icon">
+  
+  
+    <li>
+      <a href="https://github.com/stiekel/hexo-theme-random">
+        
+          <i class="icon iconfont github">&#xe606;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="http://weibo.com/sidcn">
+        
+          <i class="icon iconfont weibo">&#xe602;</i>
+        
+      </a>
+    </li>
+  
+    <li>
+      <a href="http://www.douban.com/people/Stiekel/">
+        
+          <i class="icon iconfont douban">&#xe60f;</i>
+        
+      </a>
+    </li>
+  
+</ul>
+  </div>
+</div>
+
+
+<div id="btn-view">Hide</div>
+
+<script>
+// is trigger analytics / tongji script
+var isIgnoreHost = false;
+
+if(window && window.location && window.location.host) {
+  isIgnoreHost = ["localhost","127.0.0.1"].some(function(address){
+    return 0 === window.location.host.indexOf(address);
+  });
+}
+
+var isTriggerAnalytics = !( true && isIgnoreHost );
+
+</script>
+
+
+
+
+  
+  
+    <script src="/js/jquery-2.2.3.min.js"></script>
+  
+    <script src="/js/vegas.min.js"></script>
+  
+    <script src="/js/random.js"></script>
+  
+    <script src="/js/highlight.pack.js"></script>
+  
+    <script src="/js/jquery.mousewheel.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox-thumbs.js"></script>
+  
+    <script src="/js/plyr.js"></script>
+  
+
+<script>
+
+  // fancybox
+  var backgroundImages = [];
+  
+  $('#post').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox') || $(this).parent().hasClass('fancybox-thumb')) return;
+      var alt = this.alt || this.title;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'post' + i);
+    });
+  });
+  $(".fancybox").fancybox();
+
+var vegasConfig = {"preload­Image":true,"transition":["slideLeft2","slideRight2","flash2"],"timer":true,"delay":5000,"shuffle":true,"count":28};
+var unsplashConfig = {"gravity":"north"};
+// is show background images
+var turnoffBackgroundImage = false;
+
+
+
+  turnoffBackgroundImage = true;
+
+
+var backgroundColor = "34495E";
+
+$(".fancybox-thumb").fancybox({
+  prevEffect: 'none',
+  nextEffect: 'none',
+  helpers: {
+    title: {
+      type: 'outside'
+    },
+    thumbs: {
+      width: 50,
+      height: 50
+    }
+  }
+});
+
+// show video with plyr
+$(".video-container iframe").each(function(i){
+  var url = $(this).attr('src');
+  var id = url.split('/').pop();
+  var plyrContainer = document.createElement('div');
+  plyrContainer.className = 'plyr';
+  var plyrElement = document.createElement('div');
+  plyrElement.dataset.videoId = id;
+  switch(true) {
+    case url.search('youtube.com') >= 0:
+      plyrElement.dataset.type = 'youtube';
+      break;
+    case url.search('vimeo.com') >= 0:
+      plyrElement.dataset.type = 'vimeo';
+      break;
+    default:
+      return;
+  };
+  plyrContainer.appendChild(plyrElement);
+  $(this).parent().html(plyrContainer);
+});
+plyr.setup('.plyr', {iconUrl: '/css/sprite.svg'});
+</script>
+</body>
+</html>
+
