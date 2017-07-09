@@ -527,7 +527,7 @@ article img {
   border: 1px solid #ddd;
 }
 .caption {
-  display: block;
+  display: none;
   text-align: center;
   font-size: 14px;
   color: #999;
