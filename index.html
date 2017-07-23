@@ -1,248 +1,1854 @@
-
-
-
-
-
-
-
 <!doctype html>
-<html lang="zh-CN">
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
 <head>
-  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
-  <meta name="author" content="Jack Wang">
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
   
   
   
   
-    <meta name="description" content="TRY">
+
   
-  <title> [ TRY ]</title>
+    
+    
   
+
   
-    <link rel="shortcut icon" href="/favicon.ico">
+
   
+
   
-  <link rel="stylesheet" href="/css/random.css">
-<link rel="stylesheet" href="/css/vegas.min.css">
-<link rel="stylesheet" href="/css/highlight-railscasts.css">
-<link rel="stylesheet" href="/css/jquery.fancybox.css">
-<link rel="stylesheet" href="/css/iconfont/iconfont.css">
-<link rel="stylesheet" href="/css/jquery.fancybox-thumbs.css">
-<link rel="stylesheet" href="/css/plyr.css">
+
   
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.1" />
+
+
+
+
+
+
+<meta name="description" content="TRY">
+<meta property="og:type" content="website">
+<meta property="og:title" content="TRY">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="TRY">
+<meta property="og:description" content="TRY">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="TRY">
+<meta name="twitter:description" content="TRY">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":0,"b2t":false,"scrollpercent":false},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/"/>
+
+
+
+
+
+  <title>TRY</title>
 </head>
 
-<div class="random-center hide-area">
-  <div id="random-index">
-    <div class="center-field">
-      <img class="avatar" src="http://7te9fe.com1.z0.glb.clouddn.com/default_avatar.jpg" width=120 height=120 onClick="openUserCard()">
-    </div>
-    <div class="center-field">
-      <div class="title" onClick="openUserCard()">TRY</div>
-      <div class="sub-title" onClick="openUserCard()"></div>
-    </div>
-    <hr >
-    <div class="center-field">
-      <ul class="index-nav-link">
-        
-        
-          
-            <li><a href="/index.html">主页</a></li>
-          
-        
-          
-            <li><a href="/archives">存档</a></li>
-          
-        
-          
-            <li><a href="/tags">标签</a></li>
-          
-        
-          
-            <li><a href="/categories">分类</a></li>
-          
-        
-          
-            <li><a href="/about">关于</a></li>
-          
-        
-          
-            <li><a href="https://github.com/stiekel/hexo-theme-random">Github</a></li>
-          
-        
-      </ul>
-      <ul class="social-icon">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
   
-    <li>
-      <a href="https://github.com/stiekel/hexo-theme-random">
-        
-          <i class="icon iconfont github">&#xe606;</i>
-        
+    
+  
+
+  <div class="container sidebar-position-left 
+   page-home 
+ ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">TRY</span>
+        <span class="logo-line-after"><i></i></span>
       </a>
-    </li>
-  
-    <li>
-      <a href="http://weibo.com/sidcn">
-        
-          <i class="icon iconfont weibo">&#xe602;</i>
-        
-      </a>
-    </li>
-  
-    <li>
-      <a href="http://www.douban.com/people/Stiekel/">
-        
-          <i class="icon iconfont douban">&#xe60f;</i>
-        
-      </a>
-    </li>
-  
-</ul>
     </div>
+      
+        <p class="site-subtitle">Just Do It</p>
+      
   </div>
-</div>
-<div id="user-card">
-  <div class="center-field">
-    <img class="avatar" src="http://7te9fe.com1.z0.glb.clouddn.com/default_avatar.jpg">
-    <p id="description">TRY</p>
-    <ul class="social-icon">
-  
-  
-    <li>
-      <a href="https://github.com/stiekel/hexo-theme-random">
-        
-          <i class="icon iconfont github">&#xe606;</i>
-        
-      </a>
-    </li>
-  
-    <li>
-      <a href="http://weibo.com/sidcn">
-        
-          <i class="icon iconfont weibo">&#xe602;</i>
-        
-      </a>
-    </li>
-  
-    <li>
-      <a href="http://www.douban.com/people/Stiekel/">
-        
-          <i class="icon iconfont douban">&#xe60f;</i>
-        
-      </a>
-    </li>
-  
-</ul>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
   </div>
 </div>
 
+<nav class="site-nav">
+  
 
-<div id="btn-view">Hide</div>
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-主页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            menu.主页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-分类">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            menu.分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-关于">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            menu.关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-归档">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            menu.归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-标签">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            menu.标签
+          </a>
+        </li>
+      
 
-<script>
-// is trigger analytics / tongji script
-var isIgnoreHost = false;
+      
+    </ul>
+  
 
-if(window && window.location && window.location.host) {
-  isIgnoreHost = ["localhost","127.0.0.1"].some(function(address){
-    return 0 === window.location.host.indexOf(address);
-  });
-}
-
-var isTriggerAnalytics = !( true && isIgnoreHost );
-
-</script>
+  
+</nav>
 
 
 
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+  <section id="posts" class="posts-expand">
+    
+      
+
+  
 
   
   
-    <script src="/js/jquery-2.2.3.min.js"></script>
-  
-    <script src="/js/vegas.min.js"></script>
-  
-    <script src="/js/random.js"></script>
-  
-    <script src="/js/highlight.pack.js"></script>
-  
-    <script src="/js/jquery.mousewheel.pack.js"></script>
-  
-    <script src="/js/jquery.fancybox.pack.js"></script>
-  
-    <script src="/js/jquery.fancybox-thumbs.js"></script>
-  
-    <script src="/js/plyr.js"></script>
   
 
-<script>
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/07/04/MySQL/">
 
-  // fancybox
-  var backgroundImages = [];
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jack Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TRY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/04/MySQL/" itemprop="url">MySQL_入门笔记</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-07-04T14:45:01+08:00">
+                2017-07-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/MySQL-linux/" itemprop="url" rel="index">
+                    <span itemprop="name">MySQL&linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="学习笔记"><a href="#学习笔记" class="headerlink" title="学习笔记"></a>学习笔记</h1><p>mysql是开源的关系型数据库。可参见菜鸟教程<a href="http://www.runoob.com" title="菜鸟教程" target="_blank" rel="external">http://www.runoob.com</a>的介绍。</p>
+<h1 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h1><p>（我用的是centos7 64位的系统）</p>
+<h3 id="检查"><a href="#检查" class="headerlink" title="检查"></a>检查</h3><pre><code>rpm -qa|grep mysql
+</code></pre><h3 id="卸载"><a href="#卸载" class="headerlink" title="卸载"></a>卸载</h3><pre><code>rpm -e mysql
+</code></pre><hr>
+<pre><code>rpm -e--nodeps mysql
+</code></pre><h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><p>用yum安装，centos7上<strong>mysql</strong>已经改为了<strong>mariadb</strong>，所以安装的时候和之前版本的有些不同，</p>
+<h3 id="centos7下的mysql"><a href="#centos7下的mysql" class="headerlink" title="centos7下的mysql"></a>centos7下的mysql</h3><pre><code>$ yum install mariadb-server mariadb #安装数据库和数据库服务器
+</code></pre><p>（之前的centos版本可以这样安装：<br><code>yum install mysql-server mysql mysql-develop</code><br>）<br>或者</p>
+<pre><code>$ yum install mariadb*   #把所有和mariadb相关的东西都装上
+</code></pre><p>完成后，可以输入<strong><code>mysqladmin --version</code></strong> 来查看安装是否成功。<br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/mysql1.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/mysql1.PNG?raw=true"><br>如果出现版本信息，就说明安装成功了。</p>
+<p>注意：安装完之后，在命令行直接输入mysql是会报错了，<br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/mysql2.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/mysql2.PNG?raw=true"><br>应该先启动数据库服务器，<code>$ systemctl start mariadb</code></p>
+<p><img src="https://github.com/hellowanghe/blogimg/blob/master/img/mysql3.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/mysql3.PNG?raw=true"></p>
+<p>相关命令：（<code>systemctl stop mariadb #停止服务,systemctl restart mariadb #重启服务,systemctl enable mariadb #开机启动,systemctl status maridb #查看状态</code>）<br>启动之后，在次输入mysql就可以进入数据库了，Mysql服务器的密码为空，本次不用输入密码，如上图。</p>
+<p>此时进入时没有用户名的。</p>
+<h3 id="创建root用户和密码"><a href="#创建root用户和密码" class="headerlink" title="创建root用户和密码"></a>创建root用户和密码</h3><p>上面看到，在初次登录的时候mysql是没有密码的，所以要设置root用户的密码，root用户是超级用户，拥有的很大的权限，密码是很有必要的。</p>
+<p><img src="https://github.com/hellowanghe/blogimg/blob/master/img/mysql4.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/mysql4.PNG?raw=true"></p>
+<p>为了方便，我设置了简单的密码。下次登录的时候，就需要密码了，直接输mysql系统会告诉你Access denied。</p>
+<h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><p>登录到mysql的命令行后，我们可以先查看一下有几个数据库。<br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/mysqluse.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/mysqluse.PNG?raw=true"></p>
+<h3 id="创建数据库"><a href="#创建数据库" class="headerlink" title="创建数据库"></a>创建数据库</h3><p>可以看到所有的数据库。test，test1，test2是我自己建的。选择你要操作的数据库，用use语句，首先创建一个数据库test。</p>
+<pre><code>create database test；
+</code></pre><hr>
+<h3 id="选择数据库"><a href="#选择数据库" class="headerlink" title="选择数据库"></a>选择数据库</h3><pre><code>use test；
+</code></pre><p>我们就进入到了<code>test</code>库。查看库中的表，由于这是个新建的库，当我用<br><code>show tables</code>；的时候，他会提示空<code>empty set</code>；</p>
+<h3 id="删除数据库，"><a href="#删除数据库，" class="headerlink" title="删除数据库，"></a>删除数据库，</h3><p>如果你要删除某个数据库。比如；</p>
+<pre><code>drop database test2；删除掉test2数据库。
+</code></pre><h3 id="创建表"><a href="#创建表" class="headerlink" title="创建表"></a>创建表</h3><p>一般格式为</p>
+<blockquote>
+<p>CREATE TABLE table_name (column_name column_type);</p>
+</blockquote>
+<p>简单的例子:<br></p>
+<blockquote>
+<p>CREATE TABLE person(person_name CHAR,person_age INT,person_sex CHAR);</p>
+</blockquote>
+<p>建立了名为<code>person</code>的表，字段有<code>person_name</code>,<code>person_age</code>,<code>person_sex</code>,<br>就是名字年龄和性别。<code>CHAR</code>代表字符 <code>INT</code>代表整数数字。可以用<code>desc ‘表名’</code>来查看表字段的属性。<br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/mysqldesc.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/mysqldesc.PNG?raw=true"><br>可以看到，<code>name</code>和<code>sex</code>字段的<code>type</code>属性为<code>char（1）</code>，这因为建表的时候没有声明字段的长度，默认为1了。</p>
+<h3 id="删除表"><a href="#删除表" class="headerlink" title="删除表"></a>删除表</h3><blockquote>
+<p>drop table person；</p>
+</blockquote>
+<p>和删除数据库命令类似，这里就不做演示了。</p>
+<h3 id="INSERT插入数据"><a href="#INSERT插入数据" class="headerlink" title="INSERT插入数据"></a>INSERT插入数据</h3><blockquote>
+<p>INSERT INTO person（person_name，person_age,person_sex)<br><br>values(“jack”,23, “male”);</p>
+</blockquote>
+<p>然后查看，<br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/mysql_insert.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/mysql_insert.PNG?raw=true"><br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/mysql_insert1.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/mysql_insert1.PNG?raw=true"></p>
+<p>发现，<code>name</code>和<code>sex</code>字段只有一个字符，这就是之前的问题了，他的字符长度是1，只能容纳一个字符。现在改变他的属性。</p>
+<h3 id="ALTER-删除，添加"><a href="#ALTER-删除，添加" class="headerlink" title="ALTER-删除，添加"></a>ALTER-删除，添加</h3><p>ALTER TABLE</p>
+<blockquote>
+<p>ALTER TABLE person DROP person_name;<br>#删除person表的person_name字段<br>ALTER TABLE person ADD person_name INT FIRST;<br>#给person表添加person_name字段，并放在第一列。<br>ALTER TABLE person DROP person_age;<br>ALTER TABLE person ADD person_age INT AFTER person_name;<br>#删除person_age字段，再添加person_age字段，并插在person_name字段后边。</p>
+</blockquote>
+<p>注：默认的添加字段是放在最后面的。</p>
+<h3 id="ALTER-修改字段"><a href="#ALTER-修改字段" class="headerlink" title="ALTER-修改字段"></a>ALTER-修改字段</h3><p>修改表字段的属性有两种方法：MODIFY和CHANGE。<br>下面是两种方法修改person表中，person_name字段的属性。</p>
+<h4 id="MODIFY"><a href="#MODIFY" class="headerlink" title="MODIFY"></a>MODIFY</h4><blockquote>
+<p>ALTER TABLE person MODIFY person_name CHAR(10);</p>
+</blockquote>
+<h4 id="CHANGE"><a href="#CHANGE" class="headerlink" title="CHANGE"></a>CHANGE</h4><blockquote>
+<p>ALTER TABLE person CHANGE COLUMN person_name person_name CHAR(10) NOT NULL;</p>
+</blockquote>
+<p>修改完成后，再插入一条数据，可以发现，person_name已经可以，正常显示了。<br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/mysql_insert2.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/mysql_insert2.PNG?raw=true"></p>
+<h3 id="ALTER-修改表名"><a href="#ALTER-修改表名" class="headerlink" title="ALTER-修改表名"></a>ALTER-修改表名</h3><p>下面的语句可以修改表名。如果有需要的话。将表person重命名为person_tbl。</p>
+<blockquote>
+<p>ALTER TABLE person RENAME TO person_tbl;</p>
+</blockquote>
+<h2 id="创建用户与权限管理"><a href="#创建用户与权限管理" class="headerlink" title="创建用户与权限管理"></a>创建用户与权限管理</h2><p>之前我们已经有了root用户及密码，我们以root用户登录，创建其他的用户，用来控制权限。<br>创建用户有两种方法（前提以root用户登录）</p>
+<ol>
+<li>GRANT命令<br></li>
+<li>用insert 语句直接在mysql库user表中直接插入用户</li>
+</ol>
+<h3 id="GRANT命令创建用户"><a href="#GRANT命令创建用户" class="headerlink" title="GRANT命令创建用户"></a>GRANT命令创建用户</h3><blockquote>
+<p>GRANT ALL PRIVILEGES<br>ON *.* TO ‘monty’@’localhost’<br>IDENTIFIED BY ‘some_pass’ WITH GRANT OPTION</p>
+</blockquote>
+<p>超级用户，用于本机链接。</p>
+<blockquote>
+<p>GRANT ALL PRIVILEGES ON *.* TO ‘monty’@’%’<br><br>IDENTIFIED BY ‘some_pass’ WITH GRANT OPTION;</p>
+</blockquote>
+<p>超级用户，用于从其他主机连接。</p>
+<blockquote>
+<p>GRANT RELOAD,PROCESS ON *.* TO ‘admin’@’localhost’;</p>
+</blockquote>
+<p>无密码admin账户，授予RELOAD和PROCESS权限。<br>这些权限允许<code>admin</code>用户执行<code>mysqladmin reload</code>，<code>mysqladmin refresh</code>， <code>mysqladmin flush-xxx</code>命令，<br>以及<code>mysqladmin processlist</code>。未授予访问数据库的权限。</p>
+<blockquote>
+<p>GRANT USAGE ON *.* TO ‘dummy’@’localhost’;</p>
+</blockquote>
+<p>无密码，只用于从本机连接。未授予权限，</p>
+<blockquote>
+<p>GRANT ALL PRIVILEGES ON db_1.* to ‘jack’@’localhost’ <br>IDENTIFIED BY “jack” WITH GRANT OPTION；</p>
+</blockquote>
+<p>该用户只能访问db_1的数据库。</p>
+<h3 id="INSERT语句创建用户"><a href="#INSERT语句创建用户" class="headerlink" title="INSERT语句创建用户"></a>INSERT语句创建用户</h3><blockquote>
+<p>MariaDB&gt;INSERT INTO user<br>(host, user, authentication_string,<br>select_priv, insert_priv, update_priv)<br>VALUES (‘localhost’, ‘guest’,<br>PASSWORD(‘guest123’), ‘Y’, ‘Y’, ‘Y’);</p>
+</blockquote>
+<p><strong>注意:在用inser语句创建完用户后，需要执行 FLUSH PRIVILEGES命令。 这个命令执行后会重新载入授权表。否则，你插入所建的用户不会生效，除非你重启数据库服务。</strong></p>
+<p><strong>注意：用insert创建用户时，可能会弹出，某字段不能空的错误，具体的语句可以参照mysql库user表的字段写，确保不会出错</strong></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
   
-  $('#post').each(function(i){
-    $(this).find('img').each(function(){
-      if ($(this).parent().hasClass('fancybox') || $(this).parent().hasClass('fancybox-thumb')) return;
-      var alt = this.alt || this.title;
-      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
-      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
-    });
-    $(this).find('.fancybox').each(function(){
-      $(this).attr('rel', 'post' + i);
-    });
-  });
-  $(".fancybox").fancybox();
 
-var vegasConfig = {"preload­Image":true,"transition":["slideLeft2","slideRight2","flash2"],"timer":true,"delay":5000,"shuffle":true,"count":28};
-var unsplashConfig = {"gravity":"north"};
-// is show background images
-var turnoffBackgroundImage = false;
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/23/ftp/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jack Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TRY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/23/ftp/" itemprop="url">一个简单的FTP服务器</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-23T16:27:58+08:00">
+                2017-06-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/linux/" itemprop="url" rel="index">
+                    <span itemprop="name">linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="FTP-服务器简单搭建"><a href="#FTP-服务器简单搭建" class="headerlink" title="FTP 服务器简单搭建"></a>FTP 服务器简单搭建</h1><p>（centos7)</p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>如果你的电脑是没有安装ftp。执行命令安装。</p>
+<pre><code>yum install vsftpd
+</code></pre><hr>
+<pre><code>yum install ftp
+</code></pre><p>在目录/var/ftp/pub下存放共享的文件。</p>
+<h2 id="开启ftp服务"><a href="#开启ftp服务" class="headerlink" title="开启ftp服务"></a>开启ftp服务</h2><pre><code>$ systemctl start vsftpd
+</code></pre><h2 id="查看ftp服务状态"><a href="#查看ftp服务状态" class="headerlink" title="查看ftp服务状态"></a>查看ftp服务状态</h2><pre><code>$ systemctl status vsftpd
+</code></pre><p>状态为active表示成功开启<br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/ftpstatus.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/ftpstatus.PNG?raw=true"></p>
+<p>文件目录在<code>/var/ftp/</code>下有个<code>pub</code>文件夹，要分享的文件可以放在这里。<br><code>/etc/vsftpd/</code>下<code>vsftpd.conf</code>是配置文件。<br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/ftpconf.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/ftpconf.PNG?raw=true"></p>
+<p>如果修改成NO，在登录的时候会需要服务器密码。目录也不再是默认的目录，而是你所登录用户的目录。<br>在浏览器输入地址</p>
+<pre><code>ftp://localhost/
+</code></pre><p>或者</p>
+<pre><code>ftp://10.238.49.54/
+</code></pre><p>就可以看到ftp目录了。</p>
+<p>2017/6/27 21:12:16 </p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
 
 
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/21/Apache-And-nginx/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jack Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TRY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/21/Apache-And-nginx/" itemprop="url">Apache And nginx</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-21T14:45:01+08:00">
+                2017-06-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web-linux/" itemprop="url" rel="index">
+                    <span itemprop="name">web&linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="学习笔记"><a href="#学习笔记" class="headerlink" title="学习笔记"></a>学习笔记</h1><p>主流的web服务器软件，一个是Apache HTTP Server，一个是Nginx。Nginx是款轻量级的web服务器和反向代理服务器软件，处理静态请求有极高的性能，国内的淘宝，百度，微博都在使用。<br>使用系统为CentOS7，不同系统可能有差易</p>
+<h1 id="systemctl-工具"><a href="#systemctl-工具" class="headerlink" title="systemctl 工具"></a>systemctl 工具</h1><p>centOS7中，systemctl是个新的工具，据说是集合了service和chkconfig的功能。如果你的网站，在别的电脑打不开，可能是防火墙打开了。如果不知道如何只开启80端口，在自己实验的时候可以把防火墙全部关掉。<br>查看防火墙状态<br><code>$ systemctl status firewalld  #查看防火墙状态</code><br><code>$ systemctl stop firewalld  #关闭防火墙</code><br><code>$ systemctl start firewalld #启动防火墙</code><br><code>$ systemctl restart firewalld #重启防火墙</code><br><code>$ systemctl enable firewalld #开机启动防火墙</code><br><code>$ systemctl disable firewalld #禁止开机启动防火墙</code></p>
+<p>上面的命令将firewalld替换为其他服务，对绝大多数的服务有相同的效果，比如（<code>$ systemctl status httpd</code>）查看httpd服务的状态。</p>
+<h1 id="压缩与解压"><a href="#压缩与解压" class="headerlink" title="压缩与解压"></a>压缩与解压</h1><h2 id="zip"><a href="#zip" class="headerlink" title="zip"></a>zip</h2><p><code>$ unzip filename.zip #解压文件到当前目录</code></p>
+<p><code>$ zip 1.zip 2.txt  #将名为2.txt的文件压缩为1.zip</code></p>
+<p><code>$ zip -r 1.zip uuu #将名为uuu的文件夹压缩为1.zip，文件夹压缩加参数-r</code></p>
+<h2 id="tar"><a href="#tar" class="headerlink" title="tar"></a>tar</h2><p><code>$ tar xvf filename.tar #解压文件到当前目录</code></p>
+<p><code>$ tar cvf 目标文件 源文件 #压缩命令</code></p>
+<h2 id="tar-gz"><a href="#tar-gz" class="headerlink" title="tar.gz"></a>tar.gz</h2><p><code>$ tar zxvf name.tar.gz  #解压文件到当前目录</code></p>
+<p><code>$ tar zcvf name.tar.gz 2.txt  #压缩命令，将2.txt压缩到name.tar.gz</code></p>
+<h1 id="Apache"><a href="#Apache" class="headerlink" title="Apache"></a>Apache</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>在Linux中Apache是个叫做httpd的软件，安装之前可以用命令rpm -qa|grep httpd查看是否安装了软件。如未安装，可以用yum install命令安装</p>
+<pre><code>$ yum install httpd
+</code></pre><p>系统会自动从软件仓库安装。</p>
+<p>安装完成后存放html文件的目录为<em><code>/var/www/html/</code></em>下，你的网站页面文件就放在这个目录下。</p>
+<p>配置文件的目录为<em><code>/etc/httpd/conf/</code></em>下，有一个<em><code>httpd.conf</code></em>的文件。可以配置详细的功能，有兴趣的同学可以深入学习。</p>
+<p>httpd默认开启80端口，打开浏览器输入localhost就能看到Apache的默认页面了。如果你的电脑在局域网中，在其他电脑上打开浏览器，输入你的电脑的IP地址，也可以访问到你的网页。你的电脑，就相当于一个WEB服务器了。</p>
+<h1 id="nginx"><a href="#nginx" class="headerlink" title="nginx"></a>nginx</h1><h2 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h2><p>在nginx的官网下载nginx的linux版本包。</p>
+<p><a href="http://nginx.org/en/download.html" title="http://nginx.org/en/download.html" target="_blank" rel="external">http://nginx.org/en/download.html</a></p>
+<p>解压文件</p>
+<pre><code>$ tar zxvf nginx-1.13.1.tar.gz #我下载的为此版本
+</code></pre><hr>
+<pre><code>$ cd nginx-1.13.1
+</code></pre><hr>
+<pre><code>$ ./configure
+</code></pre><hr>
+<pre><code>$ make &amp;&amp; make install
+</code></pre><p>nginx的执行目录在<em><code>/usr/local/nginx/sbin/</code></em></p>
+<p>静态文件的存放路径在<em><code>/usr/local/nginx/html</code></em>进入到此目录可一看到一个index.html（默认主页）文件和50x.html文件（错误的时候反会的402页面）。</p>
+<h3 id="启动-amp-软连接-amp-基本命令"><a href="#启动-amp-软连接-amp-基本命令" class="headerlink" title="启动&amp;软连接&amp;基本命令"></a>启动&amp;软连接&amp;基本命令</h3><h4 id="软链接"><a href="#软链接" class="headerlink" title="软链接"></a>软链接</h4><p>由于<code>nginx</code>命令没有加到系统路径，所以启动的时候要输入<br><code>$ /usr/local/nginx/sbin/nginx</code>这么一大串完整路径，为了方便，<br>可以给nginx加一个软连接到bin目录下，就是一个程序的快捷方式，这样当你在命令行ngnix的时候就不会提示<code>no command</code>了。</p>
+<pre><code>ln -s /usr/local/nginx/sbin/nginx /bin/nginx
+</code></pre><p>(ln -s 源文件 目标文件）这样就在bin目录下添加了一个软链接，到<code>bin</code>目录下用<code>ll</code>命令查看<code>nginx</code>是这样的，如图<br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/nginxln.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/nginxln.PNG?raw=true">可以发现，nginx指向nginx所在的目录。</p>
+<h4 id="启动"><a href="#启动" class="headerlink" title="启动"></a>启动</h4><p>当在命令行输入nginx的时候，系统会到bin下找nginx的命令，nginx就会到它指向的目录寻找。这时就能启动nginx了，在浏览器输入localhost，就可以看到nginx的默认页面。或者在局域网内的其他电脑上输入，nginx服务所在电脑的IP也可以看到（80端口开启的情况下）。<br>可以输入</p>
+<pre><code>$ nginx -h #查看帮助
+</code></pre><p>nignx的命令不多，常用的就nginx -s了，在帮助里可以看到他的意思。-s是向ngnix传递信息的意思。<br><code>$ nginx -s stop #直接退出，不做保存</code></p>
+<p><code>$ nginx -s quit #温和的退出</code></p>
+<p><code>$ nginx -s reopen #重新打开</code></p>
+<p><code>$ nginx -s reload #重新加载配置文件，如果配置文件有修改的话</code></p>
+<h2 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h2><p>在./configure的时候回报找不到PCRE library，gzip需要zlib库的错误，或者找不到g++的错误。所以在这之前需要把这些库安装好。<br>先安装编译工具。</p>
+<pre><code>$ yum install gcc
+</code></pre><hr>
+<pre><code>$ yum install gcc-c++
+</code></pre><h3 id="PCRE"><a href="#PCRE" class="headerlink" title="PCRE:"></a>PCRE:</h3><p>rewrite所要使用的第三方模块<br><a href="http://www.pcre.org/" target="_blank" rel="external">http://www.pcre.org/</a></p>
+<pre><code>$ wget ftp://ftp.csx.cam.ac.uk/pub/software/programming/pcre/pcre-8.13.zip
+</code></pre><h3 id="openssl："><a href="#openssl：" class="headerlink" title="openssl："></a>openssl：</h3><p>https协议所要使用的模块<br><a href="http://www.openssl.org/source/下载源码包安装。" target="_blank" rel="external">http://www.openssl.org/source/下载源码包安装。</a></p>
+<pre><code>$ wget http://www.openssl.org/source/openssl-1.0.0e.tar.gz
+</code></pre><p>或者</p>
+<pre><code>yum install -y openssl
+</code></pre><h3 id="zlib"><a href="#zlib" class="headerlink" title="zlib"></a>zlib</h3><p>缺少zlib的情况，</p>
+<pre><code>yum install -y zlib-devel
+</code></pre><h3 id="uploadprogress"><a href="#uploadprogress" class="headerlink" title="uploadprogress"></a>uploadprogress</h3><p>如果你用到uploadprogress模块<br><a href="http://wiki.nginx.org/HttpUploadProgressModule" target="_blank" rel="external">http://wiki.nginx.org/HttpUploadProgressModule</a></p>
+<pre><code>wget https://github.com/masterzen/nginx-upload-progress-module/downloads
+</code></pre><p>将所需模块安装完成后，照如下步骤安装即可。</p>
+<p><code>$ ./configure</code></p>
+<p><code>$ make</code></p>
+<p><code>$ make install</code></p>
+<h3 id="libpcre-so-0"><a href="#libpcre-so-0" class="headerlink" title="libpcre.so.0"></a>libpcre.so.0</h3><p>在安装完pcre的依赖包之后，启动nginx时，又爆出了错误，提示没有libpcre.so.0文件。我进到lib64目录发现，有一个libpcre.so.1的软链接到了libpcre.so.1.2.0文件。于是我加了一个libpcre.so.0的软链接到libpcre.so.1.2.0.再次启动,启动成功。</p>
+<pre><code>$ ln -s /lib64/libpcre.so.1.2.0  /lib64/libpcre.so.0
+</code></pre><h1 id="Windows下的Nginx"><a href="#Windows下的Nginx" class="headerlink" title="Windows下的Nginx"></a>Windows下的Nginx</h1><p>windows的下的Nginx比较简单，到nginx的官网下载，nginx的windows压缩包，解压到一个目录下，最好是英文的目录。<br>打开cmd命令行<br>进入到nginx的目录，<br>敲入<br><code>nginx</code>，</p>
+<p>或者</p>
+<p><code>start nginx</code><br>然后，在浏览器打开localhost就可以看到nginx的页面了。关掉dos窗口，nginx会在后台运行。<br>若要停止，命令行进入，nginx所在目录，运行</p>
+<p><code>nginx -s stop</code></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
 
 
-var backgroundColor = "34495E";
+    
+      
 
-$(".fancybox-thumb").fancybox({
-  prevEffect: 'none',
-  nextEffect: 'none',
-  helpers: {
-    title: {
-      type: 'outside'
-    },
-    thumbs: {
-      width: 50,
-      height: 50
-    }
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/15/Git-基本操作/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jack Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TRY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/15/Git-基本操作/" itemprop="url">Git 基本操作</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-15T08:17:49+08:00">
+                2017-06-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tools/" itemprop="url" rel="index">
+                    <span itemprop="name">Tools</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h1 id="Git是分布式的版本控制工具"><a href="#Git是分布式的版本控制工具" class="headerlink" title="Git是分布式的版本控制工具"></a>Git是分布式的版本控制工具</h1><p>这是git的官网，可以下载最新版本的git使用。我只装了windows版本的git。想详细了解的同学可以去廖雪峰的Git教程看看。<br><a href="https://git-scm.com/" title="Git 官网" target="_blank" rel="external">https://git-scm.com/</a></p>
+<p><a href="http://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" title="廖雪峰Git" target="_blank" rel="external">http://www.liaoxuefeng.com/</a></p>
+<p>安装成功git，在cmd命令行输入 <code>git --version</code> 就可以看到git的版本号了（注意两个是<code>--</code>）<img src="https://github.com/hellowanghe/blogimg/blob/master/img/git1.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/git1.PNG?raw=true"></p>
+<p>安装完成后，首先需要配置一下，用户名和邮箱，每次的<code>commit</code>都会记录下是哪个用户推送的。</p>
+<pre><code>$ git config --global user.name &quot;Your Name&quot;
+</code></pre><hr>
+<pre><code>$ git config --global user.email &quot;email@example.com&quot;
+</code></pre><h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><h3 id="1-初始化"><a href="#1-初始化" class="headerlink" title="1.初始化"></a>1.初始化</h3><pre><code>git init test 
+</code></pre><p> 初始化一个名为test的仓库。test里有一个.git的文件夹（默认为隐藏），这个是用来管理仓库的。一个本地仓库就建好了。（版本库又名仓库，英文名repository，大概就是一个目录的样子）</p>
+<p>或者新建文件夹test，<code>cd test</code>之后，输入<code>git init</code>，和上步有同样的效果</p>
+<h3 id="2-查看仓库状态"><a href="#2-查看仓库状态" class="headerlink" title="2.查看仓库状态"></a>2.查看仓库状态</h3><pre><code>git status
+</code></pre><p>用于查看仓库状态，一旦发生改变就会有提示。我们在test文件夹下新建一个文本文件名为one.txt,并写入this is test，保存。运行此命令，如图所示。</p>
+<p><img src="https://github.com/hellowanghe/blogimg/blob/master/img/git2.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/git2.PNG?raw=true"></p>
+<h3 id="3-对比差异"><a href="#3-对比差异" class="headerlink" title="3.对比差异"></a>3.对比差异</h3><pre><code>git diff one.txt
+</code></pre><p>可以查看你所修改的东西，在提交之前查看，一旦你add之后，这个命令就不起作用了。</p>
+<h3 id="4-添加到暂存区"><a href="#4-添加到暂存区" class="headerlink" title="4.添加到暂存区"></a>4.添加到暂存区</h3><pre><code>git add filesname 
+</code></pre><p>将文件添加到暂存区</p>
+<h3 id="5-提交到分支"><a href="#5-提交到分支" class="headerlink" title="5.提交到分支"></a>5.提交到分支</h3><pre><code>git commit -m &quot;添加了一些东西，删除了一些东西&quot;
+</code></pre><p>提交到分支，-m后面是你提交的说明。可以填写你所修改的东西。</p>
+<h3 id="6-查看历史提交记录"><a href="#6-查看历史提交记录" class="headerlink" title="6.查看历史提交记录"></a>6.查看历史提交记录</h3><pre><code>git log
+</code></pre><p>会显示你所提交的日志，及版本号，版本号是用sh1计算出的一串字符，为了避免重复。在后面加上参数–pretty=oneline会让日志成行显示，<br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/gitlog.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/gitlog.PNG?raw=true"><br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/githead.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/githead.PNG?raw=true"></p>
+<h3 id="7-版本回退"><a href="#7-版本回退" class="headerlink" title="7.版本回退"></a>7.版本回退</h3><pre><code>git reset --hard &quot;版本号&quot;
+</code></pre><p>回退到制定的版本号。<code>git log</code> 显示出你的所有提交记录，想要回退到那个版本，就输入版本号，一般输个前5位就行，如果没有相同的话。<br>如上图</p>
+<pre><code>git reset --hard HEAD
+</code></pre><p>可以查看当前的版本号<br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/gitreset.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/gitreset.PNG?raw=true"></p>
+<h3 id="8-后悔药"><a href="#8-后悔药" class="headerlink" title="8.后悔药"></a>8.后悔药</h3><pre><code>git reflog 
+</code></pre><p>可以查看你所有的操作记录。也可以用reset命令，回退到你想要回退的版本。</p>
+<p><img src="https://github.com/hellowanghe/blogimg/blob/master/img/git.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/git.PNG?raw=true"></p>
+<h3 id="9-添加远程仓库"><a href="#9-添加远程仓库" class="headerlink" title="9.添加远程仓库"></a>9.添加远程仓库</h3><p>在你的仓库文件中运行</p>
+<pre><code>git remote add origin git@github.com:michaelliao/fortest.git
+</code></pre><p>把仓库名改成自己的就行了。</p>
+<h3 id="10-推送到远程仓库"><a href="#10-推送到远程仓库" class="headerlink" title="10.推送到远程仓库"></a>10.推送到远程仓库</h3><p>在仓库运行</p>
+<pre><code>git push -u origin master
+</code></pre><p>-u表示，将本地仓库同步到远程仓库，并关联到远程仓库。</p>
+<h3 id="11-将远程仓库同步到本地"><a href="#11-将远程仓库同步到本地" class="headerlink" title="11.将远程仓库同步到本地"></a>11.将远程仓库同步到本地</h3><p>git pull会同步远程分支到本地。</p>
+<pre><code>git pull
+</code></pre><h3 id="12-创建分支"><a href="#12-创建分支" class="headerlink" title="12.创建分支"></a>12.创建分支</h3><p>新建一个dev分支</p>
+<pre><code>git branch dev
+</code></pre><p>切换到dev分支</p>
+<pre><code>git checkout dev
+</code></pre><p>查看当前分支 </p>
+<pre><code>git branch
+</code></pre><p>删除分支</p>
+<pre><code>git branch -d dev
+</code></pre><p>查看分支合并图</p>
+<pre><code>git log --graph
+</code></pre><h3 id="13-合并分支"><a href="#13-合并分支" class="headerlink" title="13.合并分支"></a>13.合并分支</h3><p>在切换回master分之后，运行命令，会将dev分支合并到master分支，也就是当前分支</p>
+<pre><code>git merge dev
+</code></pre><h1 id="Git-ssh-配置"><a href="#Git-ssh-配置" class="headerlink" title="Git ssh 配置"></a>Git ssh 配置</h1><p>打开Gitbash，创建SSH Key ，可以一路回车</p>
+<pre><code>ssh-keygen -t rsa -C &quot;email&quot;
+</code></pre><p>会在 <code>C:\Users\dell</code>目录下生产.ssh文件夹，文件夹下有id_rsa和id_rsa.pub，id_rsa.pub就是公钥，复制粘贴到，github的相应位置就可以远程推送了。</p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/15/node版本管理工具nvm/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jack Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TRY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/15/node版本管理工具nvm/" itemprop="url">nvm-node版本管理工具</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-15T08:17:49+08:00">
+                2017-06-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/node/" itemprop="url" rel="index">
+                    <span itemprop="name">node</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="nvm出现的原因"><a href="#nvm出现的原因" class="headerlink" title="nvm出现的原因"></a>nvm出现的原因</h3><p>在nodejs的开发中，会需要用到不同的nodejs版本，<strong>现阶段node各个版本对一些软件支持不太够</strong>，js新的技术层出不穷，各种新的框架，js语言的不断更新，ES6/ES7新标准的js，nodejs也在不断更新。为了方便切换到不同的nodejs版本。</p>
+<p>淘宝的nodejs所有的镜像<br><a href="https://npm.taobao.org/mirrors/node" title="nodejs镜像" target="_blank" rel="external">https://npm.taobao.org/mirrors/node</a></p>
+<p>nvm-windows的github地址<br><a href="https://github.com/coreybutler/nvm-windows" title="nvm-windows" target="_blank" rel="external">https://github.com/coreybutler/nvm-windows</a></p>
+<p>nvm的linux版本的github地址<br><a href="https://github.com/creationix/nvm" title="nvm" target="_blank" rel="external">https://github.com/creationix/nvm</a></p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>windows下nvm的安装比较简单，最好先卸载nodejs，下载nvm的windows的安装包，像安装其他软件一样。安装完成后，可以在淘宝的npm镜像下载你所需要的不同的版本的nodejs的压缩包zip格式就行。</p>
+<p>nvm管理nodejs的目录默认在<code>C:\Users\dell\AppData\Roaming\nvm</code>，你的电脑上用户名就是你自己的，AppData有的是隐藏的，需要设置一下文件的查看方式，将其显示出来。将下载好的压缩包解压到，nvm的目录下，并重命名为<code>vx.x.x</code>即可，如图<br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/nvm1.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/nvm1.PNG?raw=true"></p>
+<p>在命令行输入</p>
+<pre><code>nvm list
+</code></pre><p>会显示可用的nodejs版本列表，当前再用版本也会显示出来。如图：<br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/nvmlist.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/nvmlist.PNG?raw=true"></p>
+<p>在命令行输入</p>
+<pre><code>nvm use 4.5.0
+</code></pre><p>nvm会自动切换到所选版本，nvm list可以看到，当前使用版本变为了4.5.0，也可用node -v查看版本是否改变。<br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/nvmuse.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/nvmuse.PNG?raw=true"></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/10/Linux-常用命令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jack Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TRY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/10/Linux-常用命令/" itemprop="url">Linux 常用命令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-10T18:43:14+08:00">
+                2017-06-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="常用基本命令（Centos7）"><a href="#常用基本命令（Centos7）" class="headerlink" title="常用基本命令（Centos7）"></a>常用基本命令（Centos7）</h3><p><code># ls</code>  查看当前目录下文件和文件夹<br></p>
+<p><code># ll</code>  查看当前目录下文件和文件夹的详细信息<br></p>
+<p><code># ls -lh</code> 文件和文件的大小一k,M显示，不加h是以字节显示（<code>-lhr</code>正序排列，<code>-lhv</code>倒序排列） <br></p>
+<p><code># cd /home</code> 改变目录到绝对路径的home目录下（<code>/</code>表示绝对定位）<br></p>
+<p><code># cd home</code> 到当前目录下的<code>home</code>路径<br></p>
+<p><code># cp 1.txt /home/jack</code> 复制名叫<code>1.txt</code>的文件到<code>/home/jack</code>目录下<br></p>
+<p><code># cp one.txt /home/jack/two.txt</code> 复制名叫<code>one.txt</code>的文件到<code>/home/jack</code>下并重命名为<code>two.txt</code><br></p>
+<p><code># mv one.txt three.txt</code> 将名为<code>one.txt</code>的文件重命名为<code>three.txt</code><br></p>
+<p><code># mv one.txt /root</code> 将名为<code>one.txt</code>的文件移动到<code>/root</code>目录下<br></p>
+<p><code># mkdir tom</code> 新建名为<code>tom</code>的目录（文件夹）<br></p>
+<p><code># touch main.java</code> 新建名为<code>main</code>的<code>java</code>格式文件<br></p>
+<p><code># touch book.txt</code> 新建名为<code>book</code>的<code>txt</code>格式文件<br></p>
+<p><code># rm one.txt</code> 删除名为<code>one.txt</code>的文件，（rm意为remove）<br></p>
+<p><code># rmdir tom</code> 删除名为<code>tom</code>的文件夹，只能删除空文件夹（同 <code># rm -d</code>）<br></p>
+<p><code># rm -r tom</code> （recursive递归删除文件夹，及其包含的内容，每次删除都会有提示。<br></p>
+<p><code># rm -rf tom</code> 删除文件夹，强制删除文件夹中所有内容，不再询问<br></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/09/Sublime/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jack Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TRY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/09/Sublime/" itemprop="url">Sublime</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-09T15:11:25+08:00">
+                2017-06-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/web/" itemprop="url" rel="index">
+                    <span itemprop="name">web</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="Sublime-相关"><a href="#Sublime-相关" class="headerlink" title="Sublime 相关"></a>Sublime 相关</h2><h3 id="0-简介"><a href="#0-简介" class="headerlink" title="0 简介"></a>0 简介</h3><p>sublime是款轻量级的text编辑器，有丰富的插件。</p>
+<h3 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h3><p>Windows下，到sublime官网下载<a href="http://www.sublimetext.com" title="sublimetext" target="_blank" rel="external">http://www.sublimetext.com</a>,sublime的windows的安装包。</p>
+<h3 id="2-Package-Control"><a href="#2-Package-Control" class="headerlink" title="2.Package Control"></a>2.Package Control</h3><p>Package control 类似于一个插件包安装工具，安装了Package control就可在安装插件了!或者你可以直接下载Packagecontrol的压缩包，解压后，放在sublime的安装目录里，baidu网盘链接：<a href="http://pan.baidu.com/s/1geJjxlx" title="baidu" target="_blank" rel="external">http://pan.baidu.com/s/1geJjxlx</a> 密码：<strong>gwgn</strong>，我的是 <code>C:\Program Files\Sublime Text 3\Packages</code> ,压缩文件加压后文件夹命名为Package Control，放到上边的目录里，重启sublime即可。安装Package Control成功后，点击preferences，最下方点击package control!<br><img src="https://github.com/hellowanghe/Mypage/blob/master/img/sulime1.PNG?raw=true" alt=""><br>接着出现package control的选项，点击install Package Control<img src="https://github.com/hellowanghe/Mypage/blob/master/img/sublime2.PNG?raw=true" alt=""><br>会弹出搜索框，你可输入，选择你要安装的插件<br><img src="https://github.com/hellowanghe/Mypage/blob/master/img/sublime3.PNG?raw=true" alt=""><br>点击你要安装的插件，会自动安装，等待时间取决于你的网速了。</p>
+<h3 id="3-sublime常用插件"><a href="#3-sublime常用插件" class="headerlink" title="3.sublime常用插件"></a>3.sublime常用插件</h3><hr>
+<p><strong>1.Emmet</strong></p>
+<p>Emmet是一个自动补全插件，可以节约开发时间。</p>
+<p><strong>2.HTML-CSS_JS Prettify</strong></p>
+<p>Prettify是一个用来对齐美化代码的插件，使凌乱的代码立马变得整齐。<br>类似的插件还有Alignment，不过Alignment太过整齐，没有Prettify灵活。</p>
+<p><strong>3.Reactjs</strong></p>
+<p>适用于reactjs的开发可以快速生成代码</p>
+<p><strong>4.Snippet</strong></p>
+<p>代码补偿工具。</p>
+<p><strong>5.APICloud</strong></p>
+<p>具体可参见链接文档；<br><a href="http://docs.apicloud.com/Dev-Tools/sublime-apicloud-plugin" title="http://docs.apicloud.com/Dev-Tools/sublime-apicloud-plugin" target="_blank" rel="external">http://docs.apicloud.com/Dev-Tools/sublime-apicloud-plugin</a></p>
+<h3 id="4-sublime常用快捷方式"><a href="#4-sublime常用快捷方式" class="headerlink" title="4.sublime常用快捷方式"></a>4.sublime常用快捷方式</h3><p>Ctrl+L 选择整行（按住-继续选择下行）<br><br>Ctrl+KK 从光标处删除至行尾<br><br>Ctrl+Shift+K 删除整行<br><br>Ctrl+Shift+D 复制光标所在整行，插入在该行之前<br><br>Ctrl+J 合并行（已选择需要合并的多行时）<br><br>Ctrl+KU 改为大写<br><br>Ctrl+KL 改为小写<br><br>Ctrl+D 选词 （按住-继续选择下个相同的字符串）<br><br>Ctrl+M 光标移动至括号内开始或结束的位置<br><br>Ctrl+Shift+M 选择括号内的内容（按住-继续选择父括号）<br><br>Ctrl+/ 注释整行（如已选择内容，同“Ctrl+Shift+/”效果）<br><br>Ctrl+Shift+/ 注释已选择内容<br><br>Ctrl+Z 撤销<br><br>Ctrl+Y 恢复撤销<br><br>Ctrl+M 光标跳至对应的括号<br><br>Alt+. 闭合当前标签<br><br>Ctrl+Shift+A 选择光标位置父标签对儿<br><br>Ctrl+Shift+[ 折叠代码<br><br>Ctrl+Shift+] 展开代码<br><br>Ctrl+KT 折叠属性<br><br>Ctrl+K0 展开所有<br><br>Ctrl+U 软撤销<br><br>Ctrl+T 词互换<br><br>Tab 缩进 自动完成<br><br>Shift+Tab 去除缩进<br><br>Ctrl+Shift+↑ 与上行互换<br><br>Ctrl+Shift+↓ 与下行互换<br><br>Ctrl+K Backspace 从光标处删除至行首<br><br>Ctrl+Enter 光标后插入行<br><br>Ctrl+Shift+Enter 光标前插入行<br><br>Ctrl+F2 设置书签<br><br>F2 下一个书签<br><br>Shift+F2 上一个书签<br></p>
+<hr>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/08/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jack Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TRY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/08/hello-world/" itemprop="url">Hello World</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-08T18:43:14+08:00">
+                2017-06-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+  </section>
+
+  
+
+
+          </div>
+          
+
+
+          
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <section class="site-overview sidebar-panel sidebar-panel-active">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="Jack Wang" />
+          <p class="site-author-name" itemprop="name">Jack Wang</p>
+           
+              <p class="site-description motion-element" itemprop="description">TRY</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy; 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Jack Wang</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
   }
-});
-
-// show video with plyr
-$(".video-container iframe").each(function(i){
-  var url = $(this).attr('src');
-  var id = url.split('/').pop();
-  var plyrContainer = document.createElement('div');
-  plyrContainer.className = 'plyr';
-  var plyrElement = document.createElement('div');
-  plyrElement.dataset.videoId = id;
-  switch(true) {
-    case url.search('youtube.com') >= 0:
-      plyrElement.dataset.type = 'youtube';
-      break;
-    case url.search('vimeo.com') >= 0:
-      plyrElement.dataset.type = 'vimeo';
-      break;
-    default:
-      return;
-  };
-  plyrContainer.appendChild(plyrElement);
-  $(this).parent().html(plyrContainer);
-});
-plyr.setup('.plyr', {iconUrl: '/css/sprite.svg'});
 </script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.1"></script>
+
+
+
+  
+  
+
+  
+    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.1"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
 </body>
 </html>
-
