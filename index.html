@@ -525,7 +525,7 @@ $ Start MySQL success
 <p>关闭SElinux：</p>
 <p><strong>修改/etc/selinux/config文件中的SELINUX=””为disabled，然后重启reboot</strong></p>
 <p>自己学习也可以完全关闭防火墙：<code>systemctl stop firewalld</code></p>
-<h2 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h2><ul>
+<h4 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h4><ul>
 <li>-t&lt;表&gt;：指定要操纵的表；</li>
 <li>-A：向规则链中添加条目；</li>
 <li>-D：从规则链中删除条目；</li>
@@ -541,7 +541,10 @@ $ Start MySQL success
 <li>-s：指定要匹配的数据包源ip地址；</li>
 <li>-j&lt;目标&gt;：指定要跳转的目标；</li>
 <li>-i&lt;网络接口&gt;：指定数据包进入本机的网络接口；</li>
-<li>-o&lt;网络接口&gt;：指定数据包要离开本机所使用的网络接口。<h2 id="开放制定端口"><a href="#开放制定端口" class="headerlink" title="开放制定端口"></a>开放制定端口</h2>(ACCEPT 必须为大写）</li>
+<li>-o&lt;网络接口&gt;：指定数据包要离开本机所使用的网络接口。</li>
+</ul>
+<h4 id="开放制定端口"><a href="#开放制定端口" class="headerlink" title="开放制定端口"></a>开放制定端口</h4><p>(ACCEPT 必须为大写）</p>
+<ul>
 <li>iptables -A INPUT -s 127.0.0.1 -d 127.0.0.1 -j ACCEPT               #允许本地回环接口(即运行本机访问本机)</li>
 <li>iptables -A INPUT -m state –state ESTABLISHED,RELATED -j ACCEPT    #允许已建立的或相关连的通行</li>
 <li>iptables -A OUTPUT -j ACCEPT         #允许所有本机向外的访问</li>
@@ -552,23 +555,23 @@ $ Start MySQL success
 <li>iptables -A INPUT -j reject       #禁止其他未允许的规则访问</li>
 <li>iptables -A FORWARD -j REJECT     #禁止其他未允许的规则访问</li>
 </ul>
-<h2 id="屏蔽IP"><a href="#屏蔽IP" class="headerlink" title="屏蔽IP"></a>屏蔽IP</h2><ul>
+<h4 id="屏蔽IP"><a href="#屏蔽IP" class="headerlink" title="屏蔽IP"></a>屏蔽IP</h4><ul>
 <li>iptables -I INPUT -s 123.45.6.7 -j DROP       #屏蔽单个IP的命令</li>
 <li>iptables -I INPUT -s 123.0.0.0/8 -j DROP      #封整个段即从123.0.0.1到123.255.255.254的命令</li>
 <li>iptables -I INPUT -s 124.45.0.0/16 -j DROP    #封IP段即从123.45.0.1到123.45.255.254的命令</li>
 <li>iptables -I INPUT -s 123.45.6.0/24 -j DROP    #封IP段即从123.45.6.1到123.45.6.254的命令是</li>
 </ul>
-<h2 id="查看已添加的iptables规则"><a href="#查看已添加的iptables规则" class="headerlink" title="查看已添加的iptables规则"></a>查看已添加的iptables规则</h2><ul>
+<h4 id="查看已添加的iptables规则"><a href="#查看已添加的iptables规则" class="headerlink" title="查看已添加的iptables规则"></a>查看已添加的iptables规则</h4><ul>
 <li>iptables -L -n -v</li>
 </ul>
-<h2 id="规则链名包括"><a href="#规则链名包括" class="headerlink" title="规则链名包括"></a>规则链名包括</h2><ul>
+<h4 id="规则链名包括"><a href="#规则链名包括" class="headerlink" title="规则链名包括"></a>规则链名包括</h4><ul>
 <li>INPUT链：处理输入数据包。</li>
 <li>OUTPUT链：处理输出数据包。</li>
 <li>PORWARD链：处理转发数据包。</li>
 <li>PREROUTING链：用于目标地址转换（DNAT）。</li>
 <li>POSTOUTING链：用于源地址转换（SNAT）。</li>
 </ul>
-<h3 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h3><p>进入/opt/zbox<br>先关闭服务<br>./zbox stop</p>
+<h2 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h2><p>进入/opt/zbox<br>先关闭服务<br>./zbox stop</p>
 <p>到/opt目录下,将zbox文件夹打包压缩，可以得到zbox.tar.gz文件</p>
 <pre><code>$ tar -zcvf zbox.tar.gz zbox
 </code></pre><p>用ftp工具传到要存储的地方即可.在此部署只需将压缩包解压到/opt目录下运行即</p>
