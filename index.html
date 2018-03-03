@@ -2010,7 +2010,16 @@ $ Start MySQL success
 <pre><code>$ gzip -r log.tar
 </code></pre><p>解压缩tar.gz文件</p>
 <pre><code>$ gzip -d log.tar.gz
-</code></pre>
+</code></pre><h3 id="实时查看日志文件输出"><a href="#实时查看日志文件输出" class="headerlink" title="实时查看日志文件输出"></a>实时查看日志文件输出</h3><pre><code>tail -f app.log
+</code></pre><p>命令参数：<br>-f 循环读取</p>
+<p>-q 不显示处理信息</p>
+<p>-v 显示详细的处理信息</p>
+<p>-c&lt;数目&gt; 显示的字节数</p>
+<p>-n&lt;行数&gt; 显示行数</p>
+<p>–pid=PID 与-f合用,表示在进程ID,PID死掉之后结束.</p>
+<p>-q, –quiet, –silent 从不输出给出文件名的首部</p>
+<p>-s, –sleep-interval=S 与-f合用,表示在每次反复的间隔休眠S秒</p>
+
           
         
       

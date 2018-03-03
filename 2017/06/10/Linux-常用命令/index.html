@@ -100,7 +100,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/06/10/Linux-常用命令/index.html">
 <meta property="og:site_name" content="TRY">
 <meta property="og:description" content="常用基本命令（Centos7）# ls  查看当前目录下文件和文件夹 # ll  查看当前目录下文件和文件夹的详细信息 # ls -lh 文件和文件的大小一k,M显示，不加h是以字节显示（-lhr正序排列，-lhv倒序排列）  # cd /home 改变目录到绝对路径的home目录下（/表示绝对定位） # cd home 到当前目录下的home路径 # cp 1.txt /home/jack 复制">
-<meta property="og:updated_time" content="2018-03-03T04:49:53.678Z">
+<meta property="og:updated_time" content="2018-03-03T06:42:13.411Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux 常用命令">
 <meta name="twitter:description" content="常用基本命令（Centos7）# ls  查看当前目录下文件和文件夹 # ll  查看当前目录下文件和文件夹的详细信息 # ls -lh 文件和文件的大小一k,M显示，不加h是以字节显示（-lhr正序排列，-lhv倒序排列）  # cd /home 改变目录到绝对路径的home目录下（/表示绝对定位） # cd home 到当前目录下的home路径 # cp 1.txt /home/jack 复制">
@@ -390,7 +390,16 @@
 <pre><code>$ gzip -r log.tar
 </code></pre><p>解压缩tar.gz文件</p>
 <pre><code>$ gzip -d log.tar.gz
-</code></pre>
+</code></pre><h3 id="实时查看日志文件输出"><a href="#实时查看日志文件输出" class="headerlink" title="实时查看日志文件输出"></a>实时查看日志文件输出</h3><pre><code>tail -f app.log
+</code></pre><p>命令参数：<br>-f 循环读取</p>
+<p>-q 不显示处理信息</p>
+<p>-v 显示详细的处理信息</p>
+<p>-c&lt;数目&gt; 显示的字节数</p>
+<p>-n&lt;行数&gt; 显示行数</p>
+<p>–pid=PID 与-f合用,表示在进程ID,PID死掉之后结束.</p>
+<p>-q, –quiet, –silent 从不输出给出文件名的首部</p>
+<p>-s, –sleep-interval=S 与-f合用,表示在每次反复的间隔休眠S秒</p>
+
       
     </div>
 
@@ -573,7 +582,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用基本命令（Centos7）"><span class="nav-number">1.</span> <span class="nav-text">常用基本命令（Centos7）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#压缩命令"><span class="nav-number">2.</span> <span class="nav-text">压缩命令</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用基本命令（Centos7）"><span class="nav-number">1.</span> <span class="nav-text">常用基本命令（Centos7）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#压缩命令"><span class="nav-number">2.</span> <span class="nav-text">压缩命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#实时查看日志文件输出"><span class="nav-number">3.</span> <span class="nav-text">实时查看日志文件输出</span></a></li></ol></div>
             
 
           </div>
