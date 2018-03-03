@@ -93,17 +93,17 @@
 
 
 
-<meta name="description" content="iptables安装项目管理系统禅道（Centos7）从禅道官网下载Linux一件安装包下载完成后，解压到linux下/opt目录下，cd 到/opt/zbox 执行./zbox start,可以看到 $ Start Apache success  $ Start MySQL success 开放端口80,3306端口如果，电脑访问不到禅道，有可能为80端口未开放。用到iptables设置防火墙">
+<meta name="description" content="iptables安装项目管理系统禅道（Centos7）从禅道官网下载Linux一件安装包下载完成后，解压到linux下/opt目录下，cd 到/opt/zbox 执行./zbox start,可以看到 $ Start Apache success  $ Start MySQL success 开放端口80,3306端口如果，电脑访问不到禅道，有可能为80端口未开放。用到iptables设置防火墙。">
 <meta name="keywords" content="Linux安装禅道">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux 下禅道安装">
 <meta property="og:url" content="http://yoursite.com/2018/01/23/禅道安装/index.html">
 <meta property="og:site_name" content="TRY">
-<meta property="og:description" content="iptables安装项目管理系统禅道（Centos7）从禅道官网下载Linux一件安装包下载完成后，解压到linux下/opt目录下，cd 到/opt/zbox 执行./zbox start,可以看到 $ Start Apache success  $ Start MySQL success 开放端口80,3306端口如果，电脑访问不到禅道，有可能为80端口未开放。用到iptables设置防火墙">
-<meta property="og:updated_time" content="2018-03-03T04:49:53.678Z">
+<meta property="og:description" content="iptables安装项目管理系统禅道（Centos7）从禅道官网下载Linux一件安装包下载完成后，解压到linux下/opt目录下，cd 到/opt/zbox 执行./zbox start,可以看到 $ Start Apache success  $ Start MySQL success 开放端口80,3306端口如果，电脑访问不到禅道，有可能为80端口未开放。用到iptables设置防火墙。">
+<meta property="og:updated_time" content="2018-03-03T06:25:46.903Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux 下禅道安装">
-<meta name="twitter:description" content="iptables安装项目管理系统禅道（Centos7）从禅道官网下载Linux一件安装包下载完成后，解压到linux下/opt目录下，cd 到/opt/zbox 执行./zbox start,可以看到 $ Start Apache success  $ Start MySQL success 开放端口80,3306端口如果，电脑访问不到禅道，有可能为80端口未开放。用到iptables设置防火墙">
+<meta name="twitter:description" content="iptables安装项目管理系统禅道（Centos7）从禅道官网下载Linux一件安装包下载完成后，解压到linux下/opt目录下，cd 到/opt/zbox 执行./zbox start,可以看到 $ Start Apache success  $ Start MySQL success 开放端口80,3306端口如果，电脑访问不到禅道，有可能为80端口未开放。用到iptables设置防火墙。">
 
 
 
@@ -367,7 +367,10 @@
 <pre><code>$ Start Apache success
 
 $ Start MySQL success
-</code></pre><h3 id="开放端口80-3306端口"><a href="#开放端口80-3306端口" class="headerlink" title="开放端口80,3306端口"></a>开放端口80,3306端口</h3><p>如果，电脑访问不到禅道，有可能为80端口未开放。用到iptables设置防火墙</p>
+</code></pre><h3 id="开放端口80-3306端口"><a href="#开放端口80-3306端口" class="headerlink" title="开放端口80,3306端口"></a>开放端口80,3306端口</h3><p>如果，电脑访问不到禅道，有可能为80端口未开放。用到iptables设置防火墙。开放端口后如果仍不能访问，可能是SELinux导致的，</p>
+<p>关闭SElinux：</p>
+<p><strong>修改/etc/selinux/config文件中的SELINUX=””为disabled，然后重启reboot</strong></p>
+<p>自己学习也可以完全关闭防火墙：<code>systemctl stop firewalld</code></p>
 <h2 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h2><ul>
 <li>-t&lt;表&gt;：指定要操纵的表；</li>
 <li>-A：向规则链中添加条目；</li>
@@ -384,12 +387,12 @@ $ Start MySQL success
 <li>-s：指定要匹配的数据包源ip地址；</li>
 <li>-j&lt;目标&gt;：指定要跳转的目标；</li>
 <li>-i&lt;网络接口&gt;：指定数据包进入本机的网络接口；</li>
-<li>-o&lt;网络接口&gt;：指定数据包要离开本机所使用的网络接口。<h2 id="开放制定端口"><a href="#开放制定端口" class="headerlink" title="开放制定端口"></a>开放制定端口</h2></li>
+<li>-o&lt;网络接口&gt;：指定数据包要离开本机所使用的网络接口。<h2 id="开放制定端口"><a href="#开放制定端口" class="headerlink" title="开放制定端口"></a>开放制定端口</h2>(ACCEPT 必须为大写）</li>
 <li>iptables -A INPUT -s 127.0.0.1 -d 127.0.0.1 -j ACCEPT               #允许本地回环接口(即运行本机访问本机)</li>
 <li>iptables -A INPUT -m state –state ESTABLISHED,RELATED -j ACCEPT    #允许已建立的或相关连的通行</li>
 <li>iptables -A OUTPUT -j ACCEPT         #允许所有本机向外的访问</li>
 <li>iptables -A INPUT -p tcp –dport 22 -j ACCEPT    #允许访问22端口</li>
-<li>iptables -A INPUT -p tcp –dport 80 -j ACCEPT    #允许访问80端口</li>
+<li>iptables -A INPUT -p tcp –dport 80 -j ACCEPT    #允许访问80端口(也可以用-I，向规则链中插入条目）</li>
 <li>iptables -A INPUT -p tcp –dport 21 -j ACCEPT    #允许ftp服务的21端口</li>
 <li>iptables -A INPUT -p tcp –dport 20 -j ACCEPT    #允许FTP服务的20端口</li>
 <li>iptables -A INPUT -j reject       #禁止其他未允许的规则访问</li>
@@ -411,7 +414,12 @@ $ Start MySQL success
 <li>PREROUTING链：用于目标地址转换（DNAT）。</li>
 <li>POSTOUTING链：用于源地址转换（SNAT）。</li>
 </ul>
-
+<h3 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h3><p>进入/opt/zbox<br>先关闭服务<br>./zbox stop</p>
+<p>到/opt目录下,将zbox文件夹打包压缩，可以得到zbox.tar.gz文件</p>
+<pre><code>$ tar -zcvf zbox.tar.gz zbox
+</code></pre><p>用ftp工具传到要存储的地方即可.在此部署只需将压缩包解压到/opt目录下运行即</p>
+<pre><code>$ tar -zxvf zbox.tar.gz zbox
+</code></pre>
       
     </div>
 
@@ -594,7 +602,7 @@ $ Start MySQL success
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#iptables安装项目管理系统禅道（Centos7）"><span class="nav-number">1.</span> <span class="nav-text">iptables安装项目管理系统禅道（Centos7）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从禅道官网下载Linux一件安装包"><span class="nav-number">2.</span> <span class="nav-text">从禅道官网下载Linux一件安装包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开放端口80-3306端口"><span class="nav-number">3.</span> <span class="nav-text">开放端口80,3306端口</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选项"><span class="nav-number"></span> <span class="nav-text">选项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开放制定端口"><span class="nav-number"></span> <span class="nav-text">开放制定端口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#屏蔽IP"><span class="nav-number"></span> <span class="nav-text">屏蔽IP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看已添加的iptables规则"><span class="nav-number"></span> <span class="nav-text">查看已添加的iptables规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#规则链名包括"><span class="nav-number"></span> <span class="nav-text">规则链名包括</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#iptables安装项目管理系统禅道（Centos7）"><span class="nav-number">1.</span> <span class="nav-text">iptables安装项目管理系统禅道（Centos7）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从禅道官网下载Linux一件安装包"><span class="nav-number">2.</span> <span class="nav-text">从禅道官网下载Linux一件安装包</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开放端口80-3306端口"><span class="nav-number">3.</span> <span class="nav-text">开放端口80,3306端口</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选项"><span class="nav-number"></span> <span class="nav-text">选项</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开放制定端口"><span class="nav-number"></span> <span class="nav-text">开放制定端口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#屏蔽IP"><span class="nav-number"></span> <span class="nav-text">屏蔽IP</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看已添加的iptables规则"><span class="nav-number"></span> <span class="nav-text">查看已添加的iptables规则</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#规则链名包括"><span class="nav-number"></span> <span class="nav-text">规则链名包括</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#备份"><span class="nav-number">1.</span> <span class="nav-text">备份</span></a></li></ol></div>
             
 
           </div>
