@@ -100,7 +100,7 @@
 <meta property="og:url" content="http://yoursite.com/2017/06/10/Linux-常用命令/index.html">
 <meta property="og:site_name" content="TRY">
 <meta property="og:description" content="常用基本命令（Centos7）# ls  查看当前目录下文件和文件夹 # ll  查看当前目录下文件和文件夹的详细信息 # ls -lh 文件和文件的大小一k,M显示，不加h是以字节显示（-lhr正序排列，-lhv倒序排列）  # cd /home 改变目录到绝对路径的home目录下（/表示绝对定位） # cd home 到当前目录下的home路径 # cp 1.txt /home/jack 复制">
-<meta property="og:updated_time" content="2017-06-27T13:18:16.047Z">
+<meta property="og:updated_time" content="2018-03-03T04:49:53.678Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux 常用命令">
 <meta name="twitter:description" content="常用基本命令（Centos7）# ls  查看当前目录下文件和文件夹 # ll  查看当前目录下文件和文件夹的详细信息 # ls -lh 文件和文件的大小一k,M显示，不加h是以字节显示（-lhr正序排列，-lhv倒序排列）  # cd /home 改变目录到绝对路径的home目录下（/表示绝对定位） # cd home 到当前目录下的home路径 # cp 1.txt /home/jack 复制">
@@ -379,7 +379,18 @@
 <p><code># rmdir tom</code> 删除名为<code>tom</code>的文件夹，只能删除空文件夹（同 <code># rm -d</code>）<br></p>
 <p><code># rm -r tom</code> （recursive递归删除文件夹，及其包含的内容，每次删除都会有提示。<br></p>
 <p><code># rm -rf tom</code> 删除文件夹，强制删除文件夹中所有内容，不再询问<br></p>
-
+<h3 id="压缩命令"><a href="#压缩命令" class="headerlink" title="压缩命令"></a>压缩命令</h3><p>tar命令可以为linux的文件和目录创建档案。利用tar，可以为某一特定文件创建档案（备份文件），也可以在档案中改变文件，或者向档案中加入新的文件。tar最初被用来在磁带上创建档案，现在，用户可以在任何设备上创建档案。利用tar命令，可以把一大堆的文件和目录全部打包成一个文件，这对于备份文件或将几个文件组合成为一个文件以便于网络传输是非常有用的。</p>
+<p><strong>首先要弄清两个概念：打包和压缩。打包是指将一大堆文件或目录变成一个总的文件；压缩则是将一个大的文件通过一些压缩算法变成一个小文件。</strong></p>
+<p>为什么要区分这两个概念呢？这源于Linux中很多压缩程序只能针对一个文件进行压缩，这样当你想要压缩一大堆文件时，你得先将这一大堆文件先打成一个包（tar命令），然后再用压缩程序进行压缩（gzip bzip2命令）。</p>
+<p>打包压缩文件，不加z时，只打包不压缩</p>
+<pre><code>$ tar -zcvf file.tar.gz file
+</code></pre><p>解压缩文件</p>
+<pre><code>$ tar -zxvf file.tar.gz
+</code></pre><p>压缩一个tar备份文件，此时压缩文件的扩展名为.tar.gz</p>
+<pre><code>$ gzip -r log.tar
+</code></pre><p>解压缩tar.gz文件</p>
+<pre><code>$ gzip -d log.tar.gz
+</code></pre>
       
     </div>
 
@@ -431,8 +442,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/06/15/node版本管理工具nvm/" rel="prev" title="nvm-node版本管理工具">
-                nvm-node版本管理工具 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/06/15/Git-基本操作/" rel="prev" title="Git 基本操作">
+                Git 基本操作 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -505,7 +516,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -527,7 +538,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -562,7 +573,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用基本命令（Centos7）"><span class="nav-number">1.</span> <span class="nav-text">常用基本命令（Centos7）</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用基本命令（Centos7）"><span class="nav-number">1.</span> <span class="nav-text">常用基本命令（Centos7）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#压缩命令"><span class="nav-number">2.</span> <span class="nav-text">压缩命令</span></a></li></ol></div>
             
 
           </div>
@@ -585,7 +596,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

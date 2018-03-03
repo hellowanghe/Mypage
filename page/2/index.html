@@ -77,7 +77,7 @@
 <link href="/css/main.css?v=5.1.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="ftp," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -93,20 +93,15 @@
 
 
 
-<meta name="description" content="FTP 服务器简单搭建（centos7) 安装如果你的电脑是没有安装ftp。执行命令安装。 yum install vsftpd  yum install ftp 在目录/var/ftp/pub下存放共享的文件。 开启ftp服务$ systemctl start vsftpd 查看ftp服务状态$ systemctl status vsftpd 状态为active表示成功开启 文件目录在/var/">
-<meta name="keywords" content="ftp">
-<meta property="og:type" content="article">
-<meta property="og:title" content="一个简单的FTP服务器">
-<meta property="og:url" content="http://yoursite.com/2017/06/23/ftp/index.html">
+<meta name="description" content="TRY">
+<meta property="og:type" content="website">
+<meta property="og:title" content="TRY">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
 <meta property="og:site_name" content="TRY">
-<meta property="og:description" content="FTP 服务器简单搭建（centos7) 安装如果你的电脑是没有安装ftp。执行命令安装。 yum install vsftpd  yum install ftp 在目录/var/ftp/pub下存放共享的文件。 开启ftp服务$ systemctl start vsftpd 查看ftp服务状态$ systemctl status vsftpd 状态为active表示成功开启 文件目录在/var/">
-<meta property="og:image" content="https://github.com/hellowanghe/blogimg/blob/master/img/ftpstatus.PNG?raw=true">
-<meta property="og:image" content="https://github.com/hellowanghe/blogimg/blob/master/img/ftpconf.PNG?raw=true">
-<meta property="og:updated_time" content="2017-06-27T13:12:29.415Z">
+<meta property="og:description" content="TRY">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一个简单的FTP服务器">
-<meta name="twitter:description" content="FTP 服务器简单搭建（centos7) 安装如果你的电脑是没有安装ftp。执行命令安装。 yum install vsftpd  yum install ftp 在目录/var/ftp/pub下存放共享的文件。 开启ftp服务$ systemctl start vsftpd 查看ftp服务状态$ systemctl status vsftpd 状态为active表示成功开启 文件目录在/var/">
-<meta name="twitter:image" content="https://github.com/hellowanghe/blogimg/blob/master/img/ftpstatus.PNG?raw=true">
+<meta name="twitter:title" content="TRY">
+<meta name="twitter:description" content="TRY">
 
 
 
@@ -134,13 +129,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/06/23/ftp/"/>
+  <link rel="canonical" href="http://yoursite.com/page/2/"/>
 
 
 
 
 
-  <title>一个简单的FTP服务器 | TRY</title>
+  <title>TRY</title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -166,7 +161,9 @@
     
   
 
-  <div class="container sidebar-position-left page-post-detail ">
+  <div class="container sidebar-position-left 
+   page-home 
+ ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -269,9 +266,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-
-  <div id="posts" class="posts-expand">
+  <section id="posts" class="posts-expand">
     
+      
 
   
 
@@ -280,7 +277,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/23/ftp/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/09/Sublime/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Jack Wang">
@@ -297,7 +294,9 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">一个简单的FTP服务器</h1>
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/09/Sublime/" itemprop="url">Sublime</a></h1>
         
 
         <div class="post-meta">
@@ -309,8 +308,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-23T16:27:58+08:00">
-                2017-06-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-09T15:11:25+08:00">
+                2017-06-09
               </time>
             
 
@@ -332,8 +331,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/linux/" itemprop="url" rel="index">
-                    <span itemprop="name">linux</span>
+                  <a href="/categories/web/" itemprop="url" rel="index">
+                    <span itemprop="name">web</span>
                   </a>
                 </span>
 
@@ -366,93 +365,185 @@
       
 
       
-        <h1 id="FTP-服务器简单搭建"><a href="#FTP-服务器简单搭建" class="headerlink" title="FTP 服务器简单搭建"></a>FTP 服务器简单搭建</h1><p>（centos7)</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>如果你的电脑是没有安装ftp。执行命令安装。</p>
-<pre><code>yum install vsftpd
-</code></pre><hr>
-<pre><code>yum install ftp
-</code></pre><p>在目录/var/ftp/pub下存放共享的文件。</p>
-<h2 id="开启ftp服务"><a href="#开启ftp服务" class="headerlink" title="开启ftp服务"></a>开启ftp服务</h2><pre><code>$ systemctl start vsftpd
-</code></pre><h2 id="查看ftp服务状态"><a href="#查看ftp服务状态" class="headerlink" title="查看ftp服务状态"></a>查看ftp服务状态</h2><pre><code>$ systemctl status vsftpd
-</code></pre><p>状态为active表示成功开启<br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/ftpstatus.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/ftpstatus.PNG?raw=true"></p>
-<p>文件目录在<code>/var/ftp/</code>下有个<code>pub</code>文件夹，要分享的文件可以放在这里。<br><code>/etc/vsftpd/</code>下<code>vsftpd.conf</code>是配置文件。<br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/ftpconf.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/ftpconf.PNG?raw=true"></p>
-<p>如果修改成NO，在登录的时候会需要服务器密码。目录也不再是默认的目录，而是你所登录用户的目录。<br>在浏览器输入地址</p>
-<pre><code>ftp://localhost/
-</code></pre><p>或者</p>
-<pre><code>ftp://10.238.49.54/
-</code></pre><p>就可以看到ftp目录了。</p>
-<p>2017/6/27 21:12:16 </p>
+        
+          
+            <h2 id="Sublime-相关"><a href="#Sublime-相关" class="headerlink" title="Sublime 相关"></a>Sublime 相关</h2><h3 id="0-简介"><a href="#0-简介" class="headerlink" title="0 简介"></a>0 简介</h3><p>sublime是款轻量级的text编辑器，有丰富的插件。</p>
+<h3 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h3><p>Windows下，到sublime官网下载<a href="http://www.sublimetext.com" title="sublimetext" target="_blank" rel="external">http://www.sublimetext.com</a>,sublime的windows的安装包。</p>
+<h3 id="2-Package-Control"><a href="#2-Package-Control" class="headerlink" title="2.Package Control"></a>2.Package Control</h3><p>Package control 类似于一个插件包安装工具，安装了Package control就可在安装插件了!或者你可以直接下载Packagecontrol的压缩包，解压后，放在sublime的安装目录里，baidu网盘链接：<a href="http://pan.baidu.com/s/1geJjxlx" title="baidu" target="_blank" rel="external">http://pan.baidu.com/s/1geJjxlx</a> 密码：<strong>gwgn</strong>，我的是 <code>C:\Program Files\Sublime Text 3\Packages</code> ,压缩文件加压后文件夹命名为Package Control，放到上边的目录里，重启sublime即可。安装Package Control成功后，点击preferences，最下方点击package control!<br><img src="https://github.com/hellowanghe/Mypage/blob/master/img/sulime1.PNG?raw=true" alt=""><br>接着出现package control的选项，点击install Package Control<img src="https://github.com/hellowanghe/Mypage/blob/master/img/sublime2.PNG?raw=true" alt=""><br>会弹出搜索框，你可输入，选择你要安装的插件<br><img src="https://github.com/hellowanghe/Mypage/blob/master/img/sublime3.PNG?raw=true" alt=""><br>点击你要安装的插件，会自动安装，等待时间取决于你的网速了。</p>
+<h3 id="3-sublime常用插件"><a href="#3-sublime常用插件" class="headerlink" title="3.sublime常用插件"></a>3.sublime常用插件</h3><hr>
+<p><strong>1.Emmet</strong></p>
+<p>Emmet是一个自动补全插件，可以节约开发时间。</p>
+<p><strong>2.HTML-CSS_JS Prettify</strong></p>
+<p>Prettify是一个用来对齐美化代码的插件，使凌乱的代码立马变得整齐。<br>类似的插件还有Alignment，不过Alignment太过整齐，没有Prettify灵活。</p>
+<p><strong>3.Reactjs</strong></p>
+<p>适用于reactjs的开发可以快速生成代码</p>
+<p><strong>4.Snippet</strong></p>
+<p>代码补偿工具。</p>
+<p><strong>5.APICloud</strong></p>
+<p>具体可参见链接文档；<br><a href="http://docs.apicloud.com/Dev-Tools/sublime-apicloud-plugin" title="http://docs.apicloud.com/Dev-Tools/sublime-apicloud-plugin" target="_blank" rel="external">http://docs.apicloud.com/Dev-Tools/sublime-apicloud-plugin</a></p>
+<h3 id="4-sublime常用快捷方式"><a href="#4-sublime常用快捷方式" class="headerlink" title="4.sublime常用快捷方式"></a>4.sublime常用快捷方式</h3><p>Ctrl+L 选择整行（按住-继续选择下行）<br><br>Ctrl+KK 从光标处删除至行尾<br><br>Ctrl+Shift+K 删除整行<br><br>Ctrl+Shift+D 复制光标所在整行，插入在该行之前<br><br>Ctrl+J 合并行（已选择需要合并的多行时）<br><br>Ctrl+KU 改为大写<br><br>Ctrl+KL 改为小写<br><br>Ctrl+D 选词 （按住-继续选择下个相同的字符串）<br><br>Ctrl+M 光标移动至括号内开始或结束的位置<br><br>Ctrl+Shift+M 选择括号内的内容（按住-继续选择父括号）<br><br>Ctrl+/ 注释整行（如已选择内容，同“Ctrl+Shift+/”效果）<br><br>Ctrl+Shift+/ 注释已选择内容<br><br>Ctrl+Z 撤销<br><br>Ctrl+Y 恢复撤销<br><br>Ctrl+M 光标跳至对应的括号<br><br>Alt+. 闭合当前标签<br><br>Ctrl+Shift+A 选择光标位置父标签对儿<br><br>Ctrl+Shift+[ 折叠代码<br><br>Ctrl+Shift+] 展开代码<br><br>Ctrl+KT 折叠属性<br><br>Ctrl+K0 展开所有<br><br>Ctrl+U 软撤销<br><br>Ctrl+T 词互换<br><br>Tab 缩进 自动完成<br><br>Shift+Tab 去除缩进<br><br>Ctrl+Shift+↑ 与上行互换<br><br>Ctrl+Shift+↓ 与下行互换<br><br>Ctrl+K Backspace 从光标处删除至行首<br><br>Ctrl+Enter 光标后插入行<br><br>Ctrl+Shift+Enter 光标前插入行<br><br>Ctrl+F2 设置书签<br><br>F2 下一个书签<br><br>Shift+F2 上一个书签<br></p>
+<hr>
 
+          
+        
       
     </div>
 
     <div>
       
-        
-
-      
     </div>
 
     <div>
       
-        
-
-      
     </div>
 
     <div>
-      
-        
-
       
     </div>
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/ftp/" rel="tag"># ftp</a>
-          
-        </div>
+
+      
+
       
 
       
       
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2017/06/21/Apache-And-nginx/" rel="next" title="Apache And nginx">
-                <i class="fa fa-chevron-left"></i> Apache And nginx
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/07/04/MySQL/" rel="prev" title="MySQL_入门笔记">
-                MySQL_入门笔记 <i class="fa fa-chevron-right"></i>
-              </a>
-            
-          </div>
-        </div>
-      
-
-      
+        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
+    
+      
 
-    <div class="post-spread">
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/08/hello-world/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jack Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TRY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/08/hello-world/" itemprop="url">Hello World</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-08T18:43:14+08:00">
+                2017-06-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+
+          
+        
       
     </div>
-  </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+  </section>
+
+  
+  <nav class="pagination">
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+  </nav>
+
 
 
           </div>
@@ -460,10 +551,6 @@
 
 
           
-  <div class="comments" id="comments">
-    
-  </div>
-
 
         </div>
         
@@ -483,17 +570,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -555,22 +633,6 @@
 
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#FTP-服务器简单搭建"><span class="nav-number">1.</span> <span class="nav-text">FTP 服务器简单搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装"><span class="nav-number">1.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#开启ftp服务"><span class="nav-number">1.2.</span> <span class="nav-text">开启ftp服务</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#查看ftp服务状态"><span class="nav-number">1.3.</span> <span class="nav-text">查看ftp服务状态</span></a></li></ol></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -684,10 +746,10 @@
   
 
   
-  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
+    <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.1"></script>
 <script type="text/javascript" src="/js/src/post-details.js?v=5.1.1"></script>
 
-
+  
 
   
 

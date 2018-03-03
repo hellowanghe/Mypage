@@ -277,6 +277,337 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/24/vmcantfindip/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jack Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TRY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/24/vmcantfindip/" itemprop="url">vmlinux虚拟机找不到ip</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-24T18:43:14+08:00">
+                2018-01-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="虚拟机下linux没有ip（Centos7）"><a href="#虚拟机下linux没有ip（Centos7）" class="headerlink" title="虚拟机下linux没有ip（Centos7）"></a>虚拟机下linux没有ip（Centos7）</h3><p>虚拟机环境</p>
+<ul>
+<li>操作系统windows7专业版64位系统</li>
+<li>虚拟机软件VMware® Workstation 12 Pro</li>
+<li>虚拟机系统Centos7mini版</li>
+</ul>
+<p>常在虚拟机上学习linux，昨天装了一个Centos7的mini版本，试着安装禅道。可以装完后用ip address 查看不到ip地址，ip都查不到如何连接呢。</p>
+<p><img src="https://github.com/hellowanghe/blogimg/blob/master/img/vmipissue1.png?raw=true" alt=""></p>
+<p>即使配置了ip和路由也不行。在<code>/etc/sysconfig/network-scripts</code>中可以看到一个ifcfg-ens33的配置文件，用vi或vim工具打开后，编辑文件，在文件尾部增加<code>GATEWAY=10.10.10.10</code>（具体网关地址，根据自己情况填写），加上<code>IPADDR=192.168.0.1</code>则给电脑配置了固定ip。</p>
+<p>折腾了半天，上网找答案没有找到结果。桥接模式后虚拟机应该是连接到本机的物理网卡的，打开编辑菜单，选择虚拟网络编辑器，<br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/vmipissue2.png?raw=true" alt=""></p>
+<p>点击更改设置，将类型选为桥接模式，<br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/vmipissue3.png?raw=true" alt=""></p>
+<p>选择桥接到网卡时，一定注意，可以看到下拉框下有好几个网卡，大部分为虚拟网卡，这时指定选择你的电脑所用的网卡，<br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/vmipissue6.png?raw=true" alt=""></p>
+<p>如果不清楚，可到控制面板，网络连接中，查看电脑现用网卡的名字。<br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/vmipissue7.png?raw=true" alt=""></p>
+<p>点击应用，确定。</p>
+<p><img src="https://github.com/hellowanghe/blogimg/blob/master/img/vmipissue4.png?raw=true" alt=""></p>
+<p>稍等一会，vmworkstation应用完设置后，我们再在虚拟机中，查看ip会发现已经有了ip，和电脑在同一网段。<br>这会就可以在本机上访问虚拟机上的服务了。如果还访问不到，可以查看80等端口有没有开放。</p>
+<p><img src="https://github.com/hellowanghe/blogimg/blob/master/img/vmipissue5.png?raw=true" alt=""></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/01/23/禅道安装/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jack Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TRY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/01/23/禅道安装/" itemprop="url">Linux 下禅道安装</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-01-23T18:43:14+08:00">
+                2018-01-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="iptables安装项目管理系统禅道（Centos7）"><a href="#iptables安装项目管理系统禅道（Centos7）" class="headerlink" title="iptables安装项目管理系统禅道（Centos7）"></a>iptables安装项目管理系统禅道（Centos7）</h3><h3 id="从禅道官网下载Linux一件安装包"><a href="#从禅道官网下载Linux一件安装包" class="headerlink" title="从禅道官网下载Linux一件安装包"></a>从禅道官网下载Linux一件安装包</h3><p>下载完成后，解压到linux下<code>/opt</code>目录下，cd 到/opt/zbox 执行<code>./zbox start</code>,可以看到</p>
+<pre><code>$ Start Apache success
+
+$ Start MySQL success
+</code></pre><h3 id="开放端口80-3306端口"><a href="#开放端口80-3306端口" class="headerlink" title="开放端口80,3306端口"></a>开放端口80,3306端口</h3><p>如果，电脑访问不到禅道，有可能为80端口未开放。用到iptables设置防火墙</p>
+<h2 id="选项"><a href="#选项" class="headerlink" title="选项"></a>选项</h2><ul>
+<li>-t&lt;表&gt;：指定要操纵的表；</li>
+<li>-A：向规则链中添加条目；</li>
+<li>-D：从规则链中删除条目；</li>
+<li>-i：向规则链中插入条目；</li>
+<li>-R：替换规则链中的条目；</li>
+<li>-L：显示规则链中已有的条目；</li>
+<li>-F：清楚规则链中已有的条目；</li>
+<li>-Z：清空规则链中的数据包计算器和字节计数器；</li>
+<li>-N：创建新的用户自定义规则链；</li>
+<li>-P：定义规则链中的默认目标；</li>
+<li>-h：显示帮助信息；</li>
+<li>-p：指定要匹配的数据包协议类型；</li>
+<li>-s：指定要匹配的数据包源ip地址；</li>
+<li>-j&lt;目标&gt;：指定要跳转的目标；</li>
+<li>-i&lt;网络接口&gt;：指定数据包进入本机的网络接口；</li>
+<li>-o&lt;网络接口&gt;：指定数据包要离开本机所使用的网络接口。<h2 id="开放制定端口"><a href="#开放制定端口" class="headerlink" title="开放制定端口"></a>开放制定端口</h2></li>
+<li>iptables -A INPUT -s 127.0.0.1 -d 127.0.0.1 -j ACCEPT               #允许本地回环接口(即运行本机访问本机)</li>
+<li>iptables -A INPUT -m state –state ESTABLISHED,RELATED -j ACCEPT    #允许已建立的或相关连的通行</li>
+<li>iptables -A OUTPUT -j ACCEPT         #允许所有本机向外的访问</li>
+<li>iptables -A INPUT -p tcp –dport 22 -j ACCEPT    #允许访问22端口</li>
+<li>iptables -A INPUT -p tcp –dport 80 -j ACCEPT    #允许访问80端口</li>
+<li>iptables -A INPUT -p tcp –dport 21 -j ACCEPT    #允许ftp服务的21端口</li>
+<li>iptables -A INPUT -p tcp –dport 20 -j ACCEPT    #允许FTP服务的20端口</li>
+<li>iptables -A INPUT -j reject       #禁止其他未允许的规则访问</li>
+<li>iptables -A FORWARD -j REJECT     #禁止其他未允许的规则访问</li>
+</ul>
+<h2 id="屏蔽IP"><a href="#屏蔽IP" class="headerlink" title="屏蔽IP"></a>屏蔽IP</h2><ul>
+<li>iptables -I INPUT -s 123.45.6.7 -j DROP       #屏蔽单个IP的命令</li>
+<li>iptables -I INPUT -s 123.0.0.0/8 -j DROP      #封整个段即从123.0.0.1到123.255.255.254的命令</li>
+<li>iptables -I INPUT -s 124.45.0.0/16 -j DROP    #封IP段即从123.45.0.1到123.45.255.254的命令</li>
+<li>iptables -I INPUT -s 123.45.6.0/24 -j DROP    #封IP段即从123.45.6.1到123.45.6.254的命令是</li>
+</ul>
+<h2 id="查看已添加的iptables规则"><a href="#查看已添加的iptables规则" class="headerlink" title="查看已添加的iptables规则"></a>查看已添加的iptables规则</h2><ul>
+<li>iptables -L -n -v</li>
+</ul>
+<h2 id="规则链名包括"><a href="#规则链名包括" class="headerlink" title="规则链名包括"></a>规则链名包括</h2><ul>
+<li>INPUT链：处理输入数据包。</li>
+<li>OUTPUT链：处理输出数据包。</li>
+<li>PORWARD链：处理转发数据包。</li>
+<li>PREROUTING链：用于目标地址转换（DNAT）。</li>
+<li>POSTOUTING链：用于源地址转换（SNAT）。</li>
+</ul>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/09/03/富爸爸穷爸爸书摘/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1221,6 +1552,152 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/15/node版本管理工具nvm/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jack Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TRY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/15/node版本管理工具nvm/" itemprop="url">nvm-node版本管理工具</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-15T08:17:49+08:00">
+                2017-06-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/node/" itemprop="url" rel="index">
+                    <span itemprop="name">node</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="nvm出现的原因"><a href="#nvm出现的原因" class="headerlink" title="nvm出现的原因"></a>nvm出现的原因</h3><p>在nodejs的开发中，会需要用到不同的nodejs版本，<strong>现阶段node各个版本对一些软件支持不太够</strong>，js新的技术层出不穷，各种新的框架，js语言的不断更新，ES6/ES7新标准的js，nodejs也在不断更新。为了方便切换到不同的nodejs版本。</p>
+<p>淘宝的nodejs所有的镜像<br><a href="https://npm.taobao.org/mirrors/node" title="nodejs镜像" target="_blank" rel="external">https://npm.taobao.org/mirrors/node</a></p>
+<p>nvm-windows的github地址<br><a href="https://github.com/coreybutler/nvm-windows" title="nvm-windows" target="_blank" rel="external">https://github.com/coreybutler/nvm-windows</a></p>
+<p>nvm的linux版本的github地址<br><a href="https://github.com/creationix/nvm" title="nvm" target="_blank" rel="external">https://github.com/creationix/nvm</a></p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>windows下nvm的安装比较简单，最好先卸载nodejs，下载nvm的windows的安装包，像安装其他软件一样。安装完成后，可以在淘宝的npm镜像下载你所需要的不同的版本的nodejs的压缩包zip格式就行。</p>
+<p>nvm管理nodejs的目录默认在<code>C:\Users\dell\AppData\Roaming\nvm</code>，你的电脑上用户名就是你自己的，AppData有的是隐藏的，需要设置一下文件的查看方式，将其显示出来。将下载好的压缩包解压到，nvm的目录下，并重命名为<code>vx.x.x</code>即可，如图<br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/nvm1.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/nvm1.PNG?raw=true"></p>
+<p>在命令行输入</p>
+<pre><code>nvm list
+</code></pre><p>会显示可用的nodejs版本列表，当前再用版本也会显示出来。如图：<br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/nvmlist.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/nvmlist.PNG?raw=true"></p>
+<p>在命令行输入</p>
+<pre><code>nvm use 4.5.0
+</code></pre><p>nvm会自动切换到所选版本，nvm list可以看到，当前使用版本变为了4.5.0，也可用node -v查看版本是否改变。<br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/nvmuse.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/nvmuse.PNG?raw=true"></p>
+<h3 id="npm配置"><a href="#npm配置" class="headerlink" title="npm配置"></a>npm配置</h3><p>国内使用npm如果速度比较慢，可以装上cnpm，cnpm是淘宝在国内的做的镜像，10分钟更新一次。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ npm install -g cnpm --registry=https://registry.npm.taobao.org</div><div class="line"></div><div class="line">$ npm config set registry https://registry.npm.taobao.org</div><div class="line">可用以下命令查看，是否配置是否成功</div><div class="line">$ npm config get registry</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/15/Git-基本操作/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1405,152 +1882,6 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/15/node版本管理工具nvm/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jack Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="TRY">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/15/node版本管理工具nvm/" itemprop="url">nvm-node版本管理工具</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-15T08:17:49+08:00">
-                2017-06-15
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/node/" itemprop="url" rel="index">
-                    <span itemprop="name">node</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h3 id="nvm出现的原因"><a href="#nvm出现的原因" class="headerlink" title="nvm出现的原因"></a>nvm出现的原因</h3><p>在nodejs的开发中，会需要用到不同的nodejs版本，<strong>现阶段node各个版本对一些软件支持不太够</strong>，js新的技术层出不穷，各种新的框架，js语言的不断更新，ES6/ES7新标准的js，nodejs也在不断更新。为了方便切换到不同的nodejs版本。</p>
-<p>淘宝的nodejs所有的镜像<br><a href="https://npm.taobao.org/mirrors/node" title="nodejs镜像" target="_blank" rel="external">https://npm.taobao.org/mirrors/node</a></p>
-<p>nvm-windows的github地址<br><a href="https://github.com/coreybutler/nvm-windows" title="nvm-windows" target="_blank" rel="external">https://github.com/coreybutler/nvm-windows</a></p>
-<p>nvm的linux版本的github地址<br><a href="https://github.com/creationix/nvm" title="nvm" target="_blank" rel="external">https://github.com/creationix/nvm</a></p>
-<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>windows下nvm的安装比较简单，最好先卸载nodejs，下载nvm的windows的安装包，像安装其他软件一样。安装完成后，可以在淘宝的npm镜像下载你所需要的不同的版本的nodejs的压缩包zip格式就行。</p>
-<p>nvm管理nodejs的目录默认在<code>C:\Users\dell\AppData\Roaming\nvm</code>，你的电脑上用户名就是你自己的，AppData有的是隐藏的，需要设置一下文件的查看方式，将其显示出来。将下载好的压缩包解压到，nvm的目录下，并重命名为<code>vx.x.x</code>即可，如图<br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/nvm1.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/nvm1.PNG?raw=true"></p>
-<p>在命令行输入</p>
-<pre><code>nvm list
-</code></pre><p>会显示可用的nodejs版本列表，当前再用版本也会显示出来。如图：<br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/nvmlist.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/nvmlist.PNG?raw=true"></p>
-<p>在命令行输入</p>
-<pre><code>nvm use 4.5.0
-</code></pre><p>nvm会自动切换到所选版本，nvm list可以看到，当前使用版本变为了4.5.0，也可用node -v查看版本是否改变。<br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/nvmuse.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/nvmuse.PNG?raw=true"></p>
-<h3 id="npm配置"><a href="#npm配置" class="headerlink" title="npm配置"></a>npm配置</h3><p>国内使用npm如果速度比较慢，可以装上cnpm，cnpm是淘宝在国内的做的镜像，10分钟更新一次。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ npm install -g cnpm --registry=https://registry.npm.taobao.org</div><div class="line"></div><div class="line">$ npm config set registry https://registry.npm.taobao.org</div><div class="line">可用以下命令查看，是否配置是否成功</div><div class="line">$ npm config get registry</div></pre></td></tr></table></figure></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/10/Linux-常用命令/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1657,276 +1988,18 @@
 <p><code># rmdir tom</code> 删除名为<code>tom</code>的文件夹，只能删除空文件夹（同 <code># rm -d</code>）<br></p>
 <p><code># rm -r tom</code> （recursive递归删除文件夹，及其包含的内容，每次删除都会有提示。<br></p>
 <p><code># rm -rf tom</code> 删除文件夹，强制删除文件夹中所有内容，不再询问<br></p>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/09/Sublime/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jack Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="TRY">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/09/Sublime/" itemprop="url">Sublime</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-09T15:11:25+08:00">
-                2017-06-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/web/" itemprop="url" rel="index">
-                    <span itemprop="name">web</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Sublime-相关"><a href="#Sublime-相关" class="headerlink" title="Sublime 相关"></a>Sublime 相关</h2><h3 id="0-简介"><a href="#0-简介" class="headerlink" title="0 简介"></a>0 简介</h3><p>sublime是款轻量级的text编辑器，有丰富的插件。</p>
-<h3 id="1-安装"><a href="#1-安装" class="headerlink" title="1.安装"></a>1.安装</h3><p>Windows下，到sublime官网下载<a href="http://www.sublimetext.com" title="sublimetext" target="_blank" rel="external">http://www.sublimetext.com</a>,sublime的windows的安装包。</p>
-<h3 id="2-Package-Control"><a href="#2-Package-Control" class="headerlink" title="2.Package Control"></a>2.Package Control</h3><p>Package control 类似于一个插件包安装工具，安装了Package control就可在安装插件了!或者你可以直接下载Packagecontrol的压缩包，解压后，放在sublime的安装目录里，baidu网盘链接：<a href="http://pan.baidu.com/s/1geJjxlx" title="baidu" target="_blank" rel="external">http://pan.baidu.com/s/1geJjxlx</a> 密码：<strong>gwgn</strong>，我的是 <code>C:\Program Files\Sublime Text 3\Packages</code> ,压缩文件加压后文件夹命名为Package Control，放到上边的目录里，重启sublime即可。安装Package Control成功后，点击preferences，最下方点击package control!<br><img src="https://github.com/hellowanghe/Mypage/blob/master/img/sulime1.PNG?raw=true" alt=""><br>接着出现package control的选项，点击install Package Control<img src="https://github.com/hellowanghe/Mypage/blob/master/img/sublime2.PNG?raw=true" alt=""><br>会弹出搜索框，你可输入，选择你要安装的插件<br><img src="https://github.com/hellowanghe/Mypage/blob/master/img/sublime3.PNG?raw=true" alt=""><br>点击你要安装的插件，会自动安装，等待时间取决于你的网速了。</p>
-<h3 id="3-sublime常用插件"><a href="#3-sublime常用插件" class="headerlink" title="3.sublime常用插件"></a>3.sublime常用插件</h3><hr>
-<p><strong>1.Emmet</strong></p>
-<p>Emmet是一个自动补全插件，可以节约开发时间。</p>
-<p><strong>2.HTML-CSS_JS Prettify</strong></p>
-<p>Prettify是一个用来对齐美化代码的插件，使凌乱的代码立马变得整齐。<br>类似的插件还有Alignment，不过Alignment太过整齐，没有Prettify灵活。</p>
-<p><strong>3.Reactjs</strong></p>
-<p>适用于reactjs的开发可以快速生成代码</p>
-<p><strong>4.Snippet</strong></p>
-<p>代码补偿工具。</p>
-<p><strong>5.APICloud</strong></p>
-<p>具体可参见链接文档；<br><a href="http://docs.apicloud.com/Dev-Tools/sublime-apicloud-plugin" title="http://docs.apicloud.com/Dev-Tools/sublime-apicloud-plugin" target="_blank" rel="external">http://docs.apicloud.com/Dev-Tools/sublime-apicloud-plugin</a></p>
-<h3 id="4-sublime常用快捷方式"><a href="#4-sublime常用快捷方式" class="headerlink" title="4.sublime常用快捷方式"></a>4.sublime常用快捷方式</h3><p>Ctrl+L 选择整行（按住-继续选择下行）<br><br>Ctrl+KK 从光标处删除至行尾<br><br>Ctrl+Shift+K 删除整行<br><br>Ctrl+Shift+D 复制光标所在整行，插入在该行之前<br><br>Ctrl+J 合并行（已选择需要合并的多行时）<br><br>Ctrl+KU 改为大写<br><br>Ctrl+KL 改为小写<br><br>Ctrl+D 选词 （按住-继续选择下个相同的字符串）<br><br>Ctrl+M 光标移动至括号内开始或结束的位置<br><br>Ctrl+Shift+M 选择括号内的内容（按住-继续选择父括号）<br><br>Ctrl+/ 注释整行（如已选择内容，同“Ctrl+Shift+/”效果）<br><br>Ctrl+Shift+/ 注释已选择内容<br><br>Ctrl+Z 撤销<br><br>Ctrl+Y 恢复撤销<br><br>Ctrl+M 光标跳至对应的括号<br><br>Alt+. 闭合当前标签<br><br>Ctrl+Shift+A 选择光标位置父标签对儿<br><br>Ctrl+Shift+[ 折叠代码<br><br>Ctrl+Shift+] 展开代码<br><br>Ctrl+KT 折叠属性<br><br>Ctrl+K0 展开所有<br><br>Ctrl+U 软撤销<br><br>Ctrl+T 词互换<br><br>Tab 缩进 自动完成<br><br>Shift+Tab 去除缩进<br><br>Ctrl+Shift+↑ 与上行互换<br><br>Ctrl+Shift+↓ 与下行互换<br><br>Ctrl+K Backspace 从光标处删除至行首<br><br>Ctrl+Enter 光标后插入行<br><br>Ctrl+Shift+Enter 光标前插入行<br><br>Ctrl+F2 设置书签<br><br>F2 下一个书签<br><br>Shift+F2 上一个书签<br></p>
-<hr>
-
-          
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/08/hello-world/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Jack Wang">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="TRY">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/06/08/hello-world/" itemprop="url">Hello World</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-08T18:43:14+08:00">
-                2017-06-08
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
+<h3 id="压缩命令"><a href="#压缩命令" class="headerlink" title="压缩命令"></a>压缩命令</h3><p>tar命令可以为linux的文件和目录创建档案。利用tar，可以为某一特定文件创建档案（备份文件），也可以在档案中改变文件，或者向档案中加入新的文件。tar最初被用来在磁带上创建档案，现在，用户可以在任何设备上创建档案。利用tar命令，可以把一大堆的文件和目录全部打包成一个文件，这对于备份文件或将几个文件组合成为一个文件以便于网络传输是非常有用的。</p>
+<p><strong>首先要弄清两个概念：打包和压缩。打包是指将一大堆文件或目录变成一个总的文件；压缩则是将一个大的文件通过一些压缩算法变成一个小文件。</strong></p>
+<p>为什么要区分这两个概念呢？这源于Linux中很多压缩程序只能针对一个文件进行压缩，这样当你想要压缩一大堆文件时，你得先将这一大堆文件先打成一个包（tar命令），然后再用压缩程序进行压缩（gzip bzip2命令）。</p>
+<p>打包压缩文件，不加z时，只打包不压缩</p>
+<pre><code>$ tar -zcvf file.tar.gz file
+</code></pre><p>解压缩文件</p>
+<pre><code>$ tar -zxvf file.tar.gz
+</code></pre><p>压缩一个tar备份文件，此时压缩文件的扩展名为.tar.gz</p>
+<pre><code>$ gzip -r log.tar
+</code></pre><p>解压缩tar.gz文件</p>
+<pre><code>$ gzip -d log.tar.gz
+</code></pre>
           
         
       
@@ -1963,6 +2036,10 @@
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -2005,7 +2082,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">12</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -2027,7 +2104,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">9</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -2069,7 +2146,7 @@
         <div class="copyright" >
   
   &copy; 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2018</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
