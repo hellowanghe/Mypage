@@ -277,6 +277,312 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/15/node版本管理工具nvm/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jack Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TRY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/15/node版本管理工具nvm/" itemprop="url">nvm-node版本管理工具</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-15T08:17:49+08:00">
+                2017-06-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/node/" itemprop="url" rel="index">
+                    <span itemprop="name">node</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="nvm出现的原因"><a href="#nvm出现的原因" class="headerlink" title="nvm出现的原因"></a>nvm出现的原因</h3><p>在nodejs的开发中，会需要用到不同的nodejs版本，<strong>现阶段node各个版本对一些软件支持不太够</strong>，js新的技术层出不穷，各种新的框架，js语言的不断更新，ES6/ES7新标准的js，nodejs也在不断更新。为了方便切换到不同的nodejs版本。</p>
+<p>淘宝的nodejs所有的镜像<br><a href="https://npm.taobao.org/mirrors/node" title="nodejs镜像" target="_blank" rel="external">https://npm.taobao.org/mirrors/node</a></p>
+<p>nvm-windows的github地址<br><a href="https://github.com/coreybutler/nvm-windows" title="nvm-windows" target="_blank" rel="external">https://github.com/coreybutler/nvm-windows</a></p>
+<p>nvm的linux版本的github地址<br><a href="https://github.com/creationix/nvm" title="nvm" target="_blank" rel="external">https://github.com/creationix/nvm</a></p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><p>windows下nvm的安装比较简单，最好先卸载nodejs，下载nvm的windows的安装包，像安装其他软件一样。安装完成后，可以在淘宝的npm镜像下载你所需要的不同的版本的nodejs的压缩包zip格式就行。</p>
+<p>nvm管理nodejs的目录默认在<code>C:\Users\dell\AppData\Roaming\nvm</code>，你的电脑上用户名就是你自己的，AppData有的是隐藏的，需要设置一下文件的查看方式，将其显示出来。将下载好的压缩包解压到，nvm的目录下，并重命名为<code>vx.x.x</code>即可，如图<br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/nvm1.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/nvm1.PNG?raw=true"></p>
+<p>在命令行输入</p>
+<pre><code>nvm list
+</code></pre><p>会显示可用的nodejs版本列表，当前再用版本也会显示出来。如图：<br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/nvmlist.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/nvmlist.PNG?raw=true"></p>
+<p>在命令行输入</p>
+<pre><code>nvm use 4.5.0
+</code></pre><p>nvm会自动切换到所选版本，nvm list可以看到，当前使用版本变为了4.5.0，也可用node -v查看版本是否改变。<br><img src="https://github.com/hellowanghe/blogimg/blob/master/img/nvmuse.PNG?raw=true" alt="https://github.com/hellowanghe/blogimg/blob/master/img/nvmuse.PNG?raw=true"></p>
+<h3 id="npm配置"><a href="#npm配置" class="headerlink" title="npm配置"></a>npm配置</h3><p>国内使用npm如果速度比较慢，可以装上cnpm，cnpm是淘宝在国内的做的镜像，10分钟更新一次。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ npm install -g cnpm --registry=https://registry.npm.taobao.org</div><div class="line"></div><div class="line">$ npm config set registry https://registry.npm.taobao.org</div><div class="line">可用以下命令查看，是否配置是否成功</div><div class="line">$ npm config get registry</div></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/10/Linux-常用命令/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Jack Wang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TRY">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/10/Linux-常用命令/" itemprop="url">Linux 常用命令</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-10T18:43:14+08:00">
+                2017-06-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h3 id="常用基本命令（Centos7）"><a href="#常用基本命令（Centos7）" class="headerlink" title="常用基本命令（Centos7）"></a>常用基本命令（Centos7）</h3><p><code># ls</code>  查看当前目录下文件和文件夹<br></p>
+<p><code># ll</code>  查看当前目录下文件和文件夹的详细信息<br></p>
+<p><code># ls -lh</code> 文件和文件的大小一k,M显示，不加h是以字节显示（<code>-lhr</code>正序排列，<code>-lhv</code>倒序排列） <br></p>
+<p><code># cd /home</code> 改变目录到绝对路径的home目录下（<code>/</code>表示绝对定位）<br></p>
+<p><code># cd home</code> 到当前目录下的<code>home</code>路径<br></p>
+<p><code># cp 1.txt /home/jack</code> 复制名叫<code>1.txt</code>的文件到<code>/home/jack</code>目录下<br></p>
+<p><code># cp one.txt /home/jack/two.txt</code> 复制名叫<code>one.txt</code>的文件到<code>/home/jack</code>下并重命名为<code>two.txt</code><br></p>
+<p><code># mv one.txt three.txt</code> 将名为<code>one.txt</code>的文件重命名为<code>three.txt</code><br></p>
+<p><code># mv one.txt /root</code> 将名为<code>one.txt</code>的文件移动到<code>/root</code>目录下<br></p>
+<p><code># mkdir tom</code> 新建名为<code>tom</code>的目录（文件夹）<br></p>
+<p><code># touch main.java</code> 新建名为<code>main</code>的<code>java</code>格式文件<br></p>
+<p><code># touch book.txt</code> 新建名为<code>book</code>的<code>txt</code>格式文件<br></p>
+<p><code># rm one.txt</code> 删除名为<code>one.txt</code>的文件，（rm意为remove）<br></p>
+<p><code># rmdir tom</code> 删除名为<code>tom</code>的文件夹，只能删除空文件夹（同 <code># rm -d</code>）<br></p>
+<p><code># rm -r tom</code> （recursive递归删除文件夹，及其包含的内容，每次删除都会有提示。<br></p>
+<p><code># rm -rf tom</code> 删除文件夹，强制删除文件夹中所有内容，不再询问<br></p>
+<h3 id="压缩命令"><a href="#压缩命令" class="headerlink" title="压缩命令"></a>压缩命令</h3><p>tar命令可以为linux的文件和目录创建档案。利用tar，可以为某一特定文件创建档案（备份文件），也可以在档案中改变文件，或者向档案中加入新的文件。tar最初被用来在磁带上创建档案，现在，用户可以在任何设备上创建档案。利用tar命令，可以把一大堆的文件和目录全部打包成一个文件，这对于备份文件或将几个文件组合成为一个文件以便于网络传输是非常有用的。</p>
+<p><strong>首先要弄清两个概念：打包和压缩。打包是指将一大堆文件或目录变成一个总的文件；压缩则是将一个大的文件通过一些压缩算法变成一个小文件。</strong></p>
+<p>为什么要区分这两个概念呢？这源于Linux中很多压缩程序只能针对一个文件进行压缩，这样当你想要压缩一大堆文件时，你得先将这一大堆文件先打成一个包（tar命令），然后再用压缩程序进行压缩（gzip bzip2命令）。</p>
+<p>打包压缩文件，不加z时，只打包不压缩</p>
+<pre><code>$ tar -zcvf file.tar.gz file
+</code></pre><p>解压缩文件</p>
+<pre><code>$ tar -zxvf file.tar.gz
+</code></pre><p>压缩一个tar备份文件，此时压缩文件的扩展名为.tar.gz</p>
+<pre><code>$ gzip -r log.tar
+</code></pre><p>解压缩tar.gz文件</p>
+<pre><code>$ gzip -d log.tar.gz
+</code></pre>
+          
+        
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/09/Sublime/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -586,7 +892,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">14</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -608,7 +914,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
