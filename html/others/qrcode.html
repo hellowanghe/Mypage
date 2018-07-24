@@ -7,8 +7,15 @@
 <script type="text/javascript" src="http://static.runoob.com/assets/jquery/2.0.3/jquery.min.js"></script>
 <script type="text/javascript" src="http://static.runoob.com/assets/qrcode/qrcode.min.js"></script>
 </head>
+<style>
+	img{
+		    border: 5px solid;
+    padding: 9px;
+	}
+</style>
 <body>
-<input id="text" type="text" value="http://www.runoob.com" style="width:80%;height:40px" /><br />
+<input id="text" type="text" placeholder="请输入内容" style="width:80%;height:40px" /><br />
+<input type="button" id="go" value="生成二维码" style="margin-top: 10px; " />
 <div id="qrcode" style="width:100px; height:100px; margin-top:15px;"></div>
 
 <script type="text/javascript">
@@ -31,15 +38,9 @@ function makeCode () {
 
 makeCode();
 
-$("#text").
-	on("blur", function () {
+$("#go").on("click", function () {
 		makeCode();
-	}).
-	on("keydown", function (e) {
-		if (e.keyCode == 13) {
-			makeCode();
-		}
-	});
+	})
 </script>
 </body>
 </html>
