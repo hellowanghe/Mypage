@@ -1,46 +1,134 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="ko" lang="ko">
+
 <head>
-<title>Javascript 二维码生成库：QRCode</title>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
-<script type="text/javascript" src="http://static.runoob.com/assets/jquery/2.0.3/jquery.min.js"></script>
-<script type="text/javascript" src="http://static.runoob.com/assets/qrcode/qrcode.min.js"></script>
+    <title>Javascript 二维码生成库：QRCode</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <script type="text/javascript" src="http://static.runoob.com/assets/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://static.runoob.com/assets/qrcode/qrcode.min.js"></script>
+    <script src="https://cdn.bootcss.com/jsbarcode/3.9.0/JsBarcode.all.min.js"></script>
 </head>
 <style>
-	img{
-		    border: 5px solid;
+img {
+    border: 5px solid;
     padding: 9px;
-	}
-</style>
-<body>
-<input id="text" type="text" placeholder="请输入内容" style="width:80%;height:40px" /><br />
-<input type="button" id="go" value="生成二维码" style="margin-top: 10px; " />
-<div id="qrcode" style="width:100px; height:100px; margin-top:15px;"></div>
-
-<script type="text/javascript">
-var qrcode = new QRCode(document.getElementById("qrcode"), {
-	width : 200,
-	height : 200
-});
-
-function makeCode () {		
-	var elText = document.getElementById("text");
-	
-	// if (!elText.value) {
-	// 	alert("Input a text");
-	// 	elText.focus();
-	// 	return;
-	// }
-	
-	qrcode.makeCode(elText.value);
 }
+</style>
 
-makeCode();
+<body>
+    <div>
+        <input id="text" type="text" placeholder="请输入内容" style="width:80%;height:40px" />
+        <br />
+        <input type="button" id="go" value="生成二维码" style="margin-top: 10px; " />
+        <div id="qrcode" style="width:100px; margin-top:15px;"></div>
+    </div>
+    <script type="text/javascript">
+    var qrcode = new QRCode(document.getElementById("qrcode"), {
+        width: 200,
+        height: 200
+    });
 
-$("#go").on("click", function () {
-		makeCode();
-	})
-</script>
+    function makeCode() {
+        var elText = document.getElementById("text");
+
+        // if (!elText.value) {
+        // 	alert("Input a text");
+        // 	elText.focus();
+        // 	return;
+        // }
+
+        qrcode.makeCode(elText.value);
+    }
+
+    makeCode();
+
+    $("#go").on("click", function() {
+        makeCode();
+    })
+    </script>
+    <hr />
+    <h2>条形码工具</h2>
+    <div>
+        <div style="margin:10px">
+            <input id="src" value=""></input>
+            <br/>
+            <input type="button" id="clear2" value="清空" />
+            <input type="button" onclick='code128()' value="code128()">
+            <input type="button" onclick='ean13()' value="ean13">
+            <input type="button" onclick='ean8()' value="ean8">
+            <input type="button" onclick='ean5()' value="ean5">
+            <input type="button" onclick='ean2()' value="ean2">
+            <input type="button" onclick='upca()' value="upca">
+            <input type="button" onclick='code39()' value="code39">
+            <input type="button" onclick='itf14()' value="itf14">
+            <input type="button" onclick='msi()' value="msi">
+            <input type="button" onclick='pharmacode()' value="pharmacode">
+            <div>
+                <svg id="bcTarget"></svg>
+            </div>
+        </div>
+        <script type="text/javascript">
+        $("#clear2").on("click", function() {
+            $("#src").val("");
+        });
+
+        function inputval() {
+            var a = $("#src").val();
+            return a;
+        }
+
+        function code128() {
+            var i = inputval();
+            JsBarcode("#bcTarget", i);
+        }
+
+        function ean13() {
+            var i = inputval();
+            JsBarcode("#bcTarget", i, { format: "ean13" });
+        }
+
+        function ean8() {
+            var i = inputval();
+            JsBarcode("#bcTarget", i, { format: "ean8" });
+        }
+
+        function ean5() {
+            var i = inputval();
+            JsBarcode("#bcTarget", i, { format: "ean5" });
+        }
+
+        function ean2() {
+            var i = inputval();
+            JsBarcode("#bcTarget", i, { format: "ean2" });
+        }
+
+        function upca() {
+            var i = inputval();
+            JsBarcode("#bcTarget", i, { format: "upc" });
+        }
+
+        function code39() {
+            var i = inputval();
+            JsBarcode("#bcTarget", i, { format: "code39" });
+        }
+
+        function itf14() {
+            var i = inputval();
+            JsBarcode("#bcTarget", i, { format: "itf14" });
+        }
+
+        function msi() {
+            var i = inputval();
+            JsBarcode("#bcTarget", i, { format: "msi" });
+        }
+
+        function pharmacode() {
+            var i = inputval();
+            JsBarcode("#bcTarget", i, { format: "pharmacode" });
+        }
+        </script>
+    </div>
 </body>
+
 </html>
