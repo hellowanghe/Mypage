@@ -8,19 +8,34 @@
     <script type="text/javascript" src="http://static.runoob.com/assets/jquery/2.0.3/jquery.min.js"></script>
     <script type="text/javascript" src="http://static.runoob.com/assets/qrcode/qrcode.min.js"></script>
     <script src="https://cdn.bootcss.com/jsbarcode/3.9.0/JsBarcode.all.min.js"></script>
+    <link href="https://cdn.bootcss.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <style>
 img {
     border: 5px solid;
     padding: 9px;
 }
+.btn{
+	margin-bottom: 10px;
+	margin-right: 10px;
+}
+/*#text,#src{
+border: 2px solid;
+    padding: 3px 10px;
+    outline: 0;
+    font-size: 20px;	
+}
+*/
 </style>
 
 <body>
-    <div>
-        <input id="text" type="text" placeholder="请输入内容" style="width:80%;height:40px" />
+	<h2>二维码工具</h2>
+    <div style="margin:10px">
+
+        <input id="text" class="form-control" type="text" placeholder="请输入内容" style="height:40px" />
         <br />
-        <input type="button" id="go" value="生成二维码" style="margin-top: 10px; " />
+        <input class="btn btn-success"type="button" id="go" value="生成二维码" />
+        <input class="btn btn-success" type="button" id="clear1" value="清空" />
         <div id="qrcode" style="width:100px; margin-top:15px;"></div>
     </div>
     <script type="text/javascript">
@@ -51,19 +66,19 @@ img {
     <h2>条形码工具</h2>
     <div>
         <div style="margin:10px">
-            <input id="src" value=""></input>
+            <input id="src" class="form-control" value=""  placeholder="请输入内容"></input>
             <br/>
-            <input type="button" id="clear2" value="清空" />
-            <input type="button" onclick='code128()' value="code128()">
-            <input type="button" onclick='ean13()' value="ean13">
-            <input type="button" onclick='ean8()' value="ean8">
-            <input type="button" onclick='ean5()' value="ean5">
-            <input type="button" onclick='ean2()' value="ean2">
-            <input type="button" onclick='upca()' value="upca">
-            <input type="button" onclick='code39()' value="code39">
-            <input type="button" onclick='itf14()' value="itf14">
-            <input type="button" onclick='msi()' value="msi">
-            <input type="button" onclick='pharmacode()' value="pharmacode">
+            <input class="btn btn-success" type="button" id="clear2" value="清空" />
+            <input class="btn btn-success" type="button" onclick='code128()' value="code128()">
+            <input class="btn btn-success" type="button" onclick='ean13()' value="ean13">
+            <input class="btn btn-success" type="button" onclick='ean8()' value="ean8">
+            <input class="btn btn-success" type="button" onclick='ean5()' value="ean5">
+            <input class="btn btn-success" type="button" onclick='ean2()' value="ean2">
+            <input class="btn btn-success" type="button" onclick='upca()' value="upca">
+            <input class="btn btn-success" type="button" onclick='code39()' value="code39">
+            <input class="btn btn-success" type="button" onclick='itf14()' value="itf14">
+            <input class="btn btn-success" type="button" onclick='msi()' value="msi">
+            <input class="btn btn-success" type="button" onclick='pharmacode()' value="pharmacode">
             <div>
                 <svg id="bcTarget"></svg>
             </div>
@@ -71,6 +86,9 @@ img {
         <script type="text/javascript">
         $("#clear2").on("click", function() {
             $("#src").val("");
+        });
+        $("#clear1").on("click", function() {
+            $("#text").val("");
         });
 
         function inputval() {
