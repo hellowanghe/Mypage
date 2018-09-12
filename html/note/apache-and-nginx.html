@@ -2,18 +2,18 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Document</title>
-    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
-    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+   <!--  <link rel="stylesheet" href="/css/base.css"> -->
 </head>
 
 <body>
-    <div id="nav-counter">
-        <nav-counter></nav-counter>
-    </div>
-    <hr>
-    <div id="src-counter">
+
+    <div class="container-fluid">
+        <div class="row-fluid">
         <h1>学习笔记</h1>学习笔记
         <p>主流的web服务器软件，一个是Apache HTTP Server，一个是Nginx。Nginx是款轻量级的web服务器和反向代理服务器软件，处理静态请求有极高的性能，国内的淘宝，百度，微博都在使用。 使用系统为CentOS7，不同系统可能有差易
         </p>
@@ -92,6 +92,7 @@
    <code>$ ln -s /lib64/libpcre.so.1.2.0 /lib64/libpcre.so.0</code>
    <h1>Windows下的Nginx</h1>
    <p>windows的下的Nginx比较简单，到nginx的官网下载，nginx的windows压缩包，解压到一个目录下，最好是英文的目录。打开cmd命令行 进入到nginx的目录，敲入 </p> <code>nginx</code>或者 <code>start nginx</code><p>然后，在浏览器打开localhost就可以看到nginx的页面了。关掉dos窗口，nginx会在后台运行。 若要停止，命令行进入，nginx所在目录，运行 <code>nginx -s stop</code></p>
+   </div>
     </div>
 </body>
 <script src="/js/nav.js"></script>
