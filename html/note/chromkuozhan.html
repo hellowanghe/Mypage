@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>note</title>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/base.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="col-md-10 col-md-offset-1">
+                <ul class="nav nav-tabs">
+                    <li role="presentation"><a href="/">Home</a></li>
+                    <li role="presentation"><a href="/html/life">life</a></li>
+                    <li role="presentation" class="active"><a href="/html/note">note</a></li>
+                    <li role="presentation"><a href="/html/others/">Others</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="col-md-10 col-md-offset-1">
+                <h1>Chrome Package-extensions</h1>
+                <p>在使用谷歌的Chrome的时候，原本有很多插件可以使用，由于众所周知的原因，国内访问不到浏览器的应用商店。想分享插件不知如何是好，在网络上搜索一下，Chrome有一个打包扩展程序的功能，可以将下载的插件打包成
+                    <kbd>crx</kbd>格式文件。</p>
+                <p>
+                    首先，在谷歌浏览器中输入地址<code>chrome://extensions/</code>，即可打开扩展程序管理，将右上角的开发者模式打开后，可以看到浏览器上所安装的插件。还可以看到有`打包扩展程序`的功能</p>
+                <p>
+                    <img src="https://raw.githubusercontent.com/hellowanghe/blogimg/master/chromep/chromep1.png" alt="" class="img-responsive">
+                </p>
+                <p>
+                    点击打包扩展程序，可以看见弹出框，让我们输入扩展程序的地址。
+                    <img src="https://raw.githubusercontent.com/hellowanghe/blogimg/master/chromep/chromep3.png" alt="" class="img-responsive">
+                </p>
+                <p>
+                    Chrome插件的地址一般为。
+                    <code>C:\Users\dell\AppData\Local\Google\Chrome\User Data\Default\Extensions\</code> 用户下为你自己的用户名，自己根据情况修改。在资源管理器中输入地址，可以看到Extensions目录下边，我们所安装的插件，文件夹的名称是插件的ID，在第一张图片中可以看到，每个插件的ID，ID所对应的文件夹就是该扩展程序的文件夹，可以看到上图，复制扩展程序目录的时候，一定把版本号地址也带过去
+                </p>
+                <p>
+                    <code>C:\Users\dell\AppData\Local\Google\Chrome\User Data\Default\Extensions\mooikfkahbdckldjjndioackbalphokd\1.0.3.0_0</code>
+                    <img src="https://raw.githubusercontent.com/hellowanghe/blogimg/master/chromep/chromep2.png" alt="" class="img-responsive"> </p>
+                <p>然后点击打包扩展程序，提示已创建。 </p>
+                <p><img src="https://raw.githubusercontent.com/hellowanghe/blogimg/master/chromep/chromep4.png" alt="" class="img-responsive"></p>
+                <p>此时我们到<code>C:\Users\dell\AppData\Local\Google\Chrome\User Data\Default\Extensions\mooikfkahbdckldjjndioackbalphokd\1.0.3.0_0</code></p>
+                <p>目录下可以看到打包好的插件。</p>
+                <p> <img src="https://raw.githubusercontent.com/hellowanghe/blogimg/master/chromep/chromep5.png" alt="" class="img-responsive"></p>
+                <p>安装的时候，只需打开chrome浏览器输入chrome://extensions，然后将crx文件拖拽过去，点击添加扩展程序即可，不再赘述。</p>
+                <p>
+            </div>
+        </div>
+</body>
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</html>

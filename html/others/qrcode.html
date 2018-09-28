@@ -9,27 +9,57 @@
     <script type="text/javascript" src="http://static.runoob.com/assets/qrcode/qrcode.min.js"></script>
     <script src="https://cdn.bootcss.com/jsbarcode/3.9.0/JsBarcode.all.min.js"></script>
     <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/base.css">
 </head>
 <style>
 img {
     border: 5px solid;
     padding: 9px;
 }
-.btn{
-	margin-bottom: 10px;
-	margin-right: 10px;
+
+.btn {
+    margin-bottom: 10px;
+    margin-right: 10px;
 }
 </style>
 
 <body>
-	<h2>二维码工具</h2>
-    <div style="margin:10px">
-
-        <input autocomplete="off" id="text" class="form-control" type="text" placeholder="请输入内容" style="height:40px" value="12345" />
-        <br />
-        <input class="btn btn-success"type="button" id="go" value="生成二维码" />
-        <input class="btn btn-success" type="button" id="clear1" value="清空" />
-        <div id="qrcode" style="width:100px; margin-top:15px;"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <h2>二维码工具</h2>
+                <div style="margin:10px">
+                    <input autocomplete="off" id="text" class="form-control" type="text" placeholder="请输入内容" style="height:40px" value="12345" />
+                    <br />
+                    <input class="btn btn-success" type="button" id="go" value="生成二维码" />
+                    <input class="btn btn-success" type="button" id="clear1" value="清空" />
+                    <div id="qrcode" style="width:100px; margin-top:15px;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-10">
+                <h2>条形码工具</h2>
+                <div style="margin:10px">
+                    <input autocomplete="off" id="src" class="form-control" value="" placeholder="请输入内容"></input>
+                    <br/>
+                    <input class="btn btn-success" type="button" id="clear2" value="清空" />
+                    <input class="btn btn-success" type="button" onclick='code128()' value="code128">
+                    <input class="btn btn-success" type="button" onclick='ean13()' value="ean13">
+                    <input class="btn btn-success" type="button" onclick='ean8()' value="ean8">
+                    <input class="btn btn-success" type="button" onclick='ean5()' value="ean5">
+                    <input class="btn btn-success" type="button" onclick='ean2()' value="ean2">
+                    <input class="btn btn-success" type="button" onclick='upca()' value="upca">
+                    <input class="btn btn-success" type="button" onclick='code39()' value="code39">
+                    <input class="btn btn-success" type="button" onclick='itf14()' value="itf14">
+                    <input class="btn btn-success" type="button" onclick='msi()' value="msi">
+                    <input class="btn btn-success" type="button" onclick='pharmacode()' value="pharmacode">
+                    <div>
+                        <svg id="bcTarget"></svg>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <script type="text/javascript">
     var qrcode = new QRCode(document.getElementById("qrcode"), {
@@ -40,9 +70,9 @@ img {
     function makeCode() {
         var elText = document.getElementById("text");
         if (!elText.value) {
-      alert("请输入文本\nPlease Input a text");
-     elText.focus();
-       	return;
+            alert("请输入文本\nPlease Input a text");
+            elText.focus();
+            return;
         }
         qrcode.makeCode(elText.value);
     }
@@ -53,82 +83,70 @@ img {
         makeCode();
     })
     </script>
+    <script type="text/javascript">
+    $("#clear2").on("click", function() {
+        $("#src").val("");
+    });
+    $("#clear1").on("click", function() {
+        $("#text").val("");
+    });
+
+    function inputval() {
+        var a = $("#src").val();
+        return a;
+    }
+
+    function code128() {
+        var i = inputval();
+        JsBarcode("#bcTarget", i);
+    }
+
+    function ean13() {
+        var i = inputval();
+        JsBarcode("#bcTarget", i, { format: "ean13" });
+    }
+
+    function ean8() {
+        var i = inputval();
+        JsBarcode("#bcTarget", i, { format: "ean8" });
+    }
+
+    function ean5() {
+        var i = inputval();
+        JsBarcode("#bcTarget", i, { format: "ean5" });
+    }
+
+    function ean2() {
+        var i = inputval();
+        JsBarcode("#bcTarget", i, { format: "ean2" });
+    }
+
+    function upca() {
+        var i = inputval();
+        JsBarcode("#bcTarget", i, { format: "upc" });
+    }
+
+    function code39() {
+        var i = inputval();
+        JsBarcode("#bcTarget", i, { format: "code39" });
+    }
+
+    function itf14() {
+        var i = inputval();
+        JsBarcode("#bcTarget", i, { format: "itf14" });
+    }
+
+    function msi() {
+        var i = inputval();
+        JsBarcode("#bcTarget", i, { format: "msi" });
+    }
+
+    function pharmacode() {
+        var i = inputval();
+        JsBarcode("#bcTarget", i, { format: "pharmacode" });
+    }
+    </script>
     <hr />
-    <h2>条形码工具</h2>
-    <div>
-        <div style="margin:10px">
-            <input   autocomplete="off" id="src" class="form-control" value=""  placeholder="请输入内容"></input>
-            <br/>
-            <input class="btn btn-success" type="button" id="clear2" value="清空" />
-            <input class="btn btn-success" type="button" onclick='code128()' value="code128">
-            <input class="btn btn-success" type="button" onclick='ean13()' value="ean13">
-            <input class="btn btn-success" type="button" onclick='ean8()' value="ean8">
-            <input class="btn btn-success" type="button" onclick='ean5()' value="ean5">
-            <input class="btn btn-success" type="button" onclick='ean2()' value="ean2">
-            <input class="btn btn-success" type="button" onclick='upca()' value="upca">
-            <input class="btn btn-success" type="button" onclick='code39()' value="code39">
-            <input class="btn btn-success" type="button" onclick='itf14()' value="itf14">
-            <input class="btn btn-success" type="button" onclick='msi()' value="msi">
-            <input class="btn btn-success" type="button" onclick='pharmacode()' value="pharmacode">
-            <div>
-                <svg id="bcTarget"></svg>
-            </div>
-        </div>
-        <script type="text/javascript">
-        $("#clear2").on("click", function() {
-            $("#src").val("");
-        });
-        $("#clear1").on("click", function() {
-            $("#text").val("");
-        });
-
-        function inputval() {
-            var a = $("#src").val();
-            return a;
-        }
-
-        function code128() {
-            var i = inputval();
-            JsBarcode("#bcTarget", i);
-        }
-        function ean13() {
-            var i = inputval();
-            JsBarcode("#bcTarget", i, { format: "ean13" });
-        }
-        function ean8() {
-            var i = inputval();
-            JsBarcode("#bcTarget", i, { format: "ean8" });
-        }
-        function ean5() {
-            var i = inputval();
-            JsBarcode("#bcTarget", i, { format: "ean5" });
-        }
-        function ean2() {
-            var i = inputval();
-            JsBarcode("#bcTarget", i, { format: "ean2" });
-        }
-        function upca() {
-            var i = inputval();
-            JsBarcode("#bcTarget", i, { format: "upc" });
-        }
-        function code39() {
-            var i = inputval();
-            JsBarcode("#bcTarget", i, { format: "code39" });
-        }
-        function itf14() {
-            var i = inputval();
-            JsBarcode("#bcTarget", i, { format: "itf14" });
-        }
-        function msi() {
-            var i = inputval();
-            JsBarcode("#bcTarget", i, { format: "msi" });
-        }
-        function pharmacode() {
-            var i = inputval();
-            JsBarcode("#bcTarget", i, { format: "pharmacode" });
-        }
-        </script>
-    </div>
 </body>
 
 </html>
