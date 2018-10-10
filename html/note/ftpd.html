@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>note</title>
+    <link href="/css/bootstrap3.3.7.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="col-md-10 col-md-offset-1">
+                <ul class="nav nav-tabs">
+                    <li role="presentation"><a href="/">Home</a></li>
+                    <li role="presentation"><a href="/html/life">life</a></li>
+                    <li role="presentation" class="active"><a href="/html/note">note</a></li>
+                    <li role="presentation"><a href="/html/others/">Others</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div class="col-md-10 col-md-offset-1">
+                <h1>FTP服务器简单搭建(linux-centos7)</h1><span>2017-06-23 16:27:58</span>
+                <h2>安装</h2>
+                <p>如果你的电脑是没有安装ftp。执行命令安装。
+                <pre>yum install vsftpd</pre>
+                <pre>yum install ftp</pre>
+                
+                在目录<code>/var/ftp/pub</code>下存放共享的文件。
+                <h2></h2>开启ftp服务
+                <pre>systemctl start vsftpd</pre>
+                <h2>查看ftp服务状态</h2>
+                <pre>systemctl status vsftpd</pre>
+                状态为active表示成功开启
+                <img src="https://github.com/hellowanghe/blogimg/blob/master/img/ftpstatus.PNG?raw=true" alt="" class="img-responsive">
+               
+                文件目录在<code>/var/ftp/</code>下有个<code>pub</code>`文件夹，要分享的文件可以放在这里。
+                <code>/etc/vsftpd/</code>中vsftpd.conf`是配置文件。<img src="https://github.com/hellowanghe/blogimg/blob/master/img/ftpconf.PNG?raw=true" alt="" class="img-responsive">
+                如果修改成NO，在登录的时候会需要服务器密码。目录也不再是默认的目录，而是你所登录用户的目录。
+                在浏览器输入地址
+                <kbd>ftp://localhost/</kbd>or <kbd>ftp://10.238.49.54/</kbd>在浏览器中
+                就可以看到ftp目录了。
+                </p>
+            </div>
+        </div>
+</body>
+<script src="/js/jquery1.12.4.min.js"></script>
+<script src="/js/bootstrap3.3.7.min.js"></script>
+
+</html>
