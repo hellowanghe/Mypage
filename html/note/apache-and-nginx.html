@@ -59,7 +59,7 @@
         </p>
         <h3>启动&软连接&基本命令</h3>
         <h4>软链接</h4>
-        <p>由于`nginx`命令没有加到系统路径，所以启动的时候要输入,<code>$ /usr/local/nginx/sbin/nginx</code>这么一大串完整路径，为了方便， 可以给nginx加一个软连接到bin目录下，就是一个程序的快捷方式，这样当你在命令行ngnix的时候就不会提示`no command`了。<code>ln -s /usr/local/nginx/sbin/nginx /bin/nginx</code>(ln -s 源文件 目标文件）这样就在bin目录下添加了一个软链接，到`bin`目录下用`ll`命令查看`nginx`是这样的，如图<img class="img-responsive" src="https://github.com/hellowanghe/blogimg/blob/master/img/nginxln.PNG?raw=true" alt="">可以发现，nginx指向nginx所在的目录。</p>
+        <p>由于`nginx`命令没有加到系统路径，所以启动的时候要输入,<code>$ /usr/local/nginx/sbin/nginx</code>这么一大串完整路径，为了方便， 可以给nginx加一个软连接到bin目录下，就是一个程序的快捷方式，这样当你在命令行ngnix的时候就不会提示`no command`了。<code>ln -s /usr/local/nginx/sbin/nginx /bin/nginx</code>(ln -s 源文件 目标文件）这样就在bin目录下添加了一个软链接，到`bin`目录下用`ll`命令查看`nginx`是这样的，如图<img class="img-responsive" src="/img/apache/nginxln.PNG" alt="">可以发现，nginx指向nginx所在的目录。</p>
         <h3>启动</h3>
         <p>当在命令行输入nginx的时候，系统会到bin下找nginx的命令，nginx就会到它指向的目录寻找。这时就能启动nginx了，在浏览器输入localhost，就可以看到nginx的默认页面。或者在局域网内的其他电脑上输入，nginx服务所在电脑的IP也可以看到（80端口开启的情况下）。 可以输入
         </p>

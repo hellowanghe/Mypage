@@ -36,10 +36,10 @@
                 <h2>查看ftp服务状态</h2>
                 <pre>systemctl status vsftpd</pre>
                 状态为active表示成功开启
-                <img src="https://github.com/hellowanghe/blogimg/blob/master/img/ftpstatus.PNG?raw=true" alt="" class="img-responsive">
+                <img src="/img/ftpimg/ftpstatus.PNG" alt="" class="img-responsive">
                
                 文件目录在<code>/var/ftp/</code>下有个<code>pub</code>`文件夹，要分享的文件可以放在这里。
-                <code>/etc/vsftpd/</code>中vsftpd.conf`是配置文件。<img src="https://github.com/hellowanghe/blogimg/blob/master/img/ftpconf.PNG?raw=true" alt="" class="img-responsive">
+                <code>/etc/vsftpd/</code>中vsftpd.conf`是配置文件。<img src="/img/ftpimg/ftpconf.PNG" alt="" class="img-responsive">
                 如果修改成NO，在登录的时候会需要服务器密码。目录也不再是默认的目录，而是你所登录用户的目录。
                 在浏览器输入地址
                 <kbd>ftp://localhost/</kbd>or <kbd>ftp://10.238.49.54/</kbd>在浏览器中

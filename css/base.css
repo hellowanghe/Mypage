@@ -1,12 +1,15 @@
 /*.container{
     box-shadow: 8px 8px 15px 1px #dcdcdc;
     border: solid 1px #e1e1e1;
-}
-.container-fluid{
+}*/
+/*.container-fluid{
     box-shadow: 8px 8px 15px 1px #dcdcdc;
     border: solid 1px #e1e1e1;
-}
-*/
+}*/
+/*body{
+    background-color: #fcf8e3;
+}*/
+
 .list-group {
     margin-top: 15px;
 }
@@ -21,4 +24,10 @@ img {
     margin-top: 10px;
     margin-bottom: 10px;
  box-shadow: 1px 1px 10px 1px #bfbfbf;
+}
+.list-group>a:hover{
+    color: #2096de;
+}
+span{
+    font-style: italic;
 }

@@ -27,17 +27,25 @@
                 <h1>Git入门基本操作</h1><span>2017-06-15 08:17:49</span>
                 <h2>Git是分布式的版本控制工具</h2>
                 <p>
-                    这是git的官网，可以下载最新版本的git使用。我只装了windows版本的git。想详细了解的同学可以去廖雪峰的Git教程看看。<a href="https://git-scm.com" alt="Git 官网">https://git-scm.com</a>
-                    <a href="http://www.liaoxuefeng.com/" alt="廖雪峰Git">http://www.liaoxuefeng.com/</a> 安装成功git，在cmd命令行输入 <code>git --version</code>就可以看到git的版本号了（注意两个是`--`）
-                    <img src="https://github.com/hellowanghe/blogimg/blob/master/img/git1.PNG?raw=true" alt="" class="img-responsive"> 安装完成后，首先需要配置一下，用户名和邮箱，每次的`commit`都会记录下是哪个用户推送的。
+                    这是git的官网，可以下载最新版本的git使用。我只装了windows版本的git。想详细了解的同学可以去廖雪峰的Git教程看看。<a href="https://git-scm.com"
+                        alt="Git 官网">https://git-scm.com</a>
+                    <a href="http://www.liaoxuefeng.com/" alt="廖雪峰Git">http://www.liaoxuefeng.com/</a> 安装成功git，在cmd命令行输入
+                    <code>git --version</code>就可以看到git的版本号了（注意两个是`--`）
+                    <img src="/img/git_img/git1.PNG" alt=""
+                        class="img-responsive"> 安装完成后，首先需要配置一下，用户名和邮箱，每次的`commit`都会记录下是哪个用户推送的。
                     <pre>git config --global user.name "Your Name"</pre>
                     <pre>git config --global user.email "email@example.com"</pre>
                     <h2>基本命令</h2>
                     <li>1.初始化</li>
-                    <pre>git init test</pre> 初始化一个名为test的仓库。test里有一个.git的文件夹（默认为隐藏），这个是用来管理仓库的。一个本地仓库就建好了。（版本库又名仓库，英文名repository，大概就是一个目录的样子） 或者新建文件夹test，
+                    <pre>git init test</pre>
+                    初始化一个名为test的仓库。test里有一个.git的文件夹（默认为隐藏），这个是用来管理仓库的。一个本地仓库就建好了。（版本库又名仓库，英文名repository，大概就是一个目录的样子）
+                    或者新建文件夹test，
                     <code>cd test</code>之后，输入<code>git init</code>，和上步有同样的效果
                     <li>2.查看仓库状态</li>
-                    <pre>git status</pre> 用于查看仓库状态，一旦发生改变就会有提示。我们在test文件夹下新建一个文本文件名为one.txt,并写入this is test，保存。运行此命令，如图所示。<img src="https://github.com/hellowanghe/blogimg/blob/master/img/git2.PNG?raw=true" alt="" class="img-responsive">
+                    <pre>git status</pre> 用于查看仓库状态，一旦发生改变就会有提示。我们在test文件夹下新建一个文本文件名为one.txt,并写入this is
+                    test，保存。运行此命令，如图所示。<img
+                        src="/img/git_img/git2.PNG" alt=""
+                        class="img-responsive">
                     <li>3.对比差异</li>
                     <pre>git diff one.txt</pre> 可以查看你所修改的东西，在提交之前查看，一旦你add之后，这个命令就不起作用了。
                     <li>4.添加到暂存区</li>
@@ -45,24 +53,51 @@
                     <li>5.提交到分支</li>
                     <pre>git commit -m "添加了一些东西，删除了一些东西" </pre>提交到分支，<code>-m</code>后面是你提交的说明。可以填写你所修改的东西。
                     <li>6.查看历史提交记录</li>
-                    <pre>git log</pre> 会显示你所提交的日志，及版本号，版本号是用sh1计算出的一串字符，为了避免重复。在后面加上参数<code>--pretty=oneline</code>会让日志成行显示，<img src="https://github.com/hellowanghe/blogimg/blob/master/img/gitlog.PNG?raw=true" alt="" class="img-responsive"> <img src="https://github.com/hellowanghe/blogimg/blob/master/img/githead.PNG?raw=true" alt="" class="img-responsive">
+                    <pre>git log</pre>
+                    会显示你所提交的日志，及版本号，版本号是用sh1计算出的一串字符，为了避免重复。在后面加上参数<code>--pretty=oneline</code>会让日志成行显示，<img
+                        src="/img/git_img/gitlog.PNG" alt=""
+                        class="img-responsive"> <img
+                        src="/img/git_img/githead.PNG" alt=""
+                        class="img-responsive">
                     <li>7.版本回退</li>
-                    <pre>git reset --hard</pre> "版本号" 回退到制定的版本号。<pre>git log</pre>显示出你的所有提交记录，想要回退到那个版本，就输入版本号，一般输个前5位就行，如果没有相同的话。 如上图
-                    <pre>git reset --hard HEAD</pre> 可以查看当前的版本号 <img src="https://github.com/hellowanghe/blogimg/blob/master/img/gitreset.PNG?raw=true" alt="" class="img-responsive">
+                    <pre>git reset --hard</pre> "版本号" 回退到制定的版本号。
+                    <pre>git log</pre>显示出你的所有提交记录，想要回退到那个版本，就输入版本号，一般输个前5位就行，如果没有相同的话。 如上图
+                    <pre>git reset --hard HEAD</pre> 可以查看当前的版本号 <img
+                        src="/img/git_img/gitreset.PNG" alt=""
+                        class="img-responsive">
                     <li>8.后悔药</li>
-                    <pre>git reflog</pre> 可以查看你所有的操作记录。也可以用<code>reset</code>命令，回退到你想要回退的版本。<img src="https://github.com/hellowanghe/blogimg/blob/master/img/git.PNG?raw=true" alt="" class="img-responsive">
-                    <li>9.添加远程仓库</li> 在你的仓库文件中运行<pre>git remote add origin git@github.com:michaelliao/fortest.git</pre>把仓库名改成自己的就行了。
+                    <pre>git reflog</pre> 可以查看你所有的操作记录。也可以用<code>reset</code>命令，回退到你想要回退的版本。<img
+                        src="/img/git_img/git.PNG" alt=""
+                        class="img-responsive">
+                    <li>9.添加远程仓库</li> 在你的仓库文件中运行
+                    <pre>git remote add origin git@github.com:michaelliao/fortest.git</pre>把仓库名改成自己的就行了。
                     <li>10.推送到远程仓库</li> 在仓库运行
                     <pre>git push -u origin master</pre> -u表示，将本地仓库同步到远程仓库，并关联到远程仓库。
-                    <li>11.将远程仓库同步到本地</li> <pre>git pull</pre>会同步远程分支到本地。
+                    <li>11.将远程仓库同步到本地</li>
+                    <pre>git pull</pre>会同步远程分支到本地。
                     <li>12. 分支</li>
-                    新建一个dev分支 <pre>git branch dev</pre>切换到dev分支<pre>git checkout dev</pre> 查看当前分支 <pre>git branch</pre> 删除分支 <pre>git branch -d dev</pre> 查看分支合并图 <pre>git log --graph</pre>
-                    <li>13.合并分支</li> 在切换回master分之后，运行命令，会将dev分支合并到master分支，也就是当前分支 <pre>git merge dev</pre>
+                    新建一个dev分支
+                    <pre>git branch dev</pre>切换到dev分支
+                    <pre>git checkout dev</pre> 查看当前分支
+                    <pre>git branch</pre> 删除分支
+                    <pre>git branch -d dev</pre> 查看分支合并图
+                    <pre>git log --graph</pre>
+                    <li>13.合并分支</li> 在切换回master分之后，运行命令，会将dev分支合并到master分支，也就是当前分支
+                    <pre>git merge dev</pre>
                     <h2>Git ssh 配置</h2>打开Gitbash，创建SSH Key ，可以一路回车
-                    <pre>ssh-keygen -t rsa -C "email"</pre> 会在用户`<code>C:\Users\dell</code>`目录下生成.ssh文件夹，文件夹下有<code>id_rsa</code>和<code>id_rsa.pub</code>，<code>id_rsa.pub</code>就是公钥，复制粘贴到，github的相应位置添加信任的ssh，下次推送可以不用输入用户名和密码，就可以直接远程推送了。
+                    <pre>ssh-keygen -t rsa -C "email"</pre>
+                    会在用户`<code>C:\Users\dell</code>`目录下生成.ssh文件夹，文件夹下有<code>id_rsa</code>和<code>id_rsa.pub</code>，<code>id_rsa.pub</code>
+                    就是公钥，登录github，到setting中找到SSH and GPG keys的New SSH key，将公钥信息复制进去，下次就可以直接远程推送了，而不用输入用户名和密码，。
                     <h2>配置了ssh后，git命令行push的时候还是要求输入用户名和密码</h2>
                     <p>这种事情通常发生在更换机器后克隆自己仓库的时候，通常我们会使用https方式克隆
-                    <pre>git clone https://github.com/Name/project.git1</pre>  这样便会在你git push时候要求输入用户名和密码 解决的方法是使用ssh方式克隆仓库<pre>git clone git@github.com:Name/project.git1</pre>如果你已经用https方式克隆了仓库，就不必删除仓库重新克隆，只需将 <code>.git/config</code>文件中的 <code>url = https://github.com/Name/project.git</code> 一行改为 <code>url = git@github.com:Name/project.git</code> 测试你的ssh-key,在gitbash中输入 <pre>ssh -T git@github.com</pre> 输入yes后若显示 Hi xxx! You’ve successfully authenticated, but GitHub does not provide shell access. 则代表成功
+                        <pre>git clone https://github.com/Name/project.git1</pre> 这样便会在你git push时候要求输入用户名和密码
+                        解决的方法是使用ssh方式克隆仓库
+                        <pre>git clone git@github.com:Name/project.git1</pre>如果你已经用https方式克隆了仓库，就不必删除仓库重新克隆，只需将
+                        <code>.git/config</code>文件中的 <code>url = https://github.com/Name/project.git</code> 一行改为
+                        <code>url = git@github.com:Name/project.git</code> 测试你的ssh-key,在gitbash中输入
+                        <pre>ssh -T git@github.com</pre> 输入yes后若显示 Hi xxx! You’ve successfully authenticated, but GitHub
+                        does not provide shell access. 
+                        <img src="/img/git_img/git-t.png">则代表成功
                     </p>
                 </p>
             </div>

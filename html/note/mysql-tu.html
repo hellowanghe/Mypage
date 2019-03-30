@@ -36,28 +36,28 @@
                 <h3>安装</h3>
                 <p>用yum安装，centos7上mysql已经改为了mariadb，所以安装的时候和之前版本的有些不同，centos7下的mysql安装</p> <pre>yum install mariadb-server mariadb</pre>
                 <dd>安装数据库和数据库服务器 </dd>
-                <p>（之前的centos版本可以这样安装： <pre>yum install mysql-server mysql mysql-develop</pre> 或者 $ <pre>yum install mariadb*</pre> *代表把所有和mariadb相关的东西都装上 完成后，可以输入<pre>mysqladmin --version</pre>来查看安装是否成功。 <img class="img-responsive" src="https://github.com/hellowanghe/blogimg/blob/master/img/mysql1.PNG?raw=true" alt=""> 如果出现版本信息，就说明安装成功了。 注意：安装完之后，在命令行直接输入mysql是会报错了，<img src="https://github.com/hellowanghe/blogimg/blob/master/img/mysql2.PNG?raw=true" alt="" class="img-responsive"></p>
-                    <p>应该先启动数据库服务器，<pre>systemctl start mariadb</pre> <img class="img-responsive" src="https://github.com/hellowanghe/blogimg/blob/master/img/mysql3.PNG?raw=true" alt="">相关命令：
+                <p>（之前的centos版本可以这样安装： <pre>yum install mysql-server mysql mysql-develop</pre> 或者 $ <pre>yum install mariadb*</pre> *代表把所有和mariadb相关的东西都装上 完成后，可以输入<pre>mysqladmin --version</pre>来查看安装是否成功。 <img class="img-responsive" src="/img/mysqlimg/mysql1.PNG" alt=""> 如果出现版本信息，就说明安装成功了。 注意：安装完之后，在命令行直接输入mysql是会报错了，<img src="/img/mysqlimg/mysql2.PNG" alt="" class="img-responsive"></p>
+                    <p>应该先启动数据库服务器，<pre>systemctl start mariadb</pre> <img class="img-responsive" src="/img/mysqlimg/mysql3.PNG" alt="">相关命令：
                         <pre>systemctl stop mariadb /停止服务</pre>
                         <pre>systemctl restart mariadb /重启服务</pre>
                         <pre>systemctl enable mariadb /开机启动</pre>
                         <pre>systemctl status maridb /查看状态</pre> 启动之后，在次输入mysql就可以进入数据库了，Mysql服务器的密码为空，本次不用输入密码，如上图。此时进入时没有用户名的。
                     </p>
                     <h3>创建root用户和密码</h3>
-                    <p> 上面看到，在初次登录的时候mysql是没有密码的，所以要设置root用户的密码，root用户是超级用户，拥有的很大的权限，密码是很有必要的。 <img src="https://github.com/hellowanghe/blogimg/blob/master/img/mysql4.PNG?raw=true" alt="" class="img-responsive">为了方便，我设置了简单的密码。下次登录的时候，就需要密码了，直接输mysql系统会告诉你Access denied。
+                    <p> 上面看到，在初次登录的时候mysql是没有密码的，所以要设置root用户的密码，root用户是超级用户，拥有的很大的权限，密码是很有必要的。 <img src="/img/mysqlimg/mysql4.PNG" alt="" class="img-responsive">为了方便，我设置了简单的密码。下次登录的时候，就需要密码了，直接输mysql系统会告诉你Access denied。
                     </p>
                         <h3>基本操作命令</h3>
-                        <p>登录到mysql的命令行后，我们可以先查看一下有几个数据库。<img src="https://github.com/hellowanghe/blogimg/blob/master/img/mysqluse.PNG?raw=true" alt="" class="img-responsive"></p>
+                        <p>登录到mysql的命令行后，我们可以先查看一下有几个数据库。<img src="/img/mysqlimg/mysqluse.PNG" alt="" class="img-responsive"></p>
                             <h4>创建数据库 </h4>可以看到所有的数据库。test，test1，test2是我自己建的。选择你要操作的数据库，用use语句，首先创建一个数据库test。 <pre>create database test</pre>
                             <h4>选择数据库</h4> <pre>use test</pre>； 我们就进入到了`test`库。查看库中的表，由于这是个新建的库，当我用 <code>show tables</code>的时候，他会提示空`empty set`；
                             <h4>删除数据库</h4>如果你要删除某个数据库。比如； <pre>drop database test2；删除掉test2数据库</pre>
                             <h4>创建表</h4> 一般格式为 > <pre>CREATE TABLE table_name (column_name column_type);</pre> 简单的例子:
                             <pre>CREATE TABLE person(person_name CHAR,person_age INT,person_sex CHAR);</pre> 建立了名为<code>person</code>的表，字段有<code>person_name`,`person_age`,`person_sex`</code>代表名字，年龄和性别。`CHAR`代表字符 `INT`代表整数数字。可以用`desc ‘表名’`来查看表字段的属性。
-                            <img src="https://github.com/hellowanghe/blogimg/blob/master/img/mysqldesc.PNG?raw=true" alt="" class="img-responsive">可以看到，`name`和`sex`字段的`type`属性为`char（1）`，这因为建表的时候没有声明字段的长度，默认为1了。
+                            <img src="/img/mysqlimg/mysqldesc.PNG" alt="" class="img-responsive">可以看到，`name`和`sex`字段的`type`属性为`char（1）`，这因为建表的时候没有声明字段的长度，默认为1了。
                             <h4>删除表</h4> <pre>drop table person</pre> 和删除数据库命令类似。
                             <h4>INSERT插入数据</h4>
                             <pre>INSERT INTO person（person_name，person_age,person_sex)
-                    values("jack",23, "male")</pre> 然后查看， <img src="https://github.com/hellowanghe/blogimg/blob/master/img/mysql_insert.PNG?raw=true" alt="" class="img-responsive"><img src="https://github.com/hellowanghe/blogimg/blob/master/img/mysql_insert1.PNG?raw=true" alt="" class="img-responsive"> 发现，`name`和`sex`字段只有一个字符，这就是之前的问题了，他的字符长度是1，只能容纳一个字符。现在改变他的属性。 <h4>ALTER-删除，添加 ALTER TABLE</h4>
+                    values("jack",23, "male")</pre> 然后查看， <img src="/img/mysqlimg/mysql_insert.PNG" alt="" class="img-responsive"><img src="/img/mysqlimg/mysql_insert1.PNG" alt="" class="img-responsive"> 发现，`name`和`sex`字段只有一个字符，这就是之前的问题了，他的字符长度是1，只能容纳一个字符。现在改变他的属性。 <h4>ALTER-删除，添加 ALTER TABLE</h4>
                             <pre>ALTER TABLE person DROP person_name  /删除person表的person_name字段</pre>
                             <pre>ALTER TABLE person ADD person_name INT FIRST;  /给person表添加person_name字段，并放在第一列
                             </pre>
@@ -70,7 +70,7 @@
                             <h5>MODIFY</h5>
                             <pre>ALTER TABLE person MODIFY person_name CHAR(10); </pre>
                             <h5>CHANGE</h5>
-                            <pre>ALTER TABLE person CHANGE COLUMN person_name person_name CHAR(10) NOT NULL; </pre>修改完成后，再插入一条数据，可以发现，person_name已经可以，正常显示了。<img src="https://github.com/hellowanghe/blogimg/blob/master/img/mysql_insert2.PNG?raw=true" alt="" class="img-responsive">
+                            <pre>ALTER TABLE person CHANGE COLUMN person_name person_name CHAR(10) NOT NULL; </pre>修改完成后，再插入一条数据，可以发现，person_name已经可以，正常显示了。<img src="/img/mysqlimg/mysql_insert2.PNG" alt="" class="img-responsive">
                             <h4>ALTER-修改表名</h4> 下面的语句可以修改表名。如果有需要的话。将表person重命名为person_tbl。 <pre>ALTER TABLE person RENAME TO person_tbl; </pre><h3>创建用户与权限管理 </h3>
                             之前我们已经有了root用户及密码，我们以root用户登录，创建其他的用户，用来控制权限。 创建用户有两种方法（前提以root用户登录）
                             <li>GRANT命令</li>
