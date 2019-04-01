@@ -1,7 +1,10 @@
-/*.container{
-    box-shadow: 8px 8px 15px 1px #dcdcdc;
-    border: solid 1px #e1e1e1;
-}*/
+.container{
+    box-shadow: 8px 8px 15px 1px #b2b2b2;
+    border: solid 1px #e1e4e8;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-bottom: 50px;
+}
 /*.container-fluid{
     box-shadow: 8px 8px 15px 1px #dcdcdc;
     border: solid 1px #e1e1e1;
@@ -31,3 +34,7 @@ img {
 span{
     font-style: italic;
 }
+/*.row-fluid{
+    border: 1px solid #e1e4e8;
+}*/
+
