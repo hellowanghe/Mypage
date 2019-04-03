@@ -1,17 +1,20 @@
-.container{
+.container {
     box-shadow: 8px 8px 15px 1px #b2b2b2;
     border: solid 1px #e1e4e8;
     padding-top: 50px;
     padding-bottom: 50px;
     margin-bottom: 50px;
 }
+
+
 /*.container-fluid{
     box-shadow: 8px 8px 15px 1px #dcdcdc;
     border: solid 1px #e1e1e1;
 }*/
-/*body{
-    background-color: #fcf8e3;
-}*/
+
+body {
+    font-size: 16px;
+}
 
 .list-group {
     margin-top: 15px;
@@ -19,22 +22,25 @@
 
 .indeximg {
     margin-top: 10px: margin-left: 50%;
-    left: -400px;
+    width: 100%;
     position: relative;
 }
 
 img {
     margin-top: 10px;
     margin-bottom: 10px;
- box-shadow: 1px 1px 10px 1px #bfbfbf;
+    box-shadow: 1px 1px 10px 1px #bfbfbf;
 }
-.list-group>a:hover{
+
+.list-group>a:hover {
     color: #2096de;
 }
-span{
+
+span {
     font-style: italic;
 }
+
+
 /*.row-fluid{
     border: 1px solid #e1e4e8;
 }*/
-
