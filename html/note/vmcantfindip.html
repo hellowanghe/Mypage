@@ -27,11 +27,35 @@
         <div class="row-fluid">
             <div class="col-md-10 col-md-offset-1">
                 <h1>linux虚拟机基础配置入门</h1><span>2018-01-24 18:43:14</span>
-                <h2>虚拟机下linux没有ip（Centos7）</h2> 虚拟机环境 - 操作系统windows7专业版64位系统 - 虚拟机软件VMware® Workstation 12 Pro - 虚拟机系统Centos7mini版 常在虚拟机上学习linux，昨天装了一个Centos7的mini版本，试着安装禅道。可装完后用<code>ip address </code>查看不到ip地址，ip都查不到如何连接呢。 <img src="/img/vmimg/vmipissue1.png" alt="" class="img-responsive">即使配置了ip和路由也不行。在<code>/etc/sysconfig/network-scripts</code>中可以看到一个<code>ifcfg-ens33</code>的配置文件，用vi或vim工具打开后，编辑文件，在文件尾部增加`<code>GATEWAY=10.10.10.10</code>（具体网关地址，根据自己情况填写），加上<code>IPADDR=192.168.0.1</code>则给电脑配置了固定ip。 折腾了半天，上网找答案没有找到结果。桥接模式后虚拟机应该是连接到本机的物理网卡的，打开编辑菜单，选择虚拟网络编辑器，
+                <h2>虚拟机下linux没有ip（Centos7）</h2> 虚拟机环境 - 操作系统windows7专业版64位系统 - 虚拟机软件VMware® Workstation 12 Pro - 虚拟机系统Centos7mini版 常在虚拟机上学习linux，昨天装了一个Centos7的mini版本，试着安装禅道。可装完后用<code>ip address </code>查看不到ip地址，ip都查不到如何连接呢。 <img src="/img/vmimg/vmipissue1.png" alt="" class="img-responsive">即使配置了ip和路由也不行。在<code>/etc/sysconfig/network-scripts</code>中可以看到一个<code>ifcfg-ens33</code>的配置文件，用vi或vim工具打开后，首先检查一下配置文件。
+                <li>NAME是网卡的名字</li>
+                <li>IPADDR是网卡设置固定IP时使用</li>
+                <li>GATEWAY是设置网关使用</li>
+                <li>DNS如果需要dns在这里设置，免费的dns服务器由8.8.8.8(google),还有国内的114.114.114.114</li>
+                <li>查看ONBOOT选项，这个选项的意思是：开机或重启时是否启动网卡。设置为yes。</li>
+                <li>查看BOOTPROTO选项， 网卡是如何获取到ip地址 </li>网卡获取ip地址的方式，无线网络一般为dhcp自动获取由路由器自动分配。none或者static都为固定的ip。
+                　<li>BOOTPROTO=dhcp 自动获取ip地址</li>
+                <li>BOOTPROTO=none 固定的ip地址</li>
+                <li>BOOTPROTO=static 固定的ip地址</li>
+                <img src="/img/vmimg/vmip8.png" alt="" class='img-responsive'>编辑文件，在文件尾部增加`<code>GATEWAY=10.10.10.10</code>（具体网关地址，根据自己情况填写），加上<code>IPADDR=192.168.0.1</code>则给电脑配置了固定ip（如果为自动获取IP,IP地址可以不设置）。 桥接模式后虚拟机应该是连接到本机的物理网卡的，打开编辑菜单，选择虚拟网络编辑器，
                 <img src="/img/vmimg/vmipissue2.png" alt="" class="img-responsive">点击更改设置，将类型选为桥接模式，<img src="/img/vmimg/vmipissue3.png" alt="" class="img-responsive"> 选择桥接到网卡时，一定注意，可以看到下拉框下有好几个网卡，大部分为虚拟网卡，这时指定选择你的电脑所用的网卡，<img src="/img/vmimg/vmipissue6.png" alt="" class="img-responsive">如果不清楚，可到控制面板，网络连接中，查看电脑现用网卡的名字。 <img src="/img/vmimg/vmipissue7.png" alt="" class="img-responsive">点击应用，确定。<img src="/img/vmimg/vmipissue4.png" alt="" class="img-responsive"> 稍等一会，vmworkstation应用完设置后，我们再在虚拟机中，查看ip会发现已经有了ip，和电脑在同一网段。 这会就可以在本机上访问虚拟机上的服务了。如果还访问不到，可以查看80等端口有没有开放。<img src="/img/vmimg/vmipissue5.png" alt="" class="img-responsive"> 总之电脑用的wifi就连无线网卡，有线就用有线网卡应该就ok。正常ip就会自动生成了
+                <h2>重启网络失败</h2>
+                配置完成后，需要重新启动网络，有时会产生冲突。centos7上同时存在，network和NetworkManager两种网络管理工具，如果都配置的话会产生冲突。可以尝试关闭NetworkManager服务并禁止开机启动来尝试解决。
+            
+                <pre>systemctl status NetworkManager #查看状态</pre>
+                <pre>systemctl stop NetworkManager #停止服务</pre>
+                <pre>systemctl disable NetworkManager #禁止开机启动</pre>
+                <h2>网络工具</h2>
+                centos最小化安装后，会发现ifconfig命令找不到了，因为centos7开始支持新的网络配置管理工具iproute2旨在取代net-tools。
+                如果想用之前的命令，只有安装一下net-toos工具了。
+                <pre>yum install net-tools</pre>
+                <img src="/img/vmimg/vmip9.png" class="img-responsive" alt="">
+                下图是两个工具大致对比。如果你仍在使用net-tools，而且尤其需要跟上新版Linux内核中的最新最重要的网络特性的话，那么是时候转到iproute2的阵营了。
+                <img src="/img/vmimg/vmip10.png" alt="" class="img-responsive">
+                
             </div>
         </div>
-        </div>
+    </div>
 </body>
 <script src="/js/jquery1.12.4.min.js"></script>
 <script src="/js/bootstrap3.3.7.min.js"></script>
