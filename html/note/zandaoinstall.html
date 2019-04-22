@@ -22,6 +22,8 @@
                 </ul>
             </div>
         </div>
+    </div>
+    <div class="container">
         <div class="row-fluid">
             <div class="col-md-10 col-md-offset-1">
                 <h1>安装禅道-iptables配置（Centos7）</h1>
@@ -77,7 +79,13 @@
                 此命令将zbox文件夹打包压缩，如需迁移只需将zbox.tar.gz 文件拷贝到新的服务器上<kbd>/opt</kbd>目录下
                 运行一下命令即可。将zbox文件解压到，<kbd>/opt</kbd>目录下
                 <pre>tar -zxvf zbox.tar.gz zbox</pre>
+                <h3>问题</h3>
+                用——A的命令向规则链中append规则的时候，不会生效，比如开发3000端口，执行命令后
+                <pre>iptables -A INPUT -p tcp --dport 3000 -j ACCEP</pre>
+                发现3000端口依旧访问不了。
+                <img src="/img/vmimg/vmissue8.png" alt="">
             </div>
+        </div>
         </div>
 </body>
 <script src="/js/jquery1.12.4.min.js"></script>

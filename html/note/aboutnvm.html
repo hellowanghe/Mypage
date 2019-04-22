@@ -22,6 +22,8 @@
                 </ul>
             </div>
         </div>
+    </div>
+    <div class="container">
         <div class="row-fluid">
             <div class="col-md-10 col-md-offset-1">
                 <h1>nvm-node版本管理工具</h1><span>2017-06-15 08:17:49</span>
@@ -30,25 +32,29 @@
                     <li>淘宝的nodejs所有的镜像<a href="https://npm.taobao.org/mirrors/node">https://npm.taobao.org/mirrors/node</a></li>
                     <li>nvm-windows的github地址<a href="https://github.com/coreybutler/nvm-windows">https://github.com/coreybutler/nvm-windows</a></li>
                     <li>nvm的linux版本的github地址<a href="https://github.com/creationix/nvm">https://github.com/creationix/nvm</a></li>
-                    <h2>安装</h2>
-                    windows下nvm的安装比较简单，最好先卸载nodejs，下载nvm的windows的安装包，像安装其他软件一样。安装完成后，可以在淘宝的npm镜像下载你所需要的不同的版本的nodejs的压缩包zip格式就行。
-                    nvm管理nodejs的目录默认在<code>C:\Users\dell\AppData\Roaming\nvm</code>，你的电脑上用户名就是你自己的，AppData有的是隐藏的，需要设置一下文件的查看方式，将其显示出来。将下载好的压缩包解压到，nvm的目录下，并重命名为
+                    <h2>windows安装</h2> windows下nvm的安装比较简单，最好先卸载nodejs，下载nvm的windows的安装包，像安装其他软件一样。安装完成后，可以在淘宝的npm镜像下载你所需要的不同的版本的nodejs的压缩包zip格式就行。 nvm管理nodejs的目录默认在
+                    <code>C:\Users\dell\AppData\Roaming\nvm</code>，你的电脑上用户名就是你自己的，AppData有的是隐藏的，需要设置一下文件的查看方式，将其显示出来。将下载好的压缩包解压到，nvm的目录下，并重命名为
                     <kbd>vx.x.x</kbd>即可，如图
-                    <img src="/img/nvmimg/nvm1.PNG" alt="" class="img-responsive">
-在命令行输入
-                    <pre>nvm list</pre>
-                    会显示可用的nodejs版本列表，当前再用版本也会显示出来。如图：<img src="/img/nvmimg/nvmlist.PNG" alt="" class="img-responsive">
-在命令行输入
-                    <pre>nvm use 4.5.0</pre>
-                    nvm会自动切换到所选版本<code>nvm list</code>可以看到，当前使用版本变为了4.5.0，也可用<code>node -v</code>查看版本是否改变。<img src="/img/nvmimg/nvmuse.PNG" alt="" class="img-responsive">
-                    <h2>npm配置</h2>
-                    国内使用npm如果速度比较慢，可以装上cnpm，cnpm是淘宝在国内的做的镜像，10分钟更新一次。
+                    <img src="/img/nvmimg/nvm1.PNG" alt="" class="img-responsive"> 在命令行输入
+                    <pre>nvm list</pre> 会显示可用的nodejs版本列表，当前再用版本也会显示出来。如图：
+                    <img src="/img/nvmimg/nvmlist.PNG" alt="" class="img-responsive"> 在命令行输入
+                    <pre>nvm use 4.5.0</pre> nvm会自动切换到所选版本
+                    <code>nvm list</code>可以看到，当前使用版本变为了4.5.0，也可用<code>node -v</code>查看版本是否改变。<img src="/img/nvmimg/nvmuse.PNG" alt="" class="img-responsive">
+                    <h2>npm配置</h2> 国内使用npm如果速度比较慢，可以装上cnpm，cnpm是淘宝在国内的做的镜像，10分钟更新一次。
                     <pre>npm install -g cnpm --registry=https://registry.npm.taobao.org</pre>
-                    <pre>npm config set registry https://registry.npm.taobao.org</pre>
-                    可用以下命令查看，是否配置是否成功
+                    <pre>npm config set registry https://registry.npm.taobao.org</pre> 可用以下命令查看，是否配置是否成功
                     <pre>npm config get registry</pre></p>
+                <h2>Linux下安装（centos7.3 64位）</h2> 先贴一个链接,nvm的github地址。
+                <a href="https://github.com/creationix/nvm">https://github.com/creationix/nvm</a>
+                <h3>源码安装</h3> linux下安装node也可以采用源码安装，从node的官网下载打包文件，解压到系统中，然后，./config make && make install
+                <h3>nvm安装</h3> 命令行执行
+                <pre>curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash</pre>
+                <pre>wget -qO- https://raw.githubusercontent.com/creationix/nvm/v0.34.0/install.sh | bash</pre> 然后用
+                <pre>nvm install --lts</pre>
+                <img src="/img/nvmimg/nvmlinux1.png" alt="" class="img-responsive">
             </div>
         </div>
+    </div>
 </body>
 <script src="/js/jquery1.12.4.min.js"></script>
 <script src="/js/bootstrap3.3.7.min.js"></script>
