@@ -53,7 +53,17 @@
                     <img src="/img/linux/linux01.jpg" alt="" class="img-responsive">
                     文件权限详细说明如下
                     <img src="/img/linux/linux02.png" alt="" class="img-responsive">
-                    <h3></h3>
+                    <h3>2.1如何改变文件的属性和权限</h3>
+                    <ul>
+                        <li>chgrp:改变文件所属群组</li>
+                        <pre>chgrp [-R] dirname/filename</pre> 
+                        例子:下边的命令会把initial-setup-ks
+                        <pre>chgrp group01 initial-setup-ks.cfg</pre>
+                        
+                        <li>chown:改变文件拥有者</li>
+                        <li>chmod:改变文件权限</li>
+                        <img src="/img/linux/linux04.png" alt="" class="img-responsive">
+                    </ul>
                     <p></p>
                     <h3></h3>
                     <p></p>
