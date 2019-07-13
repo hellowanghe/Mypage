@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>note</title>
+    <link href="/css/bootstrap3.3.7.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/base.css">
+</head>
+
+<body>
+    <div class="container-fluid">
+        <div class="row-fluid">
+            <div class="col-md-10 col-md-offset-1">
+                <ul class="nav nav-tabs">
+                    <li role="presentation"><a href="/">Home</a></li>
+                    <li role="presentation"><a href="/html/life">life</a></li>
+                    <li role="presentation" class="active"><a href="/html/note">note</a></li>
+                    <li role="presentation"><a href="/html/others/">Others</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row-fluid">
+            <div class="col-md-10 col-md-offset-1">
+                <!-- 文本内容 -->
+                <h1>linux文件权限与目录配置</h1>
+                <p>Linux最优秀的地方之一就在于他的多用户多任务环境。而为了让各个使用者具有较保密的文件数据，因此文件的权限管理就变的很重要了。
+                    Linux一般将文件可存取的身份分为三个类别，分别是 owner/group/others，且三种身份各有 read/write/execute 
+                    等权限。你如果首次接触Linux的话，那么，	在Linux下面这么多的目录/文件，到底每个目录/文件代表什么意义呢？</p>
+                <h2>1-使用者和群组</h2>
+                <h3>1.1文件拥有者(user)</h3>
+                <p>
+                    有多个用户，这个文件到底是属于谁的，文件的归属权。
+                </p>
+                <h3>1.2群组的概念(group)</h3>
+                <p>
+                    我的理解是一种角色，比如A角色具有几个权限，这个时候我们可以建立一个A的群组，属于A群组的人继承A的权限。群组是为了方便权限管理，你不用每次都给人增加权限。
+                    我们也可以建立一个B群组，B群组也有相应的权限，一个用户可以同时属于两个群组，继承两个群组的权限。
+                </p>
+                <h3>1.3其他人（others)</h3>
+                <p>
+               B群组里的人相对与A群组的人就是其他人。
+                </p>
+                <h3>1.4Linux 使用者身份与群组记录的文件</h3>
+                <p>在我们Linux系统当中，默认的情况下，所有的系统上的帐号与一般身份使用者，还有那个root的相关信息， 都是记录在/etc/passwd这个文件内的。至于个人的密码则是记录在/etc/shadow这个文件下。 
+                    此外，Linux所有的群组名称都纪录在/etc/group内！这三个文件可以说是Linux系统里面帐号、密码、群组信息的集中地啰！ 不要随便删除这三个文件啊！</p>
+                    <h2>2-Linux文件属性</h2>
+                    我们打开命令行，用文件查看命令ls,不熟悉的同学可以先了解一下，ls -al 查看全部文件。如下图
+                    <img src="/img/linux/linux01.jpg" alt="" class="img-responsive">
+                    文件权限详细说明如下
+                    <img src="/img/linux/linux02.png" alt="" class="img-responsive">
+                    <h3></h3>
+                    <p></p>
+                    <h3></h3>
+                    <p></p>
+                    <h3></h3>
+                    <p></p>
+                    <h3></h3>
+                    <p></p>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="/js/jquery1.12.4.min.js"></script>
+<script src="/js/bootstrap3.3.7.min.js"></script>
+
+</html>
